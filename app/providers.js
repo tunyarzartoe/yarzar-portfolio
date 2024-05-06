@@ -1,3 +1,4 @@
+import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 
@@ -10,9 +11,9 @@ const Providers = ({ children }) => {
         return <>{children}</>;
     }
     return (
-        <ThemeProvider>
+        <NextUIProvider>
             {children}
-        </ThemeProvider>
+        </NextUIProvider>
     );
 };
 

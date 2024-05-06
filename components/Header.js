@@ -5,20 +5,19 @@ import { HiArrowDown } from "react-icons/hi2";
 
 const Header = () => {
   return (
-    <header className="padding-container max-container header-container flex gap-4 flexBetween py-4">
+    <header className="padding-container max-container  flex gap-4 flexBetween py-4 border-b border-gray-20">
       <Link href={"/"} className="bold-28  text-white">
-        Yar{" "}
-        <span className="regular-28 text-secondary">
-          Zar
-        </span>
+        Yar <span className="regular-28 text-secondary">Zar</span>
       </Link>
-      <ThemeSwitcher />
       <button className="btn_dark_rounded px-8 py-2 rounded-full flexCenter gap-4 animate-pulse">
         <span>Hire me</span>
         <span className="h-5 w-5 border border-white rounded-full flexCenter animate-bounce">
           <HiArrowDown />
         </span>
       </button>
+      <div>
+      <ThemeSwitcher />
+      </div>
     </header>
   );
 };

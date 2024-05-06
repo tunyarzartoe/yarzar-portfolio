@@ -1,9 +1,12 @@
+const { nextui } = require('@nextui-org/react');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -47,14 +50,10 @@ module.exports = {
       'gradient-light': 'linear-gradient(65deg, #101841, #202b60)', // Define your gradient here
     }),
   },
+  darkMode: "class",
   plugins: [
-    function ({ addUtilities }) {
-      const newUtilities = {
-        '.border-bottom-r-white': {
-          'border-bottom': '1px solid grey', 
-        },
-      };
-      addUtilities(newUtilities, ['responsive', 'hover']);
-    },
+    nextui(),
+    
   ],
+  // plugins:[nextui()]
 };

@@ -9,7 +9,7 @@ import { ThemeProvider } from "next-themes";
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider>
     <RootLayout>
         <AnimatePresence mode="wait">
           <motion.div key={router.route} className="h-full">
