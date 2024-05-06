@@ -10,7 +10,7 @@ module.exports = {
       colors:{
         primary: '#121212',
         backgroundDark: '#',
-        // backgroundLight:'linear-gradient(65deg,#101841,#202b60)',
+        backgroundLight:'#1c1f24',
         secondary: '#dc143c',
         tertiary: '#202020',
         white:'#EAEAEA',
@@ -47,5 +47,14 @@ module.exports = {
       'gradient-light': 'linear-gradient(65deg, #101841, #202b60)', // Define your gradient here
     }),
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.border-bottom-r-white': {
+          'border-bottom': '1px solid grey', 
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };

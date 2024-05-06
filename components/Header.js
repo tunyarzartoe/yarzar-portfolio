@@ -4,7 +4,7 @@ import { HiArrowDown } from "react-icons/hi2";
 
 const Header = () => {
   return (
-    <header className="padding-container max-container flex gap-4 flexBetween py-4">
+    <header className="padding-container max-container header-container flex gap-4 flexBetween py-4 ">
       <Link
         href={"/"}
         className="bold-28  text-white"

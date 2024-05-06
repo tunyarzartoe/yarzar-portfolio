@@ -23,7 +23,7 @@
 
 @layer base{ 
   body{
-    @apply bg-gradient-light text-white leading-relaxed relative overflow-hidden; 
+    @apply bg-backgroundLight text-white leading-relaxed relative overflow-hidden; 
   }
   .page{
     @apply w-full h-screen overflow-hidden;
@@ -51,11 +51,17 @@
 {
   @apply bg-tertiary text-white border-[#383838] border transform;
 }
+.page-container {
+  @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
+}
 .max-container {
   @apply mx-auto max-w-[1440px];
 }
 .padding-container {
   @apply px-6 lg:px-20 3xl:px-0;
+}
+.header-container {
+  @apply border-bottom-r-white;
 }
 .flexCenter{
   @apply flex items-center justify-center;

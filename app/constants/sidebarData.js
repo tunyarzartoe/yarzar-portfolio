@@ -18,7 +18,7 @@ export const sidebarData = [
   { name: "work", path: "/work", icon: <HiSquare2Stack /> },
   {
     name: "testimonials",
-    path: "/testimonials",
+    path: "/testimonial",
     icon: <HiChatBubbleBottomCenterText />,
   },
   { name: "contact", path: "/contact", icon: <HiEnvelope /> },

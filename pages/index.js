@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion';
 import SocialIcons from "@/components/SocialIcons";
 import Image from "next/image";
 import React from "react";
@@ -18,7 +18,7 @@ const Home = () => {
             <Typewriter
               words={["Full Stack Developer", "Youtuber", "Programmer"]}
               loop={true}
-              cursorStyle={"_"}
+              cursorStyle={" _ "}
               typeSpeed={90}
               deleteSpeed={70}
               delaySpeed={1000}
