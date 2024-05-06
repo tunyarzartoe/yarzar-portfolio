@@ -6,7 +6,7 @@ import React from "react";
 
 function Sidebar() {
   const pathname = usePathname()
-  console.log("pathname ===>",pathname)
+  // console.log("pathname ===>",pathname)
   const selectedStyle = {
     background:'#2f528f',  
     paddingTop: "auto",
