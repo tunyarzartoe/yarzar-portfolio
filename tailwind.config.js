@@ -10,13 +10,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        theme: ["Inter", "sans-serif"],
+      },
       colors:{
         primary: '#121212',
         backgroundDark: '#',
         backgroundLight:'#1c1f24',
-        secondary: '#dc143c',
+        secondaryStrong: '#dc143c',
+        secondary:'#2f528f',
         tertiary: '#202020',
         white:'#EAEAEA',
+        light:'#ffffff',
+        transitionColor:'#2f528f',
         slate:
         {
           10: '#f1f3f4',
@@ -46,9 +52,9 @@ module.exports = {
       //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       // },
     },
-    backgroundImage: theme => ({
-      'gradient-light': 'linear-gradient(65deg, #101841, #202b60)', // Define your gradient here
-    }),
+    // backgroundImage: theme => ({
+    //   'gradient-light': 'linear-gradient(65deg, #101841, #202b60)', // Define your gradient here
+    // }),
   },
   darkMode: "class",
   plugins: [

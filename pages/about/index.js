@@ -1,35 +1,66 @@
-import Hero from "@/components/Hero";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import React from "react";
+import { ImageViewModal } from "@/components/main/ImageViewModal";
+import Hero from "@/components/Hero";
 
 const About = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleImageClick = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [showModal]);
+
   return (
-    <div className="padding-container max-container  flex ">
+    <section className="padding-container max-container about flex mb-10">
       <div>
         <Hero title="About" />
 
-        <div className="flex flex-col gap-6 mb-4 ">
+        <div className="flex flex-col gap-6 mb-4 regular-16">
           <div className="leading-[2.5] text-gray-200 text-lg">
-            <Image
-              src={"/about.jpg"}
-              alt="My profile"
-              className="object-cover float-none md:float-left  w-[200px] rounded-full aspect-square m-8 mt-2"
-              width={800}
-              height={900}
-            />
+            <div
+              className=""
+              onClick={handleImageClick}
+              style={{ cursor: "pointer" }}
+            >
+              <Image
+                src={"/profile.jpg"}
+                alt="My profile"
+                className="object-cover float-none md:float-left  w-[220px] rounded-full aspect-square m-8 mt-2"
+                width={800}
+                height={800}
+                fetchPriority="eager"
+              />
+            </div>
             <p>
-              An inspiring software engineer, Coding with a strong passion for
-              design and computer science, I enjoy creating amazing things and
-              building blazingly-fast websites.
+              As a full-stack developer, I see myself as a digital craftsman,
+              sculpting elegant solutions from lines of code. With a passion for
+              both frontend finesse and backend robustness, I strive to create
+              seamless experiences that delight users and simplify their lives.
+              From brainstorming ideas to deploying polished applications, I
+              relish every step of the development journey. Let's work together
+              to build innovative solutions that make a difference in the
+              digital world.
             </p>
-            {/* <div className="md:float-right w-[200px] rounded-full aspect-square m-2"> */}
-            {/* <ComputerModel /> */}
-            {/* </div> */}
             <p>
-              Currently working mostly with Typescript, React, and Svelte, as
-              well as other JavaScript technologies for now. Here in my blog, I
-              mostly write about my experiences and share my thoughts on various
-              topics related to software engineering.
+              Currently working mostly with React, Node JS, C#, and Java, as
+              well as other JavaScript technologies for now.
+            </p>
+            <p>
+              In addition to coding, I create content on my YouTube channel,
+              covering all things technology, coding vlogs, and personal
+              development.
             </p>
             <p>
               Over the past years, I have written content for my blog and
@@ -40,7 +71,9 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      {showModal && <ImageViewModal closeModal={closeModal} />}
+    </section>
   );
 };
 

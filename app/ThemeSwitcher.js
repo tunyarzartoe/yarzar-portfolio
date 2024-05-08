@@ -23,6 +23,7 @@ const ThemeSwitcher = () => {
   };
   return (
     <Switch
+    className="cursor-pinter"
       defaultSelected
       size="lg"
       color="default"
