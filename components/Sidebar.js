@@ -8,7 +8,7 @@ function Sidebar() {
   const pathname = usePathname()
   // console.log("pathname ===>",pathname)
   const selectedStyle = {
-    background:'#2f528f',  
+    background:'#dc143c',  
     paddingTop: "auto",
     borderRadius: 5,
     boxShadow: "1px 1px 5px #303030",
@@ -22,7 +22,7 @@ function Sidebar() {
   };
 
   return (
-    <nav className="fixed h-max bottom-0 mt-auto gap-y-4 flex flex-col items-center top-0 w-full xl:justify-center xl:right-[2%] xl:w-16 xl:h-screen z-50">
+    <nav className="fixed h-max bottom-0 mt-auto gap-y-4 flex flex-col items-center top-0 w-full xl:justify-center xl:right-[5%] xl:w-16 xl:h-screen z-50">
       <ul className="flexBetween gap-4 w-full bg-white/20 backdrop-blur-3xl px-4 py-3 xl:flex-col xl:flexCenter xl:rounded-full xl:gap-y-8 xl:p-8">
         {sidebarData?.map((link, index) => (
           <Link

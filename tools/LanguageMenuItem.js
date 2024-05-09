@@ -2,33 +2,40 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import US from "../public/countryflags/us.svg";
-import Thaiwan from "../public/countryflags/taiwan.svg";
+import Taiwan from "../public/countryflags/taiwan.svg";
 import China from "../public/countryflags/cn.svg";
 import German from "../public/countryflags/de.svg";
 import JP from "../public/countryflags/jp.svg";
 import TH from "../public/countryflags/th.svg";
 import IT from "../public/countryflags/it.svg";
+import Global from "../public/global.svg";
+import GlobalPng from "../public/global.jpg";
 
+import { useTheme } from "next-themes";
+
+const DefaultFlag = (
+  <Image src={GlobalPng} width={25} height={25} alt="US" />
+);
 const UsFlag = (
-  <Image src={US} style={{ width: "25px", height: "25px" }} alt="US" />
+  <Image src={US} width={25} height={25} alt="US" />
 );
 const TaiwanFlag = (
-  <Image src={Thaiwan} style={{ width: "25px", height: "20px" }} alt="CN" />
+  <Image src={Taiwan} width={25} height={20} alt="CN" />
 );
 const ChinaFlag = (
-  <Image src={China} style={{ width: "25px", height: "25px" }} alt="CN" />
+  <Image src={China} width={25} height={25} alt="CN" />
 );
 const ItalyFlag = (
-  <Image src={IT} style={{ width: "25px", height: "25px" }} alt="IT" />
+  <Image src={IT} width={25} height={25} alt="IT" />
 );
 const GermanFlag = (
-  <Image src={German} style={{ width: "25px", height: "25px" }} alt="DE" />
+  <Image src={German} width={25} height={25} alt="DE" />
 );
 const JapanFlag = (
-  <Image src={JP} style={{ width: "25px", height: "25px" }} alt="JP" />
+  <Image src={JP} width={25} height={25} alt="JP" />
 );
 const ThaiFlag = (
-  <Image src={TH} style={{ width: "25px", height: "25px" }} alt="TH" />
+  <Image src={TH} width={25} height={25} alt="TH" />
 );
 
 const languages = [
@@ -41,7 +48,8 @@ const languages = [
   { lang: "th", flag: ThaiFlag, text: "Thailand" },
 ];
 
-const LanguageMenuItem = ({ theme }) => {
+const LanguageMenuItem = () => {
+  const theme = useTheme();
   const { t, i18n } = useTranslation("dashboard");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -62,14 +70,16 @@ const LanguageMenuItem = ({ theme }) => {
   };
 
   return (
-    <div className="relative text-center justify-center w-auto ">
+    <div className="relative text-center justify-center w-auto">
       <div>
         <button
           type="button"
           onClick={toggleDropdown}
-          className=" border border-gray-20 px-3 py-2  flexCenter inline-flex w-80 items-center gap-2 space-x-1.5 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" 
+          className="border border-gray-20 px-3 py-2 flexCenter inline-flex  items-center gap-2 space-x-1.5 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" 
         >
-          <div className="mr-5">{currentLang?.flag}</div>
+          <div className="mr-5">
+            {currentLang?.flag}
+          </div>
           <div className="ml-5">{t(currentLang?.text)}</div>{" "}
           <svg
             className="-mr-1 h-5 w-5 text-gray-400"
@@ -87,14 +97,14 @@ const LanguageMenuItem = ({ theme }) => {
       </div>
 
       {isOpen && (
-        <div className="absolute px-3 right-0 z-10 mt-2 w-80 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+        <div className="absolute px-3 right-0 z-10 mt-2  origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
           <ul className="py-1">
             {languages
               .filter((obj) => obj.lang !== i18n.language)
               .map((obj) => (
                 <li key={obj.lang} className="flex">
                   <button
-                    className="w-full px-3 py-2 text-sm flex text-gray-900 hover:bg-gray-100"
+                    className="w-full px-3 py-2 text-sm flex text-gray-900 hover:bg-gray-100 hover:text-gray-700"
                     onClick={() => changeLanguage(obj.lang)}
                   >
                     {obj.flag}
