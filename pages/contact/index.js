@@ -6,7 +6,7 @@ import fadeIn from "@/components/Variants";
 
 const Contact = () => {
   return (
-    <section className="max-container padding-container py-12 xl:py-28">
+    <section className="max-container padding-container py-12 xl:py-28 mb-8">
       <div className="flex flex-col gap-6">
         <motion.div
           variants={fadeIn("down", 0.4)}
@@ -16,7 +16,7 @@ const Contact = () => {
           className="pb-14 "
         >
           <div className="text-center justify-center flex">
-          <h3 className="text-[30px] lg:text-[36px] font-extrabold relative leading-normal uppercase text-center">
+          <h3 className="bold-20 font-extrabold relative leading-normal uppercase text-center">
             Contact U<span className="text-secondary">s</span>
             <span className="tex-[45px] lg:text-[54px]  font-extrabold text-white/30 absolute top-[50%] left-1/2  -translate-y-1/2 -translate-x-1/2 uppercase">
               Get in touch

@@ -22,12 +22,12 @@ const Services = () => {
         exit="hidden"
         className="pb-12 text-center"
       >
-        <h3 className="text-[30px] lg:text-[36px] font-extrabold relative leading-normal uppercase">
+        <h3 className="bold-20 font-extrabold relative leading-normal uppercase">
           Service<span className="text-secondary">s</span>
           {/* <span className="text-[-45px] lg:tex-[54px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2">
             My Services
           </span> */}
-          <p className="text-center max-w-md mx-auto text-gray-20 mt-1 regular-16 mb-4">
+          <p className="text-center max-w-md mx-auto text-gray-20 mt-1 regular-14 mb-4 ">
           Our services portfolio offers tailored solutions for web development, design, digital marketing, and consulting.
           </p>
         </h3>

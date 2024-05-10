@@ -14,7 +14,7 @@ const Work = () => {
       exit="hidden"
       className="pb-12 text-center"
     >
-      <h3 className="text-[30px] lg:text-[36px] font-extrabold relative leading-normal uppercase">
+      <h3 className="bold-20 font-extrabold relative leading-normal uppercase">
         Portfolio<span className="text-secondary">s</span>
         {/* <span className="text-[-45px] lg:tex-[54px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2">
           My Services

@@ -4,7 +4,7 @@ import { ImageViewModal } from "@/components/main/ImageViewModal";
 import Hero from "@/components/Hero";
 import Personal from "@/components/Personal";
 import fadeIn from "@/components/Variants";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 const About = () => {
   const [showModal, setShowModal] = useState(false);
@@ -19,14 +19,18 @@ const About = () => {
 
   return (
     <section className="padding-container max-container about mb-20">
-      <motion.div 
-      variants={fadeIn("down", 0.4)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
+      <motion.div
+        variants={fadeIn("down", 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
       >
-        <Hero title="About" />
-
+        <h3 className="bold-20 font-extrabold relative leading-normal uppercase">
+          About
+          {/* <span className="text-[-45px] lg:tex-[54px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2">
+            My Services
+          </span> */}
+        </h3>
         <div className="flex flex-col gap-10 mb-4 regular-16">
           <div className="leading-[2.5] text-gray-200 text-lg">
             <div
@@ -73,13 +77,15 @@ const About = () => {
         </div>
       </motion.div>
 
-      <motion.div 
-      variants={fadeIn("up", 0.4)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
+      <motion.div
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
       >
-        <h3 className="text-[30px] lg:text-[36px] font-extrabold uppercase">Skills</h3>
+        <h3 className="bold-20 font-extrabold uppercase">
+          Skills
+        </h3>
         <div className="flex flex-col gap-6 mb-4 regular-16">
           <div className="leading-[2.5]  text-lg">
             <div className="skill object-cover float-none md:float-left  w-[280px] rounded-full m-8 mt-1 text-start justify-start">

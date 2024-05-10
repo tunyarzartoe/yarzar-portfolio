@@ -20,7 +20,7 @@ const Personal = () => {
           {/* <h3 className="text-2xl font-bold lg:text-3xl">Skills </h3> */}
         </div>
         <div className="">
-          <div className="flex flex-start gap-x-20 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0">
+          <div className="flex flex-start gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0">
             {personalData.map((item, itemIndex) => (
               <h3
                 key={itemIndex}
