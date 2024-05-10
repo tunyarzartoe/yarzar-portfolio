@@ -16,10 +16,10 @@ export const sidebarData = [
   { name: "about", path: "/about", icon: <HiUser /> },
   { name: "services", path: "/services", icon: <HiRectangleGroup /> },
   { name: "work", path: "/work", icon: <HiSquare2Stack /> },
-  {
-    name: "testimonials",
-    path: "/testimonial",
-    icon: <HiChatBubbleBottomCenterText />,
-  },
+  // {
+  //   name: "testimonials",
+  //   path: "/testimonial",
+  //   icon: <HiChatBubbleBottomCenterText />,
+  // },
   { name: "contact", path: "/contact", icon: <HiEnvelope /> },
 ];

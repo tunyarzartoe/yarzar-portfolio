@@ -9,6 +9,17 @@
   box-sizing: border-box;
 }
 
+/* Light mode */
+[data-theme="light"] .swiper-pagination-bullet {
+  background-color: #dc143c; /* Dark gray color for light mode */
+}
+
+/* Dark mode */
+[data-theme="dark"] .swiper-pagination-bullet {
+  background-color: #ddd; /* Light gray color for dark mode */
+}
+
+
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullets,
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullets {

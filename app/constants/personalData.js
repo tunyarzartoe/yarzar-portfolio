@@ -84,30 +84,25 @@ export const personalData = [
   },
 ];
 
-export const servicesData =[
+export const servicesData = [
   {
-    icon: <FaFigma style={{ fontSize: "35px", color: "#68A063" }} />, 
-    title:"UI/UX Design",
-
+    icon: <FaFigma style={{ fontSize: "35px", color: "#0055FF" }} />,
+    title: "UI/UX Design",
   },
   {
-    icon: <SiJavascript style={{ fontSize: "35px", color: "#68A063" }} />, 
-    title:"Web Development",
-
+    icon: <SiJavascript style={{ fontSize: "35px", color: "#FFD700" }} />,
+    title: "Web Development",
   },
   {
-    icon: <FaReact style={{ fontSize: "35px", color: "#68A063" }} />, 
-    title:"App Development ",
-
+    icon: <FaReact style={{ fontSize: "35px", color: "#61DAFB" }} />,
+    title: "App Development",
   },
   {
-    icon: <FaBug style={{ fontSize: "35px", color: "#68A063" }} />, 
-    title:"Bux Fixing",
-
+    icon: <FaBug style={{ fontSize: "35px", color: "#2d2d2d" }} />,
+    title: "Bug Fixing",
   },
   {
-    icon: <FaNode style={{ fontSize: "35px", color: "#68A063" }} />, 
-    title:"Backend Development",
-
+    icon: <FaNode style={{ fontSize: "35px", color: "#68A063" }} />,
+    title: "Backend Development",
   },
-]
+];

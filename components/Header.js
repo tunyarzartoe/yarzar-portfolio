@@ -9,7 +9,7 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className="padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0">
+    <header className="fiexed padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0">
       <div className="col-span-1 flex items-center gap-4">
         <Link href={"/"} className="bold-24 text-white">
           Yar <span className="regular-24 text-secondary">Zar</span>

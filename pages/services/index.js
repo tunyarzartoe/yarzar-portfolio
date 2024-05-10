@@ -16,7 +16,7 @@ const Services = () => {
     <section className="max-container padding-container py-12 xl:py-32">
       {/* <div className="flex flex-col gap-6"> */}
       <motion.div
-        variants={fadeIn("up", 0.4)}
+        variants={fadeIn("down", 0.4)}
         initial="hidden"
         animate="show"
         exit="hidden"
