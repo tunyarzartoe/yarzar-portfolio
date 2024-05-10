@@ -91,7 +91,7 @@ const About = () => {
             <div className="skill object-cover float-none md:float-left  w-[280px] rounded-full m-8 mt-1 text-start justify-start">
               {/* <h3 className="text-2xl font-bold lg:text-3xl">Skills </h3> */}
             </div>
-            <div className="mb-4 flex flex-col max-w-[70%]">
+            <div className="mb-4 flex flex-col max-w-[100%] lg:max-w-[70%]">
               <div className="mb-4 ">
                 <div className="flexBetween regular-14 text-gray-20 ">
                   <span>JavaScript</span>
