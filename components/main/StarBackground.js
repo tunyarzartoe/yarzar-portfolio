@@ -3,6 +3,9 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import { inSphere } from "maath/random"; 
+import * as THREE from 'three';
+
+
 
 const StarBackground = (props) => {
   const ref = useRef();

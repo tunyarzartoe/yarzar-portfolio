@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
@@ -10,6 +12,7 @@ import TH from "../public/countryflags/th.svg";
 import IT from "../public/countryflags/it.svg";
 import Global from "../public/global.svg";
 import GlobalPng from "../public/global.jpg";
+
 
 import { useTheme } from "next-themes";
 
