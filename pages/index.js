@@ -11,7 +11,7 @@ import fadeIn from "@/components/Variants";
 const Home = () => {
   return (
     <>
-      <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4  pt-[180px] mb-20">
+      <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-32 mb-10">
         <motion.div
           variants={fadeIn("down", 0.4)}
           initial="hidden"
