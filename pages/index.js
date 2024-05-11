@@ -65,6 +65,7 @@ const Home = () => {
           />
         </motion.div> */}
       </section>
+     
     </>
   );
 };

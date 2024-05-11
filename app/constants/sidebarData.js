@@ -1,15 +1,12 @@
 import {
   HiChatBubbleBottomCenterText,
+  HiDocument,
   HiEnvelope,
   HiHome,
   HiRectangleGroup,
   HiSquare2Stack,
   HiUser,
 } from "react-icons/hi2";
-import { RxDesktop } from "react-icons/rx";
-import { BiBug } from "react-icons/bi";
-import { FaBug } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
 
 export const sidebarData = [
   { name: "home", path: "/", icon: <HiHome /> },
@@ -21,5 +18,10 @@ export const sidebarData = [
   //   path: "/testimonial",
   //   icon: <HiChatBubbleBottomCenterText />,
   // },
+  {
+    name: "articles",
+    path: "/article",
+    icon: <HiDocument />,
+  },
   { name: "contact", path: "/contact", icon: <HiEnvelope /> },
 ];

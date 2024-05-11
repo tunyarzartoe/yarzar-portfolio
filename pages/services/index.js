@@ -28,10 +28,17 @@ const Services = () => {
             My Services
           </span> */}
           <p className="text-center max-w-md mx-auto text-gray-20 mt-1 regular-14 mb-4 ">
-          Our services portfolio offers tailored solutions for web development, design, digital marketing, and consulting.
+            Our services portfolio offers tailored solutions for web
+            development, design, digital marketing, and consulting.
           </p>
         </h3>
-        <div className="w-full sm:max-w-[95%]">
+        <motion.div
+          variants={fadeIn("down", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="pb-12 text-center"
+        >
           <Swiper
             breakpoints={{
               320: {
@@ -77,7 +84,7 @@ const Services = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* </div> */}
