@@ -1,76 +1,80 @@
-import Hero from '@/components/Hero'
-import React from 'react'
-import {motion} from 'framer-motion'
-import fadeIn from '@/components/Variants'
+import Hero from "@/components/Hero";
+import React from "react";
+import { motion } from "framer-motion";
+import fadeIn from "@/components/Variants";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { workData } from "@/app/constants/personalData";
+import Image from "next/image";
 
 const Work = () => {
   return (
-    <section className="max-container padding-container py-12 xl:py-32">
-    {/* <div className="flex flex-col gap-6"> */}
-    <motion.div
-      variants={fadeIn("down", 0.4)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      className="pb-12 text-center"
-    >
-      <h3 className="bold-20 font-extrabold relative leading-normal uppercase">
-        Portfolio<span className="text-secondary">s</span>
-        {/* <span className="text-[-45px] lg:tex-[54px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2">
-          My Services
-        </span> */}
-      </h3>
-      {/* <div className="w-full sm:max-w-[95%]">
+    <section className="max-container padding-container  mb-12 flex flex-col flexCenter md:flex-row md:gap-8 lg:gap-20 xl:gap-28 xl:py-31">
+      <motion.div
+        variants={fadeIn("down", 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="md:max-w[40%] text-center mb-5"
+      >
+        <h3 className="bold-20 font-extrabold relative  leading-normal uppercase">
+          My Work<span className="text-secondary">s</span>
+          <span className="text-[-35px] lg:tex-[44px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2 uppercase">
+            My Works
+          </span>
+          </h3>
+          <p className="text-start max-w-md mx-auto text-gray-20 sm:text-start ">
+             Each project reflects my dedication
+            to crafting seamless digital solutions that captivate and engage
+            users. Discover the art of innovation through concise, impactful
+            design and robust functionality.{" "}
+          </p>
+        
+      </motion.div>
+      <motion.div
+       variants={fadeIn("down", 0.3)}
+       initial="hidden"
+       animate="show"
+       exit="hidden"
+      className="w-full sm:max-w-[50%]">
         <Swiper
           breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 30,
-            },
-            540: {
+            640: {
               slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            880: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1100: {
-              slidesPerView: 4,
-              spaceBetween: 30,
+              spaceBetween: 10,
             },
           }}
-          freeMode={true}
           pagination={{
             clickable: true,
           }}
-          modules={[FreeMode, Pagination]}
-          className="h-[288px]"
+          modules={[Pagination]}
+          className="h-[341px] sm:h-[288px] md:h-[377px] sm:mt-8"
         >
-          {servicesData.map((service, i) => (
+          {workData.map((slide, i) => (
             <SwiperSlide key={i}>
-              <div className=" px-8 py-12 bg-white/20 rounded-lg h-max flex flex-col gap-4 relative hover:bg-secondary w-[70%] sm:w-full mx-auto group">
-                <div className="place-self-end text-secondary text-5xl group-hover:text-white">
-                  {service.icon}
-                </div>
-                <div className="text-start bold-14 uppercase max-w-[2rem]">
-                  {service.title}
-                </div>
-                <Link
-                  href={"/"}
-                  className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute left-1/2 -bottom-6 opacity-0 group-hover:opacity-100 group-hover:tarnslate-x-10 transition-all duration-500 -rotate-45"
-                >
-                  <FaArrowRight />
-                </Link>
+              <div className=" flex flex-col items-center gap-y-4">
+                {slide.images.map((image, i) => (
+                  <div key={i} className="flexCenter">
+                    <div className="relative overlow-hidden group rounded-lg cursor-pointer">
+                      <div className="min-w-full">
+                        <Image
+                          src={image.url}
+                          alt="work_image"
+                          height={150}
+                          width={210}
+                          fetchPriority="eager"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div> */}
-    </motion.div>
+      </motion.div>
+    </section>
+  );
+};
 
-  </section>
-  )
-}
-
-export default Work
+export default Work;

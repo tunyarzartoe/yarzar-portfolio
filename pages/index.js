@@ -11,7 +11,7 @@ import fadeIn from "@/components/Variants";
 const Home = () => {
   return (
     <>
-      <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-32 mb-10">
+      <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-24 mb-10 xl:-mb-10">
         <motion.div
           variants={fadeIn("down", 0.4)}
           initial="hidden"
@@ -19,7 +19,7 @@ const Home = () => {
           exit="hidden"
           className="flex flex-col lg:items-start"
         >
-          <h3 className="bold-16">
+          <h3 className="bold-16 pt-30">
             Hi Everyone ! <br />
             I&apos;m{" "}
             <span className="regular-24 text-secondary ">Tun Yar Zar Toe</span>
@@ -65,7 +65,6 @@ const Home = () => {
           />
         </motion.div> */}
       </section>
-     
     </>
   );
 };

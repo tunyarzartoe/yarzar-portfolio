@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <div className={inter.className} style={{ position: "relative" }}>
-      <Header />
       <StarsCanvas />
+      <Header />
       <Sidebar />
       <main>{children}</main>
     </div>

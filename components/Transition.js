@@ -15,33 +15,23 @@ const transitioVariants = {
     width: ["0%", "100%"],
   },
 };
+
 const Transition = () => {
+  const delays = [0.2, 0.4, 0.6];
+  const colors = ["secondary", "primary", "backgroundLight"];
   return (
     <>
-      <motion.div
-        variants={transitioVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ delay: 0.2, duration: 0.6, ease: "easeInOut" }}
-        className="fixed top-0 right-full w-screen h-screen z-30 bg-secondary"
-      ></motion.div>
-      <motion.div
-        variants={transitioVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ delay: 0.4, duration: 0.6, ease: "easeInOut" }}
-        className="fixed top-0 right-full w-screen h-screen z-20 bg-primary"
-      ></motion.div>
-      <motion.div
-        variants={transitioVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ delay: 0.6, duration: 0.6, ease: "easeInOut" }}
-        className="fixed top-0 right-full w-screen h-screen z-10 bg-backgroundLight"
-      ></motion.div>
+      {colors.map((color, index) => (
+        <motion.div
+          key={index}
+          variants={transitioVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ delay: delays[index], duration: 0.6, ease: "easeInOut" }}
+          className={`fixed top-0 right-full w-screen h-screen z-${30 - index * 10} bg-${color}`}
+        ></motion.div>
+      ))}
     </>
   );
 };

@@ -14,6 +14,14 @@ import HM from "../../public/logos/hm_logo.jpeg";
 import EC from "../../public/logos/es_logo.jpeg";
 import TU from "../../public/logos/tu_logo.png";
 
+import P1 from "../../public/works/p1.jpeg";
+import P2 from "../../public/works/p2.jpeg";
+import P3 from "../../public/works/p3.jpeg";
+import POS1 from "../../public/works/pos.jpeg";
+import POS2 from "../../public/works/pos2.jpeg";
+import POS3 from "../../public/works/pos3.jpeg";
+
+
 export const personalData = [
   {
     title: "expertise",
@@ -111,4 +119,40 @@ export const servicesData = [
     icon: <FaNode style={{ fontSize: "35px", color: "#68A063" }} />,
     title: "Backend Development",
   },
+];
+
+export const workData = [
+  {
+    title: "Ecommerce",
+    images: [
+      { url: P1 },
+      { url: P2 },
+      // { url: P3 }
+    ]
+  },
+  {
+    title: "POS",
+    images: [
+      { url: P1 },
+      { url: POS2 },
+      // { url: POS3 }
+    ]
+  },
+  {
+    title: "POS",
+    images: [
+      { url: P1 },
+      { url: POS2 },
+      // { url: POS3 }
+    ]
+  },
+  {
+    title: "POS",
+    images: [
+      { url: P1 },
+      { url: POS2 },
+      // { url: POS3 }
+    ]
+  },
+  // Add more projects as needed
 ];

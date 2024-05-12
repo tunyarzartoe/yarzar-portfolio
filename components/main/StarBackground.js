@@ -32,7 +32,7 @@ const StarBackground = (props) => {
 
 const StarsCanvas = () => (
   <div
-    className="w-full h-auto fixed inset-0 z-[20]"
+    className="w-full h-full fixed inset-0 z-[20]"
     style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}
   >
     <Canvas camera={{ position: [0, 0, 1] }}>

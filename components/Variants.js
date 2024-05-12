@@ -5,7 +5,7 @@ const fadeIn = (direction, delay) => {
     hidden: {
       y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
       opacity: 0,
-      x: direction === "up" ? 80 : direction === "right" ? -80 : 0,
+      x: direction === "up" ? 80 : direction === "down" ? -80 : 0,
       transition: {
         type: "tween",
         duration: 1.5,

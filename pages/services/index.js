@@ -13,14 +13,14 @@ import { FaArrowRight } from "react-icons/fa";
 import { servicesData } from "@/app/constants/personalData";
 const Services = () => {
   return (
-    <section className="max-container padding-container py-12 xl:py-32">
+    <section className="max-container padding-container py-3 xl:py-10">
       {/* <div className="flex flex-col gap-6"> */}
       <motion.div
         variants={fadeIn("down", 0.4)}
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="pb-12 text-center"
+        className="pb-12 text-center "
       >
         <h3 className="bold-20 font-extrabold relative leading-normal uppercase">
           Service<span className="text-secondary">s</span>
@@ -33,7 +33,7 @@ const Services = () => {
           </p>
         </h3>
         <motion.div
-          variants={fadeIn("down", 0.4)}
+          variants={fadeIn("up", 0.3)}
           initial="hidden"
           animate="show"
           exit="hidden"
