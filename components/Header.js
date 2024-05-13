@@ -3,6 +3,8 @@ import LanguageMenuItem from "@/tools/LanguageMenuItem";
 import Link from "next/link";
 import React from "react";
 import { HiArrowDown } from "react-icons/hi2";
+import Logo from "../public/logo_icon.png"
+import Image from "next/image";
 
 const Header = () => {
 
@@ -10,7 +12,12 @@ const Header = () => {
     <header className=" padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0 mb-10 z-50">
       <div className="col-span-1 flex items-center gap-4">
         <Link href={"/"} className="bold-20 text-white">
-          Yar <span className="regular-18 text-secondary">Zar</span>
+        <Image
+            src={Logo}
+            alt="logo"
+            height={50}
+            // width={90}
+          />          {/* Yar <span className="regular-18 text-secondary">Zar</span> */}
         </Link>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
