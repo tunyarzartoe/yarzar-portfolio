@@ -67,7 +67,7 @@ const Services = () => {
           >
             {servicesData.map((service, i) => (
               <SwiperSlide key={i}>
-                <div className=" px-8 py-12 bg-white/20 rounded-lg h-max flex flex-col gap-4 relative hover:bg-secondary w-[70%] sm:w-full mx-auto group">
+                <div className=" px-8 py-12 bg-white/20 rounded-lg h-max flex flex-col gap-4 relative hover:bg-secondary w-[70%] sm:w-full mx-auto group ">
                   <div className="place-self-end text-secondary text-5xl group-hover:text-white">
                     {service.icon}
                   </div>
