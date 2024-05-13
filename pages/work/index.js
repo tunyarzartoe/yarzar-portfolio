@@ -22,7 +22,7 @@ const Work = () => {
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>
       <motion.div
-        variants={fadeIn("up", 0.4)}
+        // variants={fadeIn("up", 0.001)}
         initial="hidden"
         animate="show"
         exit="hidden"
@@ -43,7 +43,7 @@ const Work = () => {
         
       </motion.div>
       <motion.div
-       variants={fadeIn("down", 0.3)}
+      //  variants={fadeIn("down",0.001)}
        initial="hidden"
        animate="show"
        exit="hidden"

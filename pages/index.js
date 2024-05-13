@@ -15,11 +15,12 @@ const Home = () => {
   return (
     <>
       <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-24 mb-10 xl:-mb-10">
-      <Head>
-        <title>{metadata.title}</title>
-        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
-      </Head>{" "}        <motion.div
-          variants={fadeIn("down", 0.2)}
+        <Head>
+          <title>{metadata.title}</title>
+          {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+        </Head>{" "}
+        <motion.div
+          // variants={fadeIn("down", 0.2)}
           initial="hidden"
           animate="show"
           exit="hidden"

@@ -23,7 +23,7 @@ const Services = () => {
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>{" "}      {/* <div className="flex flex-col gap-6"> */}
       <motion.div
-        variants={fadeIn("down", 0.4)}
+        // variants={fadeIn("down", 0.4)}
         initial="hidden"
         animate="show"
         exit="hidden"
@@ -40,7 +40,7 @@ const Services = () => {
           </p>
         </h3>
         <motion.div
-          variants={fadeIn("up", 0.3)}
+          // variants={fadeIn("up", 0.3)}
           initial="hidden"
           animate="show"
           exit="hidden"

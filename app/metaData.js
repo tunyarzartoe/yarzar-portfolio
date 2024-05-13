@@ -2,13 +2,13 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Icon from "./logo_icon.png"
+import Icon from "./favicon.ico"
 
 export const useMetadata = () => {
   const [metadata, setMetadata] = useState({
     title: '',
     description: '',
-    icon: Icon,
+    icon:Icon
   });
   const router = useRouter();
 
@@ -34,7 +34,6 @@ export const useMetadata = () => {
         setMetadata({
           title: "Work | Tun Yar Zar Toe",
           description: "Description for the Contact page",
-          icon: Icon,
         });
       } else if (pathname === "/contact") {
         setMetadata({
@@ -54,7 +53,7 @@ export const useMetadata = () => {
     return () => {
       router.events.off("routeChangeComplete", handleMetadata);
     };
-  }, [router]);
+  }, [router,Icon]);
 
   return metadata;
 };

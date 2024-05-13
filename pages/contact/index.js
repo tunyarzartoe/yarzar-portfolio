@@ -10,29 +10,30 @@ const Contact = () => {
   const metadata = useMetadata();
 
   return (
-    <section className="max-container padding-container py-8 xl:py-28 mb-8">
+    <section className="max-container padding-container py-8 xl:py-12 mb-8">
       <Head>
         <title>{metadata.title}</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
-      </Head>{" "}      <div className="flex flex-col gap-6">
+      </Head>{" "}
+      <div className="flex flex-col gap-6">
         <motion.div
-          variants={fadeIn("down", 0.4)}
+          // variants={fadeIn("down", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
           className="pb-14 "
         >
           <div className="text-center justify-center flex">
-          <h3 className="bold-20 font-extrabold relative leading-normal uppercase text-center">
-            Contact U<span className="text-secondary">s</span>
-            <span className="tex-[45px] lg:text-[54px]  font-extrabold text-white/30 absolute top-[50%] left-1/2  -translate-y-1/2 -translate-x-1/2 uppercase">
-              Get in touch
-            </span>
-          </h3>
+            <h3 className="bold-20 font-extrabold relative leading-normal uppercase text-center">
+              Contact U<span className="text-secondary">s</span>
+              <span className="tex-[30px] lg:text-[34px]  font-extrabold text-white/30 absolute top-[50%] left-1/2  -translate-y-1/2 -translate-x-1/2 uppercase">
+                Get in touch
+              </span>
+            </h3>
           </div>
         </motion.div>
         <motion.form
-          variants={fadeIn("down", 0.4)}
+          // variants={fadeIn("down", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
