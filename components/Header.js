@@ -7,7 +7,7 @@ import { HiArrowDown } from "react-icons/hi2";
 const Header = () => {
 
   return (
-    <header className=" padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0 mb-10 z-100">
+    <header className=" padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0 mb-10 z-50">
       <div className="col-span-1 flex items-center gap-4">
         <Link href={"/"} className="bold-20 text-white">
           Yar <span className="regular-18 text-secondary">Zar</span>
