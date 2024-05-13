@@ -5,8 +5,11 @@ import Hero from "@/components/Hero";
 import Personal from "@/components/Personal";
 import fadeIn from "@/components/Variants";
 import { motion } from "framer-motion";
+import { useMetadata } from "@/app/metaData";
+import Head from "next/head";
 
 const About = () => {
+  const metadata = useMetadata();
   const [showModal, setShowModal] = useState(false);
 
   const handleImageClick = () => {
@@ -19,6 +22,10 @@ const About = () => {
 
   return (
     <section className="padding-container max-container about mb-20">
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>{" "}
       <motion.div
         variants={fadeIn("down", 0.4)}
         initial="hidden"
@@ -76,16 +83,13 @@ const About = () => {
           </div>
         </div>
       </motion.div>
-
       <motion.div
         variants={fadeIn("up", 0.4)}
         initial="hidden"
         animate="show"
         exit="hidden"
       >
-        <h3 className="bold-20 font-extrabold uppercase">
-          Skills
-        </h3>
+        <h3 className="bold-20 font-extrabold uppercase">Skills</h3>
         <div className="flex flex-col gap-6 mb-4 regular-16">
           <div className="leading-[2.5]  text-lg">
             <div className="skill object-cover float-none md:float-left  w-[280px] rounded-full m-8 mt-1 text-start justify-start">
@@ -153,7 +157,6 @@ const About = () => {
       </motion.div>
       {/* skill */}
       <Personal />
-
       {showModal && <ImageViewModal closeModal={closeModal} />}
     </section>
   );

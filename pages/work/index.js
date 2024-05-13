@@ -6,10 +6,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { workData } from "@/app/constants/personalData";
 import Image from "next/image";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { useMetadata } from "@/app/metaData";
+import Head from "next/head";
 
 const Work = () => {
+  const metadata = useMetadata();
+  // console.log("icon =====",metadata.icon)
   return (
     <section className="max-container padding-container  mb-12 flex flex-col flexCenter md:flex-row md:gap-8 lg:gap-20 xl:gap-28 xl:py-31">
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>
       <motion.div
         variants={fadeIn("down", 0.4)}
         initial="hidden"

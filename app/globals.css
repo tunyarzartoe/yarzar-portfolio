@@ -213,11 +213,12 @@ body {
   box-sizing: border-box;
 }
 .lds-spinner {
+  padding-top:"400px";
   color: currentColor;
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 .lds-spinner div {
   transform-origin: 40px 40px;

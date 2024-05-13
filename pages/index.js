@@ -7,13 +7,19 @@ import { Typewriter } from "react-simple-typewriter";
 import { slideInFromRight } from "@/components/main/Main";
 import About from "./about";
 import fadeIn from "@/components/Variants";
+import { useMetadata } from "@/app/metaData";
+import Head from "next/head";
 
 const Home = () => {
+  const metadata = useMetadata();
   return (
     <>
       <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-24 mb-10 xl:-mb-10">
-        <motion.div
-          variants={fadeIn("down", 0.4)}
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>{" "}        <motion.div
+          variants={fadeIn("down", 0.2)}
           initial="hidden"
           animate="show"
           exit="hidden"
@@ -25,16 +31,16 @@ const Home = () => {
             <span className="regular-24 text-secondary ">Tun Yar Zar Toe</span>
           </h3>
           <h4 className="bold-20">
-            A
+            A Full Stack Developer .
             <span className="pl-2">
-              <Typewriter
+              {/* <Typewriter
                 words={["Full Stack Developer", "Youtuber", "Programmer"]}
                 loop={true}
                 cursorStyle={"_"}
                 typeSpeed={90}
                 deleteSpeed={70}
                 delaySpeed={1000}
-              />
+              /> */}
             </span>
           </h4>
           <p className="bold-16">I turn coffee into code.</p>

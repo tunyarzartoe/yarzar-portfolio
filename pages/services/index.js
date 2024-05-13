@@ -11,10 +11,17 @@ import "swiper/css/pagination";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { servicesData } from "@/app/constants/personalData";
+import { useMetadata } from "@/app/metaData";
+import Head from "next/head";
 const Services = () => {
+  const metadata = useMetadata();
+
   return (
     <section className="max-container padding-container py-3 xl:py-10">
-      {/* <div className="flex flex-col gap-6"> */}
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>{" "}      {/* <div className="flex flex-col gap-6"> */}
       <motion.div
         variants={fadeIn("down", 0.4)}
         initial="hidden"

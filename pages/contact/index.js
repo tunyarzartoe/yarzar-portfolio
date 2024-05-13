@@ -3,11 +3,18 @@ import React from "react";
 import { HiArrowRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import fadeIn from "@/components/Variants";
+import { useMetadata } from "@/app/metaData";
+import Head from "next/head";
 
 const Contact = () => {
+  const metadata = useMetadata();
+
   return (
     <section className="max-container padding-container py-8 xl:py-28 mb-8">
-      <div className="flex flex-col gap-6">
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>{" "}      <div className="flex flex-col gap-6">
         <motion.div
           variants={fadeIn("down", 0.4)}
           initial="hidden"

@@ -1,12 +1,17 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import fadeIn from '@/components/Variants'
+import { useMetadata } from '@/app/metaData'
+import Head from 'next/head'
 
 const Articles = () => {
+  const metadata = useMetadata()
   return (
     <section className="max-container padding-container py-12 xl:py-32">
-    {/* <div className="flex flex-col gap-6"> */}
-    <motion.div
+      <Head>
+        <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
+      </Head>{" "}    <motion.div
       variants={fadeIn("down", 0.4)}
       initial="hidden"
       animate="show"
