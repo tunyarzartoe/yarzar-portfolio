@@ -24,6 +24,7 @@ const About = () => {
     <section className="padding-container max-container about mb-20">
       <Head>
         <title>{metadata.title}</title>
+        {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>{" "}
       <motion.div
         // variants={fadeIn("down", 0.4)}
