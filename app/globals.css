@@ -293,7 +293,7 @@ body {
 }
 
 .card-container {
-  filter: blur(1px);
+  filter: blur(0.5px);
   transition: filter 0.3s ease-in-out;
 }
 

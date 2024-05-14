@@ -3,8 +3,11 @@ import {
   SiAdobephotoshop,
   SiAdobexd,
   SiDotnet,
+  SiFirebase,
   SiFramer,
   SiJavascript,
+  SiMongodb,
+  SiMysql,
   SiNextdotjs,
   SiNodedotjs,
   SiSpringboot,
@@ -50,10 +53,17 @@ export const personalData = [
         ],
       },
       {
+        title: "Database",
+        icons: [
+          { icon: <SiMysql style={{ fontSize: "35px", color: "#FF0000" }} /> },
+          { icon: <SiMongodb style={{ fontSize: "35px", color: "#00FF00" }} /> }, 
+          { icon: <SiFirebase style={{ fontSize: "35px", color: "#0000FF" }} /> },
+        ],
+      },
+      {
         title: "UI/UX Design",
         icons: [
           { icon: <FaFigma style={{ fontSize: "35px", color: "#F24E1E" }} />}, 
-          { icon: <SiAdobexd style={{ fontSize: "35px", color: "#FF61F6" }} />}, 
           { icon: <SiAdobephotoshop style={{ fontSize: "35px", color: "#31A8FF" }} />}, 
         ],
       },

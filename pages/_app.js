@@ -6,17 +6,42 @@ import { useRouter } from "next/router";
 import i18n from "@/i18n";
 import LoadingAnimation from "@/app/LoadingAnimation";
 import RootLayout from "@/app/layout";
+import Logo from "../public/logo_icon.png"
+import Profile from "../public/profile.jpg"
+import Icon from "../app/favicon.ico"
+
+
+
+
 
 const MyApp = ({ Component, pageProps }) => {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const delay = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500); 
+    const images = [];
 
-    return () => clearTimeout(delay);
+    const imageUrls = [Logo, Profile];
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      images.push(img);
+    });
+
+    const favicon = new Image();
+    favicon.src = Icon;
+    images.push(favicon);
+
+
+    Promise.all(images.map(img => {
+      return new Promise(resolve => {
+        img.onload = img.onerror = resolve;
+      });
+    })).then(() => {
+      // Once all assets are preloaded, set isLoading to false
+      setIsLoading(false);
+    });
+
   }, []);
 
   if (isLoading) {
