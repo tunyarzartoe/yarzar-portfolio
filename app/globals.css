@@ -292,3 +292,13 @@ body {
   }
 }
 
+.card-container {
+  filter: blur(1px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  filter: blur(0);
+}
+
+

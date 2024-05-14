@@ -11,6 +11,8 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const Work = () => {
   const metadata = useMetadata();
@@ -33,21 +35,20 @@ const Work = () => {
           <span className="text-[-35px] lg:tex-[44px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2 uppercase">
             My Works
           </span>
-          </h3>
-          <p className="text-start max-w-md mx-auto text-gray-20 sm:text-start ">
-             Each project reflects my dedication
-            to crafting seamless digital solutions that captivate and engage
-            users. Discover the art of innovation through concise, impactful
-            design and robust functionality.{" "}
-          </p>
-        
+        </h3>
+        <p className="text-start max-w-md mx-auto text-gray-20 sm:text-start ">
+          Each project reflects my dedication to crafting seamless digital
+          solutions that captivate and engage users. Discover the art of
+          innovation through concise, impactful design and robust functionality.{" "}
+        </p>
       </motion.div>
       <motion.div
-      //  variants={fadeIn("down",0.001)}
-       initial="hidden"
-       animate="show"
-       exit="hidden"
-      className="w-full sm:max-w-[50%]">
+        //  variants={fadeIn("down",0.001)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="w-full sm:max-w-[50%]"
+      >
         <Swiper
           breakpoints={{
             640: {
@@ -59,23 +60,30 @@ const Work = () => {
             clickable: true,
           }}
           modules={[Pagination]}
-          className="h-[341px] sm:h-[288px] md:h-[377px] sm:mt-8"
+          // className="h-[341px] sm:h-[288px] md:h-[377px] sm:mt-8"
         >
           {workData.map((slide, i) => (
             <SwiperSlide key={i}>
-              <div className=" flex flex-col items-center gap-y-4">
+              <div className=" flex flex-col items-center gap-y-8 mb-14 ">
                 {slide.images.map((image, i) => (
                   <div key={i} className="flexCenter">
-                    <div className="relative overlow-hidden group rounded-lg cursor-pointer">
+                    <div className="relative overlow-hidden group rounded-lg cursor-pointer  bg-white/10 p-3 card-container">
+                      <h4>Project Title</h4>
                       <div className="min-w-full">
                         <Image
                           src={image.url}
                           alt="work_image"
                           height={150}
-                          width={210}
+                          width={240}
                           fetchPriority="eager"
                         />
                       </div>
+                      <Link
+                        href={"/"}
+                        className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute left-1/2 -bottom-6 opacity-0 group-hover:opacity-100 group-hover:tarnslate-x-10 transition-all duration-500 -rotate-45"
+                      >
+                        <FaArrowRight />
+                      </Link>
                     </div>
                   </div>
                 ))}
