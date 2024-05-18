@@ -2,6 +2,7 @@ import {
   HiChatBubbleBottomCenterText,
   HiDocument,
   HiEnvelope,
+  HiFolder,
   HiHome,
   HiRectangleGroup,
   HiSquare2Stack,
@@ -19,9 +20,9 @@ export const sidebarData = [
   //   icon: <HiChatBubbleBottomCenterText />,
   // },
   // {
-  //   name: "articles",
-  //   path: "/article",
-  //   icon: <HiDocument />,
+  //   name: "blog",
+  //   path: "/blog",
+  //   icon: <HiFolder />,
   // },
   { name: "contact", path: "/contact", icon: <HiEnvelope /> },
 ];

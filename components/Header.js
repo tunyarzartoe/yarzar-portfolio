@@ -21,12 +21,12 @@ const Header = () => {
         </Link>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
-        <button className="btn_dark_rounded p-1 w-32 lg:px-4  lg:py-1 rounded-full flexCenter  animate-pulse">
+        {/* <button className="btn_dark_rounded p-1 w-32 lg:px-4  lg:py-1 rounded-full flexCenter  animate-pulse">
           <span className="mr-1">Hire me</span>
           <span className="h-5 w-5 border border-white rounded-full flexCenter animate-bounce ">
             <HiArrowDown />
           </span>
-        </button>
+        </button> */}
       </div>
       <div className="col-span-1 flex items-center justify-end">
         <div className="flex gap-4">

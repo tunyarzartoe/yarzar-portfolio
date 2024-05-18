@@ -67,8 +67,8 @@ const Work = () => {
               <div className=" flex flex-col items-center gap-y-8 mb-14 ">
                 {slide.images.map((image, i) => (
                   <div key={i} className="flexCenter">
-                    <div className="relative overlow-hidden group rounded-lg cursor-pointer  bg-white/10 p-3 card-container">
-                      <h4>Project Title</h4>
+                    <div className="relative overlow-hidden group rounded-lg cursor-pointer  bg-white/10 p-3 ">
+                      <h4>{slide.title}</h4>
                       <div className="min-w-full">
                         <Image
                           src={image.url}
@@ -79,7 +79,7 @@ const Work = () => {
                         />
                       </div>
                       <Link
-                        href={"/"}
+                        href={`/work/${slide.id}`}
                         className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute left-1/2 -bottom-6 opacity-0 group-hover:opacity-100 group-hover:tarnslate-x-10 transition-all duration-500 -rotate-45"
                       >
                         <FaArrowRight />

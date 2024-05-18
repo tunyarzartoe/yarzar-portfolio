@@ -133,6 +133,8 @@ export const servicesData = [
 
 export const workData = [
   {
+    id: 1,
+    description: 'This is the description for Ecommerce.',
     title: "Ecommerce",
     images: [
       { url: P1 },
@@ -141,24 +143,30 @@ export const workData = [
     ]
   },
   {
+    id: 2,
+    description: 'This is the description for POS.',
     title: "POS",
-    images: [
+        images: [
       { url: P1 },
       { url: POS2 },
       // { url: POS3 }
     ]
   },
   {
+    id: 3,
+    description: 'This is the description for POS.',
     title: "POS",
-    images: [
+        images: [
       { url: P1 },
       { url: POS2 },
       // { url: POS3 }
     ]
   },
   {
+    id: 4,
+    description: 'This is the description for POS.',
     title: "POS",
-    images: [
+        images: [
       { url: P1 },
       { url: POS2 },
       // { url: POS3 }
