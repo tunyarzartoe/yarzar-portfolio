@@ -135,40 +135,40 @@ export const workData = [
   {
     id: 1,
     description: 'This is the description for Ecommerce.',
-    title: "Ecommerce",
+    title: "Weather App",
     images: [
       { url: P1 },
-      { url: P2 },
+      // { url: P2 },
       // { url: P3 }
     ]
   },
   {
     id: 2,
     description: 'This is the description for POS.',
-    title: "POS",
+    title: "Calculator App",
         images: [
       { url: P1 },
-      { url: POS2 },
+      // { url: POS2 },
       // { url: POS3 }
     ]
   },
   {
     id: 3,
     description: 'This is the description for POS.',
-    title: "POS",
+    title: "Shopping Cart",
         images: [
       { url: P1 },
-      { url: POS2 },
+      // { url: POS2 },
       // { url: POS3 }
     ]
   },
   {
     id: 4,
     description: 'This is the description for POS.',
-    title: "POS",
+    title: "Chart App",
         images: [
       { url: P1 },
-      { url: POS2 },
+      // { url: POS2 },
       // { url: POS3 }
     ]
   },

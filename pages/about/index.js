@@ -55,7 +55,7 @@ const About = () => {
               />
             </div>
             <p className=" mb-4">
-              As a full-stack developer, I see myself as a digital craftsman,
+              As a web developer, I see myself as a digital craftsman,
               sculpting elegant solutions from lines of code. <br />
               With a passion for both frontend finesse and backend robustness, I
               strive to create seamless experiences that delight users and

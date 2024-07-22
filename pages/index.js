@@ -32,7 +32,7 @@ const Home = () => {
             <span className="regular-24 text-secondary ">Tun Yar Zar Toe</span>
           </h3>
           <h4 className="bold-20">
-            A Full Stack Developer .
+            A Web Developer .
             <span className="pl-2">
               {/* <Typewriter
                 words={["Full Stack Developer", "Youtuber", "Programmer"]}
@@ -46,8 +46,8 @@ const Home = () => {
           </h4>
           <p className="bold-16">I turn coffee into code.</p>
           <p className="py-4 regular-16">
-            Welcome to my portfolio website ! I'm a passionate Full Stack
-            Developer
+            Welcome to my portfolio website ! I'm a passionate web
+            developer
             <br />
             with over{" "}
             <span className="text-secondaryStrong font-extrabold">
