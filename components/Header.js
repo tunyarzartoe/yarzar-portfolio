@@ -9,8 +9,9 @@ import Image from "next/image";
 const Header = () => {
 
   return (
-    <header className=" padding-container max-container  bg-white/10 backdrop-blur-3xl max-container grid grid-cols-3 gap-4 py-1 border-b border-gray-20 sticky top-0 mb-10 z-50">
-      <div className="col-span-1 flex items-center gap-4">
+    <nav className="rounded-full nav-container bg-white/20 backdrop-blur-3xl grid grid-cols-3 gap-4 sticky top-5 mb-10 z-50 py-3">
+    {/* <header className="fixed h-max bottom-0 mt-auto gap-y-4 flex flex-col items-center top-0 w-full xl:justify-center xl:right-[4%] xl:w-16 xl:h-screen z-50"> */}
+      <div className="col-span-1 px-10 flex items-center gap-4">
         <Link href={"/"} className="bold-20 text-white">
         <Image
             src={Logo}
@@ -28,18 +29,18 @@ const Header = () => {
           </span>
         </button> */}
       </div>
-      <div className="col-span-1 flex items-center justify-end">
-        <div className="flex gap-4">
+      <div className="col-span-1 flex items-center justify-end ">
+        <div className="flex  ps-10">
           {/* <div>
 
             <LanguageMenuItem />
           </div> */}
-          <div>
+          <div className="gap-4">
             <ThemeSwitcher />
           </div>
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 

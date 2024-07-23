@@ -33,7 +33,7 @@
   color: #f13024;
 }
 [data-theme="light"] {
-  --bg-color: #fff; 
+  --bg-color:rgb(247 247 248 / var(--tw-bg-opacity));; 
   --text-color: #000; 
 }
 
@@ -92,6 +92,15 @@ body {
 }
 .max-container {
   @apply mx-auto max-w-[1240px];
+}
+.footer-container{
+  @apply mb-3 ;
+}
+.page-height-container{
+  @apply h-100vh;
+}
+.nav-container {
+  @apply mx-auto 3xl:max-w-[1320px] xs:max-w-[420px];
 }
 .padding-container {
   @apply px-6 lg:px-20 3xl:px-0;
@@ -301,4 +310,20 @@ body {
   filter: blur(0);
 }
 
+.footer {
+  /* background-color: #282c34; */
+  color: white;
+  /* padding: 20px 0; */
+  text-align: center;
+}
 
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    height: 72vh;
+  }
+}

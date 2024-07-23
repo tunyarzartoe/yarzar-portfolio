@@ -20,7 +20,7 @@ const LoadingAnimation = () => {
         speed="1.4"
         color="black"
       ></l-trefoil>
-      <p className="mt-1 ml-2 text-backgroundDark">Loading...</p>
+      {/* <p className="mt-1 ml-2 text-backgroundDark">Loading...</p> */}
     </div>
   );
 };

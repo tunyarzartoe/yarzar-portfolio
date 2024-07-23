@@ -10,7 +10,7 @@ const Contact = () => {
   const metadata = useMetadata();
 
   return (
-    <section className="max-container padding-container py-8 xl:py-12 mb-8">
+    <section className="max-container padding-container py-8 xl:py-12 mb-8" style={{height: "76vh"}}>
       <Head>
         <title>{metadata.title}</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
