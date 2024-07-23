@@ -99,56 +99,56 @@ const About = () => {
               <div className="mb-4 ">
                 <div className="flexBetween regular-14 text-gray-20 ">
                   <span>JavaScript</span>
-                  <span>95%</span>
+                  <span>80%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[95%] bg-[#f0db4f] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[80%] bg-[#f0db4f] rounded-full animate-pulse"></span>
                 </div>
               </div>
               <div className="mb-4">
                 <div className="flexBetween regular-14 text-gray-20">
                   <span>React JS</span>
-                  <span>90%</span>
+                  <span>75%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[90%] bg-[#61dafb] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[75%] bg-[#61dafb] rounded-full animate-pulse"></span>
                 </div>
               </div>
               <div className="mb-4">
                 <div className="flexBetween regular-14 text-gray-20">
                   <span>Node JS</span>
-                  <span>90%</span>
+                  <span>75%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[90%] bg-[#68a063] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[75%] bg-[#68a063] rounded-full animate-pulse"></span>
                 </div>
               </div>
               <div className="mb-4">
                 <div className="flexBetween regular-14 text-gray-20">
                   <span>Next JS</span>
-                  <span>85%</span>
+                  <span>75%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[85%] bg-[#2d2d2d] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[75%] bg-[#2d2d2d] rounded-full animate-pulse"></span>
                 </div>
               </div>
 
               <div className="mb-4">
                 <div className="flexBetween regular-14 text-gray-20">
                   <span>C#</span>
-                  <span>80%</span>
+                  <span>60%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[80%] bg-[#68217a] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[60%] bg-[#68217a] rounded-full animate-pulse"></span>
                 </div>
               </div>
               <div className="mb-4">
                 <div className="flexBetween regular-14 text-gray-20">
                   <span>Java</span>
-                  <span>80%</span>
+                  <span>60%</span>
                 </div>
                 <div className="relative bg-light h-5 w-full rounded-full border border-gray-20">
-                  <span className="absolute top-0 left-0 h-full w-[80%] bg-[#5382a1] rounded-full animate-pulse"></span>
+                  <span className="absolute top-0 left-0 h-full w-[60%] bg-[#5382a1] rounded-full animate-pulse"></span>
                 </div>
               </div>
             </div>
