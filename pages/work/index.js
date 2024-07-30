@@ -24,7 +24,7 @@ const Work = () => {
           exit="hidden"
           className="mb-10"
         >
-          <h3 className="text-4xl font-extrabold uppercase mb-5">
+          <h3 className="bold-20 font-extrabold relative leading-normal uppercase mb-5">
             My Work<span className="text-secondary">s</span>
           </h3>
           <p className="regular-16 text-gray-200 text-lg max-w-2xl mx-auto">
@@ -55,19 +55,29 @@ const Work = () => {
                 className="transition-transform duration-500 group-hover:scale-105"
               />
               <div className="p-5 relative">
-                <h3 className="text-xl text-gray-600 text-start font-bold mb-3">{data.title}</h3>
-                <p className="text-gray-600 mb-5 text-start">{data.description}</p>
-                <div className="absolute bottom-5 right-5 flex items-center space-x-2">
-                  {data.lang.icon}
+                <h3 className="text-xl text-gray-600 text-start font-bold mb-3">
+                  {data.title}
+                </h3>
+                <p className="text-gray-600 text-start">{data.description}</p>
+                <div className="flex flex-warp mb-0 my-1">
+                  <span
+                    // key={index}
+                    className="tag text-black px-2 py-1 rounded mr-2 "
+                  >
+                    {data.lang.name}
+                  </span>
+                  <Link
+                    href={data.demoLink}
+                    target="_bank"
+                    className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
+                    >
+                    <FaArrowRight />
+                  </Link>
                 </div>
-                <Link
-                  href={data.demoLink}
-                  target="_bank"
-                  className="absolute bottom-2 right-2 bg-secondary text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <FaArrowRight />
-                </Link>
               </div>
+              {/* <span className="bottom-2 left-2">
+                  {data.lang.icon}
+                </span> */}
             </div>
           ))}
         </motion.div>

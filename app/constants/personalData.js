@@ -30,6 +30,8 @@ import P1 from "../../public/works/project-weather-app.png";
 import P2 from "../../public/works/project-calculator-app.png";
 import P3 from "../../public/works/project-shopping-cart.png";
 import P4 from "../../public/works/project-counter-app.png";
+import P5 from "../../public/works/project-social-app.png";
+
 
 import POS1 from "../../public/works/project-weather-app.png";
 import POS2 from "../../public/works/pos2.jpeg";
@@ -164,49 +166,61 @@ export const servicesData = [
 export const workData = [
   {
     id: 1,
+    description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
+    title: "Social App",
+    images: [
+      { url: P5 },
+    ],
+    logo :"https://cdn-icons-png.flaticon.com/128/719/719680.png",
+    languages: ["ReactJS", "Bootstrap","React-dom","React-redux","Date-fns","Axios","Jquery","Datatable"],
+    demoLink: "https://react-social-app-gules.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 2,
     description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
     title: "Weather App",
     images: [
       { url: P1 },
     ],
     logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
-    languages: ["Typescript", "Nextjs", "Tailwind", "Firebase"],
+    languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
     demoLink: "https://react-weather-app-eta-bay.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
-    id: 2,
-    description: "A simple and user-friendly calculator app for basic arithmetic operations.",
+    id: 3,
+    description: "A simple and user-friendly calculator app for basic arithmetic operations like IOS Calculator Design.",
     title: "Calculator App",
     images: [
       { url: P2 },
     ],
     logo :"https://cdn-icons-png.flaticon.com/128/891/891175.png",
-    languages: ["Typescript", "Nextjs", "Tailwind", "Firebase"],
+    languages: ["ReactJS", "Bootstrap"],
     demoLink: "https://react-calculator-app-sandy.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
-    id: 3,
-    description: "An intuitive shopping cart application to manage products and track purchases.",
+    id: 4,
+    description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
     title: "Shopping Cart",
     images: [
       { url: P3 },
     ],
     logo :"https://cdn-icons-png.flaticon.com/512/1170/1170576.png",
-    languages: ["Typescript", "Nextjs", "Tailwind", "Firebase"],
+    languages: ["Javascript", "JQuery", "Bootstrap","Sweetalert","Notiflix"],
     demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
     lang: { name: "JavaScript", icon: "FaJs" }
   },
   {
-    id: 4,
+    id: 5,
     description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
     title: "Counter App",
     images: [
       { url: P4 },
     ],
     logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
-    languages: ["Typescript", "Nextjs", "Tailwind", "Firebase"],
+    languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
     demoLink: "https://redux-counter-app-orcin.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },

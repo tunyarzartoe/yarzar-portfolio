@@ -17,32 +17,32 @@ export const useMetadata = () => {
       const { pathname } = router;
       if (pathname === "/") {
         setMetadata({
-          title: "Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | Web Developer",
           description: "Description for the About page",
         });
       } else if (pathname === "/about") {
         setMetadata({
-          title: "About | Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | About",
           description: "Description for the Contact page",
         });
       } else if (pathname === "/services") {
         setMetadata({
-          title: "Services | Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | Services",
           description: "Description for the Contact page",
         });
       } else if (pathname === "/work") {
         setMetadata({
-          title: "Work | Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | Work",
           description: "Description for the Contact page",
         });
       } else if (pathname === "/contact") {
         setMetadata({
-          title: "Contact | Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | Contact",
           description: "Description for the Contact page",
         });
       } else {
         setMetadata({
-          title: "Articles | Tun Yar Zar Toe",
+          title: "Tun Yar Zar Toe | Articles ",
           description: "Default description for your site",
         });
       }
