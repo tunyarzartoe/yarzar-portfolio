@@ -168,6 +168,7 @@ export const workData = [
     id: 1,
     description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
     title: "Social App",
+    name:"A React Social App",
     images: [
       { url: P5 },
     ],
@@ -180,6 +181,7 @@ export const workData = [
     id: 2,
     description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
     title: "Weather App",
+    name:"A Dynamic Weather App",
     images: [
       { url: P1 },
     ],
@@ -192,6 +194,7 @@ export const workData = [
     id: 3,
     description: "A simple and user-friendly calculator app for basic arithmetic operations like IOS Calculator Design.",
     title: "Calculator App",
+    name:"A Simple Calculator App",
     images: [
       { url: P2 },
     ],
@@ -204,6 +207,7 @@ export const workData = [
     id: 4,
     description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
     title: "Shopping Cart",
+    name:"An Intutitive Shopping Cart",
     images: [
       { url: P3 },
     ],
@@ -216,6 +220,7 @@ export const workData = [
     id: 5,
     description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
     title: "Counter App",
+    name:"React Redux Counter App",
     images: [
       { url: P4 },
     ],

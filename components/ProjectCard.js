@@ -7,18 +7,22 @@ import { Button } from "@nextui-org/react";
 export const ProjectCard = ({ project }) => {
   return (
     <div className="project-card flex flex-col p-4 shadow-md rounded-md mb-10">
-      <div className="flex items-center mb-4">
-        <div className="top-0">
-          <Image
-            src={project.logo}
-            alt={project.title}
-            width={80}
-            height={80}
-            className="rounded-lg"
-          />
-        </div>
+      <div className="flex mb-2">
+        <Image
+          src={project.logo}
+          alt={project.title}
+          width={70}
+          height={35}
+          className="rounded-lg"
+        />
         <div className="ml-4">
-          <h3 className="text-black regular-16 bold-16">{project.title}</h3>
+          <h4 className="text-black  bold-20">{project.title}</h4>
+          <span className="text-black regular-24"> {project.name}</span>
+        </div>
+      </div>
+
+      <div className="flex items-center mb-4">
+        <div className="">
           <p className="text-gray-600 regular-16">{project.description}</p>
         </div>
       </div>
@@ -26,7 +30,7 @@ export const ProjectCard = ({ project }) => {
         {project.languages.map((lang, index) => (
           <span
             key={index}
-            className="tag text-black px-2 py-1 rounded mr-2 mb-2"
+            className="tag text-gray-10 px-2 py-1 rounded mr-2 mb-2"
           >
             {lang}
           </span>
@@ -41,9 +45,8 @@ export const ProjectCard = ({ project }) => {
           variant="solid"
           target="_bank"
         >
-          <span className="mr-5 text-black">View Demo</span>
-
-          <span className="absolute bottom-2 right-2 bg-secondary text-white p-1 rounded-full opacity-100">
+          <span className="mr-8 text-black">View Demo</span>
+          <span className="absolute  right-2 font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-8 w-8 rounded-full opacity-100 flexCenter -rotate-45">
             <FaArrowRight />
           </span>
         </Button>

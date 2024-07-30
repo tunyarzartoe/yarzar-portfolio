@@ -17,7 +17,7 @@ export const useMetadata = () => {
       const { pathname } = router;
       if (pathname === "/") {
         setMetadata({
-          title: "Tun Yar Zar Toe | Web Developer",
+          title: "Tun Yar Zar Toe - Web Developer",
           description: "Description for the About page",
         });
       } else if (pathname === "/about") {
