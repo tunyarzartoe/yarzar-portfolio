@@ -9,7 +9,7 @@ import Image from "next/image";
 const Header = () => {
 
   return (
-    <nav className="rounded-full nav-container bg-white/20 backdrop-blur-3xl grid grid-cols-3 gap-4 sticky top-5 mb-10 z-50 py-3">
+    <nav className="rounded-full nav-container bg-white/20 backdrop-blur-3xl grid grid-cols-3 gap-4 sticky top-5 mb-10 z-50 py-2">
     {/* <header className="fixed h-max bottom-0 mt-auto gap-y-4 flex flex-col items-center top-0 w-full xl:justify-center xl:right-[4%] xl:w-16 xl:h-screen z-50"> */}
       <div className="col-span-1 px-10 xs:px-6 flex items-center gap-4">
         <Link href={"/"} className="bold-20 text-white">

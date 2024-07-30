@@ -22,7 +22,6 @@ const ProjectDetail = ({ project }) => {
     return <div>Loading...</div>;
   }
 
-  // Get the icon component based on the identifier
   const IconComponent = iconMap[project.lang.icon];
 
   return (

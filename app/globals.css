@@ -9,14 +9,12 @@
   box-sizing: border-box;
 }
 
-/* Light mode */
 [data-theme="light"] .swiper-pagination-bullet {
-  background-color: #dc143c; /* Dark gray color for light mode */
+  background-color: #dc143c; 
 }
 
-/* Dark mode */
 [data-theme="dark"] .swiper-pagination-bullet {
-  background-color: #ddd; /* Light gray color for dark mode */
+  background-color: #ddd; 
 }
 
 
@@ -47,6 +45,26 @@
 }
 [data-theme="light"] .header{
   background: #fff;
+}
+[data-theme="light"] .project-card{
+  /* background: rgb(234 234 234 / 0.1); */
+  background: #fff;
+}
+[data-theme="dark"] .project-card{
+  background: rgb(234 234 234/0.3);
+}
+
+[data-theme="dark"] .card{
+  background: rgb(234 234 234 / 0.2);
+}
+[data-theme="light"] .card{
+  background: #eee;
+}
+[data-theme="dark"] .view-demo{
+  background: rgb(234 234 234 / 0.2);
+}
+[data-theme="light"] .view-demo{
+  background: #eee;
 }
 
 body {
@@ -103,7 +121,10 @@ body {
   @apply mx-auto max-w-[1280px]  ;
 }
 .padding-container {
-  @apply px-6 lg:px-20 3xl:px-0;
+  @apply px-6 lg:px-6 3xl:px-0;
+}
+.card{
+  @apply px-6 lg:px-6
 }
 .skill {
   @apply mx-auto max-w-[1440px] 3xl:px-0;
@@ -237,12 +258,55 @@ body {
   }
 }
 @media (max-width: 768px) {
-  .home {
-    height: 72vh;
-  }
-}
-@media (max-width: 768px) {
   .nav-container {
     max-width: 420px;
   }
+}
+.group-hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.group-hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #2d2d2d;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  /* background-color: white; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.project-card img {
+  border-radius: 8px;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.project-card p {
+  color: #4A4A4A;
+}
+.tag{
+  background: #dc143c;
+}
+
+.project-card .view-demo {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+.card{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

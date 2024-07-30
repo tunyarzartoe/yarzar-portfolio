@@ -1,38 +1,37 @@
 import { motion } from "framer-motion";
 import SocialIcons from "@/components/SocialIcons";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { slideInFromRight } from "@/components/main/Main";
-import About from "./about";
 import fadeIn from "@/components/Variants";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
+import { ProjectCard } from "@/components/ProjectCard";
+import { workData } from "@/app/constants/personalData";
 
 const Home = () => {
   const metadata = useMetadata();
   return (
     <>
-      <section className="padding-container max-container  grid grid-cols-1 lg:grid-cols-2 gap-4 py-10 xl:py-24 mb-10 xl:mb-10 home" style={{height: "75vh"}}>
+      <section className=" padding-container max-container  xl:py-8 mb-8 lg:mb-8 home">
         <Head>
           <title>{metadata.title}</title>
           {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
-        </Head>{" "}
+        </Head>
         <motion.div
-          // variants={fadeIn("down", 0.2)}
           initial="hidden"
           animate="show"
           exit="hidden"
           className="flex flex-col lg:items-start"
         >
           <h3 className="bold-16 pt-24">
-            Hi Everyone ! <br />
+            Hi Everyone! <br />
             I&apos;m{" "}
             <span className="regular-24 text-secondary ">Tun Yar Zar Toe</span>
           </h3>
           <h4 className="bold-20">
-            A Web Developer .
+            A Web Developer.
             <span className="pl-2">
               {/* <Typewriter
                 words={["Full Stack Developer", "Youtuber", "Programmer"]}
@@ -46,8 +45,7 @@ const Home = () => {
           </h4>
           <p className="bold-16">I turn coffee into code.</p>
           <p className="py-4 regular-16">
-            Welcome to my portfolio website ! I'm a passionate web
-            developer
+            Welcome to my portfolio website! I'm a passionate web developer
             <br />
             with over{" "}
             <span className="text-secondaryStrong font-extrabold">
@@ -60,17 +58,16 @@ const Home = () => {
           </p>
           <SocialIcons />
         </motion.div>
-        {/* <motion.div
-          className="flex flex-1 mr-10 ml-11 lg:items-end"
-          variants={slideInFromRight(0.8)}
-        >
-          <Image
-            src={"/mainIconsdark.svg"}
-            alt="work icons"
-            height={650}
-            width={600}
-          />
-        </motion.div> */}
+      </section>
+      <section className="padding-container max-container mb-16 lg:mb-1">
+        <div className="card px-0">
+        <h2 className="text-3xl font-bold mb-1 p-5">Projects</h2>
+        <div className="project-cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+          {workData.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        </div>
       </section>
     </>
   );

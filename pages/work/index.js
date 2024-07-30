@@ -1,14 +1,7 @@
-import Hero from "@/components/Hero";
 import React from "react";
 import { motion } from "framer-motion";
-import fadeIn from "@/components/Variants";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import { workData } from "@/app/constants/personalData";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import { FaArrowRight } from "react-icons/fa";
@@ -16,83 +9,70 @@ import Link from "next/link";
 
 const Work = () => {
   const metadata = useMetadata();
-  // console.log("icon =====",metadata.icon)
+
   return (
-    <section className="max-container padding-container flex flex-col flexCenter md:flex-row md:gap-8 lg:gap-20 xl:gap-28 " style={{height: "80vh"}}>
+    <>
       <Head>
         <title>{metadata.title}</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>
-      <motion.div
-        // variants={fadeIn("up", 0.001)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="md:max-w[40%] text-center mb-5"
-      >
-        <h3 className="bold-20 font-extrabold relative  leading-normal uppercase">
-          My Work<span className="text-secondary">s</span>
-          <span className="text-[-35px] lg:tex-[44px]  font-extrabold text-white/10 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2 uppercase">
-            My Works
-          </span>
-        </h3>
-        <p className="text-start max-w-md mx-auto text-gray-20 sm:text-start ">
-          Each project reflects my dedication to crafting seamless digital
-          solutions that captivate and engage users. Discover the art of
-          innovation through concise, impactful design and robust functionality.{" "}
-        </p>
-      </motion.div>
-      <motion.div
-        //  variants={fadeIn("down",0.001)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="w-full sm:max-w-[50%]"
-      >
-        <Swiper
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          // className="h-[100px] sm:h-[288px] md:h-[377px] sm:mt-8"
+
+      <section className="max-container padding-container flex flex-col items-center text-center mb-12 sm:mb-0">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="mb-10"
         >
-          {workData.map((slide, i) => (
-            <SwiperSlide key={i}>
-              <div className=" flex flex-col items-center gap-y-8 mb-14 card-container">
-                {slide.images.map((image, i) => (
-                  <div key={i} className="flexCenter">
-                    <div className="relative overlow-hidden group rounded-lg cursor-pointer  bg-white/10 p-3 ">
-                      <h4>{slide.title}</h4>
-                      <div className="min-w-full">
-                        <Image
-                          src={image.url}
-                          alt="work_image"
-                          height={310}
-                          width={280}
-                          fetchPriority="eager"
-                        />
-                      </div>
-                      <Link
-                        href={`/work/${slide.id}`}
-                        className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute left-1/2 -bottom-6 opacity-0 group-hover:opacity-100 group-hover:tarnslate-x-10 transition-all duration-500 -rotate-45"
-                      >
-                        <FaArrowRight />
-                      </Link>
-                    </div>
-                  </div>
-                ))}
+          <h3 className="text-4xl font-extrabold uppercase mb-5">
+            My Work<span className="text-secondary">s</span>
+          </h3>
+          <p className="regular-16 text-gray-200 text-lg max-w-2xl mx-auto">
+            Each project reflects my dedication to crafting seamless digital
+            solutions that captivate and engage users. Discover the art of
+            innovation through concise, impactful design and robust
+            functionality.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-10"
+        >
+          {workData.map((data, index) => (
+            <div
+              key={index}
+              className="relative group bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <Image
+                src={data.images[0].url}
+                alt="work_image"
+                layout="responsive"
+                width={400}
+                height={300}
+                className="transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="p-5 relative">
+                <h3 className="text-xl text-gray-600 text-start font-bold mb-3">{data.title}</h3>
+                <p className="text-gray-600 mb-5 text-start">{data.description}</p>
+                <div className="absolute bottom-5 right-5 flex items-center space-x-2">
+                  {data.lang.icon}
+                </div>
+                <Link
+                  href={data.demoLink}
+                  target="_bank"
+                  className="absolute bottom-2 right-2 bg-secondary text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <FaArrowRight />
+                </Link>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
-      </motion.div>
-    </section>
+        </motion.div>
+      </section>
+    </>
   );
 };
 
