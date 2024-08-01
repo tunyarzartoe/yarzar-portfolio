@@ -17,13 +17,13 @@ export const ProjectCard = ({ project }) => {
         />
         <div className="ml-4">
           <h4 className="text-black  bold-20">{project.title}</h4>
-          <span className="text-black regular-24"> {project.name}</span>
+          <span className="text-black regular-24 italic"> {project.name}</span>
         </div>
       </div>
 
       <div className="flex items-center mb-1">
         <div className="">
-          <p className="text-gray-600 regular-16">{project.description}</p>
+          <p className="text-gray-900 regular-16 ">{project.description}</p>
         </div>
       </div>
       <div className="flex flex-wrap mb-0">
