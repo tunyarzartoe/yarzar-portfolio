@@ -62,14 +62,14 @@ const Work = () => {
                 <div className="flex flex-warp mb-0 my-1">
                   <span
                     // key={index}
-                    className="tag text-black px-2 py-1 rounded mr-2 "
+                    className="tag text-gray-10 px-2 py-1 rounded mr-2 "
                   >
                     {data.lang.name}
                   </span>
                   <Link
                     href={data.demoLink}
                     target="_bank"
-                    className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
+                    className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
                     >
                     <FaArrowRight />
                   </Link>
