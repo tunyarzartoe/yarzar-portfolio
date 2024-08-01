@@ -61,8 +61,8 @@ const Home = () => {
       </section>
       <section className="padding-container max-container mb-16 lg:mb-1">
         <div className="card px-0">
-        <h2 className="text-3xl font-bold mb-1 p-5">Projects</h2>
-        <div className="project-cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-5">
+        <h2 className="text-3xl font-bold mb-1  p-2 lg:p-5 pb-0">Projects</h2>
+        <div className="project-cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-2 lg:p-5">
           {workData.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}

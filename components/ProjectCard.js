@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 
 export const ProjectCard = ({ project }) => {
   return (
-    <div className="project-card flex flex-col p-4 shadow-md rounded-md mb-10">
+    <div className="project-card flex flex-col p-4 shadow-md rounded-md mb-1">
       <div className="flex mb-2">
         <Image
           src={project.logo}
@@ -21,12 +21,12 @@ export const ProjectCard = ({ project }) => {
         </div>
       </div>
 
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-1">
         <div className="">
           <p className="text-gray-600 regular-16">{project.description}</p>
         </div>
       </div>
-      <div className="flex flex-wrap mb-4">
+      <div className="flex flex-wrap mb-0">
         {project.languages.map((lang, index) => (
           <span
             key={index}
