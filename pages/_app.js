@@ -9,6 +9,7 @@ import RootLayout from "@/app/layout";
 import Logo from "../public/logo_icon.png";
 import Profile from "../public/profile.jpg";
 import Icon from "../app/favicon.ico";
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoadingAnimation = dynamic(() => import('../components/LoadingAnimation'), { ssr: false });
 
