@@ -11,18 +11,18 @@ const Header = () => {
   return (
     <nav className="rounded-full nav-container bg-white/20 backdrop-blur-3xl grid grid-cols-3 gap-4 sticky top-5 mb-10 z-50 py-2">
     {/* <header className="fixed h-max bottom-0 mt-auto gap-y-4 flex flex-col items-center top-0 w-full xl:justify-center xl:right-[4%] xl:w-16 xl:h-screen z-50"> */}
-      <div className="col-span-1 px-10 xs:px-6 flex items-center gap-4">
-        <Link href={"/"} className="bold-20 text-white">
+      <div className="col-span-1 px-10 xs:px-6 items-center gap-4">
+        <Link href={"/"} className="bold-20 text-white flex">
         <Image
-            className="img"
             src={Logo}
             alt="logo"
             width={50}
+            className="rounded-full"
             // height={50}
             // width={90}
-          />          {/* Yar <span className="regular-18 text-secondary">Zar</span> */}
+          />         
+          <h3 className="bold-20 font-extrabold ml-2 mt-2 text-secondary"><span>TYZT</span></h3>
         </Link>
-        <h3 className="bold-20">TYZT</h3>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
         {/* <button className="btn_dark_rounded p-1 w-32 lg:px-4  lg:py-1 rounded-full flexCenter  animate-pulse">
