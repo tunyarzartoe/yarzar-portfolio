@@ -14,12 +14,15 @@ const Header = () => {
       <div className="col-span-1 px-10 xs:px-6 flex items-center gap-4">
         <Link href={"/"} className="bold-20 text-white">
         <Image
+            className="img"
             src={Logo}
             alt="logo"
-            height={50}
+            width={50}
+            // height={50}
             // width={90}
           />          {/* Yar <span className="regular-18 text-secondary">Zar</span> */}
         </Link>
+        <h3 className="bold-20">TYZT</h3>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
         {/* <button className="btn_dark_rounded p-1 w-32 lg:px-4  lg:py-1 rounded-full flexCenter  animate-pulse">
@@ -30,7 +33,7 @@ const Header = () => {
         </button> */}
       </div>
       <div className="col-span-1 flex items-center justify-end ">
-        <div className="flex  ps-10">
+        <div className="flex  ps-10 mb-0">
           {/* <div>
 
             <LanguageMenuItem />

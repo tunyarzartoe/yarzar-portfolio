@@ -56,12 +56,12 @@ const LanguageMenuItem = () => {
   const { t, i18n } = useTranslation("dashboard");
   const [isOpen, setIsOpen] = useState(false);
 
-  let found = languages.find((obj) => obj.lang === i18n.language);
+  let found = languages.find((obj) => obj.lang === i18n?.language);
   if (!found) {
     i18n.changeLanguage("en");
   }
 
-  const currentLang = languages.find((obj) => obj.lang === i18n.language);
+  const currentLang = languages.find((obj) => obj.lang === i18n?.language);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
