@@ -17,11 +17,12 @@ const Header = () => {
             src={Logo}
             alt="logo"
             width={50}
-            className="rounded-full"
+            className="rounded-full p-1"
             // height={50}
             // width={90}
+            style={{background:"#f0f0f0"}}
           />         
-          <h3 className="bold-20 font-extrabold ml-2 mt-2 text-secondary"><span>TYZT</span></h3>
+          <h3 className="bold-20 font-extrabold ml-2  text-secondary" style={{marginTop:"6px"}}><span>TYZT</span></h3>
         </Link>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
