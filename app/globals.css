@@ -253,21 +253,21 @@ body {
 }
 
 @media (max-width: 768px) {
-  .footer {
-    display: none;
-  }
-  .project-head{
+  .footer,.project-head {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .mobile-head{
+  .mobile-head,.personal{
     display: none;
   }
 }
 @media (max-width: 768px) {
   .nav-container {
     max-width: 420px;
+  }
+  .personal-title{
+    justify-content: center;
   }
 }
 .group-hover\:scale-105:hover {

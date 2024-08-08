@@ -86,19 +86,19 @@ export const personalData = [
           },
         ],
       },
-      {
-        title: "UI/UX Design",
-        icons: [
-          { icon: <FaFigma style={{ fontSize: "35px", color: "#F24E1E" }} /> },
-          {
-            icon: (
-              <SiAdobephotoshop
-                style={{ fontSize: "35px", color: "#31A8FF" }}
-              />
-            ),
-          },
-        ],
-      },
+      // {
+      //   title: "UI/UX Design",
+      //   icons: [
+      //     { icon: <FaFigma style={{ fontSize: "35px", color: "#F24E1E" }} /> },
+      //     {
+      //       icon: (
+      //         <SiAdobephotoshop
+      //           style={{ fontSize: "35px", color: "#31A8FF" }}
+      //         />
+      //       ),
+      //     },
+      //   ],
+      // },
     ],
   },
   {

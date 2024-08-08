@@ -20,7 +20,7 @@ const Personal = () => {
           {/* <h3 className="text-2xl font-bold lg:text-3xl">Skills </h3> */}
         </div>
         <div className="">
-          <div className="flex flex-start gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0">
+          <div className="flex flex-start gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0 personal-title">
             {personalData.map((item, itemIndex) => (
               <h3
                 key={itemIndex}
@@ -37,7 +37,7 @@ const Personal = () => {
           <div className="skill object-cover float-none md:float-left w-[280px] rounded-full m-8 mt-0 text-start justify-start">
             {/* <h3 className="text-2xl font-bold lg:text-3xl">Skills </h3> */}
           </div>
-          <div className="py-6 regular-14 xl:py-8 flex flex-col gap-2 items-center xl:items-start text-gray-20">
+          <div className="py-2 regular-14 xl:py-8 flex flex-col gap-2 items-center xl:items-start text-gray-20">
             {personalData[index].info.map((item, itemIndex) => (
               <div
                 key={itemIndex}
@@ -55,7 +55,7 @@ const Personal = () => {
                       />
                     </div>
                   )}
-                  {item.title}
+                  <h3 className="regular-16">{item.title}</h3>
                 </div>
                 <div className="hidden lg:flex">-</div>
                 <div>{item.year}</div>

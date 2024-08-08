@@ -9,6 +9,8 @@ import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import { ProjectCard } from "@/components/ProjectCard";
 import { workData } from "@/app/constants/personalData";
+import Personal from "@/components/Personal";
+import { Divider } from "@nextui-org/react";
 
 const Home = () => {
   const metadata = useMetadata();
@@ -69,7 +71,11 @@ const Home = () => {
           ))}
         </div>
         </div>
+      <div className="personal">
+        <Personal/>
+      </div>
       </section>
+      
     </>
   );
 };
