@@ -54,7 +54,7 @@ const About = () => {
                 fetchPriority="eager"
               />
             </div>
-            <p className=" mb-4">
+            <p className=" mb-1">
               As a web developer, I see myself as a digital craftsman,
               sculpting elegant solutions from lines of code. <br />
               With a passion for both frontend finesse and backend robustness, I
@@ -74,12 +74,12 @@ const About = () => {
               covering all things technology, coding vlogs, and personal
               development.
             </p>
-            <p>
+            {/* <p>
               Over the past years, I have written content for my blog and
               newsletter. I strive to keep things simple by writing about
               technologies that interest me at the time, as well as how I am
               learning and growing in my career.
-            </p>
+            </p> */}
           </div>
         </div>
       </motion.div>

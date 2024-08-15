@@ -15,7 +15,7 @@ const Contact = () => {
     phNo: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +24,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true when starting the request
+    setLoading(true); 
 
     const res = await fetch("/api/contact", {
       method: "POST",
