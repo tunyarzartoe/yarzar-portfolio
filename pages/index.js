@@ -61,7 +61,7 @@ const Home = () => {
           <SocialIcons />
         </motion.div>
       </section>
-      <section className="padding-container max-container mb-16 lg:mb-1">
+      <section className="padding-container max-container mb-16 lg:mb-4">
       <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
         <div className="card px-0">
         <h2 className="text-3xl font-bold mb-1  p-2 lg:p-5 pb-0 project-head">Projects</h2>
