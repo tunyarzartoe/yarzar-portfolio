@@ -12,7 +12,7 @@ import { workData } from "@/app/constants/personalData";
 import Personal from "@/components/Personal";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
-import profileImage from "@/public/profile.jpg"; // Add your image here
+import profileImage from "@/public/profile.jpg"; 
 
 const Home = () => {
   const metadata = useMetadata();
