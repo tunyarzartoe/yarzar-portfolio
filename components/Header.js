@@ -36,10 +36,9 @@ const Header = () => {
       <div className="col-span-1 flex items-center justify-end ">
         <div className="flex  ps-10 mb-0">
           {/* <div>
-
             <LanguageMenuItem />
           </div> */}
-          <div className="gap-4">
+          <div className="gap-2">
             <ThemeSwitcher />
           </div>
         </div>

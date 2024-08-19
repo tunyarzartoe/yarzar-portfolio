@@ -73,17 +73,17 @@ const LanguageMenuItem = () => {
   };
 
   return (
-    <div className="relative text-center justify-center w-auto">
+    <div className="relative  justify-center w-auto py-2">
       <div>
         <button
           type="button"
           onClick={toggleDropdown}
-          className="border border-gray-20 px-3 py-2 flexCenter inline-flex  items-center gap-2 space-x-1.5 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" 
+          className="border border-gray-20 text-center flexCenter inline-flex align-middle px-2 items-center gap-2 space-x-1.5 text-sm font-medium text-gray-700 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75" 
         >
-          <div className="mr-5">
+          <div className="mr-1">
             {currentLang?.flag}
           </div>
-          <div className="ml-5">{t(currentLang?.text)}</div>{" "}
+          <div className="ml-5 text-center">{t(currentLang?.text)}</div>{" "}
           <svg
             className="-mr-1 h-5 w-5 text-gray-400"
             viewBox="0 0 20 20"

@@ -38,7 +38,7 @@ export const ProjectCard = ({ project }) => {
       </div>
       <div className="flex items-center mt-auto  ">
         <Button
-          className="view-demo"
+          className="view-demo rounded-full"
           href={project.demoLink}
           as={Link}
           color="primary"
