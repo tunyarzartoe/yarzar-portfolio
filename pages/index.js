@@ -16,6 +16,7 @@ import profileImage from "@/public/profile.jpg";
 import About from "./about";
 import { FaArrowUp } from "react-icons/fa";
 import BackToTopButton from "@/components/main/BackToTopButton";
+import Contact from "./contact";
 
 const Home = () => {
   const metadata = useMetadata();
@@ -99,7 +100,10 @@ const Home = () => {
           <Personal />
         </div> */}
       </section>
-
+        
+        {/* Contact Page Section */}
+        <Contact/>
+        
        {/* Back to Top Button */}
        <BackToTopButton/>
     </>
