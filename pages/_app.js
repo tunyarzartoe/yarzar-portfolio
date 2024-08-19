@@ -18,29 +18,20 @@ const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {
-    const images = [];
+    const preloadImages = () => {
+      const imageUrls = [Logo, Profile, Icon];
+      
+      imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url.src; 
+      });
+    };
 
-    const imageUrls = [Logo, Profile];
-    imageUrls.forEach((url) => {
-      const img = new Image();
-      img.src = url;
-      images.push(img);
-    });
+    preloadImages();
 
-    const favicon = new Image();
-    favicon.src = Icon;
-    images.push(favicon);
-
-    Promise.all(
-      images.map((img) => {
-        return new Promise((resolve) => {
-          img.onload = img.onerror = resolve;
-        });
-      })
-    ).then(() => {
-      // Once all assets are preloaded, set isLoading to false
+    setTimeout(() => {
       setIsLoading(false);
-    });
+    }, 1000);  
   }, []);
 
   if (isLoading) {
@@ -53,7 +44,7 @@ const MyApp = ({ Component, pageProps }) => {
         <RootLayout>
           <AnimatePresence mode="wait">
             <motion.div key={router.route} className="h-full">
-              <Suspense fallback={<div className="py-20"><LoadingAnimation /></div>}>
+              <Suspense fallback={<LoadingAnimation />}>
                 <Component {...pageProps} />
               </Suspense>
             </motion.div>

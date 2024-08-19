@@ -327,3 +327,9 @@ body {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.loading-animation{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

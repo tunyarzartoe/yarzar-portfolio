@@ -11,7 +11,7 @@ const LoadingAnimation = () => {
   }, []);
 
   return (
-    <div className="pl-20 lg:max-container lg:padding-container text-center py-72 mr-28">
+    <div className="loading-animation">
       <l-trefoil
         size="50"
         stroke="4"
