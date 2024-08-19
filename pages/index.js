@@ -125,7 +125,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-8 right-16 bg-secondary p-3 rounded-full shadow-lg z-50"
+          className="fixed bottom-16 right-4 lg:bottom-8 lg:right-16 bg-secondary p-3 rounded-full shadow-lg z-50"
           onClick={scrollToTop}
         >
           <FaArrowUp className="text-white" size={20} />
