@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import SocialIcons from "@/components/SocialIcons";
 import dynamic from "next/dynamic";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { slideInFromRight } from "@/components/main/Main";
 import fadeIn from "@/components/Variants";
@@ -14,9 +14,30 @@ import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 import profileImage from "@/public/profile.jpg"; 
 import About from "./about";
+import { FaArrowUp } from "react-icons/fa";
 
 const Home = () => {
   const metadata = useMetadata();
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Show/Hide "Back to Top" button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 250) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       {/* Home Page Section */}
@@ -78,8 +99,10 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+
       {/* About Section */}
       <About/>
+
       {/* Projects Section */}
       <section className="padding-container max-container mb-16 lg:mb-4">
         <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
@@ -95,7 +118,19 @@ const Home = () => {
           <Personal />
         </div> */}
       </section>
-      
+
+       {/* Back to Top Button */}
+       {showTopBtn && (
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="fixed bottom-8 right-16 bg-secondary p-3 rounded-full shadow-lg z-50"
+          onClick={scrollToTop}
+        >
+          <FaArrowUp className="text-white" size={20} />
+        </motion.button>
+      )}
     </>
   );
 };
