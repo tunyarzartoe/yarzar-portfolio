@@ -6,6 +6,7 @@ import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import BackToTopButton from "@/components/main/BackToTopButton";
 
 const Work = () => {
   const metadata = useMetadata();
@@ -70,7 +71,7 @@ const Work = () => {
                     href={data.demoLink}
                     target="_bank"
                     className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
-                    >
+                  >
                     <FaArrowRight />
                   </Link>
                 </div>
@@ -82,6 +83,9 @@ const Work = () => {
           ))}
         </motion.div>
       </section>
+
+      {/* Back to top button */}
+      <BackToTopButton />
     </>
   );
 };

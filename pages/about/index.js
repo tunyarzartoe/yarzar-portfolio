@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import aboutImage from "@/public/about-photo.jpg";
+import BackToTopButton from "@/components/main/BackToTopButton";
 
 const About = () => {
   const metadata = useMetadata();
@@ -20,6 +21,7 @@ const About = () => {
   };
 
   return (
+    <>
     <section className="padding-container max-container about">
       <Head>
         <title>{metadata.title}</title>
@@ -109,6 +111,10 @@ const About = () => {
       <Personal />
       {/* {showModal && <ImageViewModal closeModal={closeModal} />} */}
     </section>
+
+    {/* Back to top button */}
+    <BackToTopButton/>
+    </>
   );
 };
 
