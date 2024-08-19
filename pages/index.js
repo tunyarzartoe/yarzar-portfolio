@@ -13,11 +13,13 @@ import Personal from "@/components/Personal";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 import profileImage from "@/public/profile.jpg"; 
+import About from "./about";
 
 const Home = () => {
   const metadata = useMetadata();
   return (
     <>
+      {/* Home Page Section */}
       <section className="padding-container max-container xl:py-8 mb-8 lg:mb-8 home">
         <Head>
           <title>{metadata.title}</title>
@@ -76,6 +78,9 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+      {/* About Section */}
+      <About/>
+      {/* Projects Section */}
       <section className="padding-container max-container mb-16 lg:mb-4">
         <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
         <div className="card px-0">
@@ -86,10 +91,11 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <div className="personal">
+        {/* <div className="personal">
           <Personal />
-        </div>
+        </div> */}
       </section>
+      
     </>
   );
 };

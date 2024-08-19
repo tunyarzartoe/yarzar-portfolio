@@ -20,7 +20,7 @@ const About = () => {
   };
 
   return (
-    <section className="padding-container max-container about mb-20">
+    <section className="padding-container max-container about">
       <Head>
         <title>{metadata.title}</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
@@ -31,21 +31,8 @@ const About = () => {
         exit="hidden"
         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
-        <div className="relative flex justify-center items-center">
-          <div
-            className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-secondary shadow-lg cursor-pointer"
-            // onClick={handleImageClick}
-          >
-            <Image
-              src={aboutImage}
-              alt="Tun Yar Zar Toe"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-            />
-          </div>
-        </div>
-        <div className="flex flex-col justify-center">
+        {/* Text Section */}
+        <div className="flex flex-col justify-center order-1 lg:order-2">
           <h3 className="bold-20 font-extrabold relative leading-normal uppercase mb-4">
             About
           </h3>
@@ -67,6 +54,21 @@ const About = () => {
               In addition to coding, I create content on my YouTube channel, covering
               all things technology, coding vlogs, and personal development.
             </p>
+          </div>
+        </div>
+        {/* Image Section */}
+        <div className="relative flex justify-center items-center order-2 lg:order-1">
+          <div
+            className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-secondary shadow-lg cursor-pointer"
+            // onClick={handleImageClick}
+          >
+            <Image
+              src={aboutImage}
+              alt="Tun Yar Zar Toe"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
           </div>
         </div>
       </motion.div>
