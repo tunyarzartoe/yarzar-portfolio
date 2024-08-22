@@ -9,7 +9,7 @@ const Personal = () => {
 
   return (
     <motion.div
-      variants={fadeIn("down", 0.4)}
+      // variants={fadeIn("down", 0.4)}
       initial="hidden"
       animate="show"
       exit="hidden"

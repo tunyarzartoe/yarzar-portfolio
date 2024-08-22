@@ -1,7 +1,7 @@
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowDown, FaArrowRight } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi2";
 import {
   RiGithubFill,
@@ -54,13 +54,13 @@ const SocialIcons = () => {
       <Button
         className="view-demo rounded-full flexCenter"
         href=""
-        color="primary"
         variant="solid"
         target="_bank"
+        style={{background:"#dc143c"}}
       >
-        <span className="mr-8">Resume</span>
-        <span className="absolute  right-2 font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-8 w-8 rounded-full opacity-100 flexCenter -rotate-45">
-          <FaArrowRight />
+        <span className="mr-8 regular-16 text-tertiary">Resume</span>
+        <span className="absolute  right-2 font-extrabold text-tertiary bg-white/20 border-white/30 border-[3px] h-8 w-8 rounded-full opacity-100 flexCenter ">
+          <FaArrowDown />
         </span>
       </Button>
     </div>

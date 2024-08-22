@@ -61,7 +61,7 @@ const About = () => {
         {/* Image Section */}
         <div className="relative flex justify-center items-center order-2 lg:order-1">
           <div
-            className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-secondary shadow-lg cursor-pointer"
+            className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-secondary shadow-lg"
             // onClick={handleImageClick}
           >
             <Image
