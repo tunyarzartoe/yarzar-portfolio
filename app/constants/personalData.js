@@ -203,21 +203,21 @@ export const workData = [
     demoLink: "https://react-calculator-app-sandy.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
+  // {
+  //   id: 4,
+  //   description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
+  //   title: "Shopping Cart",
+  //   name:"An Intutitive Shopping Cart",
+  //   images: [
+  //     { url: P3 },
+  //   ],
+  //   logo :"https://cdn-icons-png.flaticon.com/512/1170/1170576.png",
+  //   languages: ["Javascript", "JQuery", "Bootstrap","Sweetalert","Notiflix"],
+  //   demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
+  //   lang: { name: "JavaScript", icon: "FaJs" }
+  // },
   {
     id: 4,
-    description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
-    title: "Shopping Cart",
-    name:"An Intutitive Shopping Cart",
-    images: [
-      { url: P3 },
-    ],
-    logo :"https://cdn-icons-png.flaticon.com/512/1170/1170576.png",
-    languages: ["Javascript", "JQuery", "Bootstrap","Sweetalert","Notiflix"],
-    demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
-    lang: { name: "JavaScript", icon: "FaJs" }
-  },
-  {
-    id: 5,
     description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
     title: "Counter App",
     name:"React Redux Counter App",

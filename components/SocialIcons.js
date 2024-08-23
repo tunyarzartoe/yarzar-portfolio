@@ -50,9 +50,9 @@ const SocialIcons = () => {
           <RiGithubFill />
         </Link>
       </div>
-      <div>
+      <div className="">
       <Button
-        className="view-demo rounded-full flexCenter"
+        className="view-demo rounded-full flexCenter mt-1"
         href=""
         variant="solid"
         target="_bank"
@@ -63,7 +63,8 @@ const SocialIcons = () => {
           <FaArrowDown />
         </span>
       </Button>
-    </div>
+      </div>
+      
     </div>
   );
 };
