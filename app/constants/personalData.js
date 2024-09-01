@@ -106,12 +106,12 @@ export const personalData = [
     type: "experience",
     info: [
       {
-        title: "Full Stack Developer - Kumo Solutions Software Company",
+        title: "Web Developer - Kumo Solutions Software Company",
         year: "2023 - Present",
         logo: KUMO,
       },
       {
-        title: "Full Stack Developer - Evercomm Sigapore",
+        title: "Web Developer - Evercomm Sigapore",
         year: "2023 - Present",
         logo: EC,
       },
