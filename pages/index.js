@@ -41,7 +41,7 @@ const Home = () => {
               <span className="regular-24 text-secondary">Tun Yar Zar Toe</span>
             </h3>
             <h4 className="bold-20">
-              A Web Developer.
+              A Software Engineer.
               <span className="pl-2">
                 {/* <Typewriter
                   words={["Full Stack Developer", "Youtuber", "Programmer"]}
@@ -86,7 +86,7 @@ const Home = () => {
       <About/>
 
       {/* Projects Section */}
-      <section className="padding-container max-container mb-16 lg:mb-4">
+      {/* <section className="padding-container max-container mb-16 lg:mb-4">
         <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
@@ -96,10 +96,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-        {/* <div className="personal">
+        <div className="personal">
           <Personal />
-        </div> */}
-      </section>
+        </div> *
+      </section> */}
         
         {/* Contact Page Section */}
         <Contact/>

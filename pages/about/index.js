@@ -40,7 +40,7 @@ const About = () => {
           </h3>
           <div className="leading-7 text-gray-200 text-lg">
             <p className="mb-4">
-              As a web developer, I see myself as a digital craftsman, sculpting
+              As a software engineer , I see myself as a digital craftsman, sculpting
               elegant solutions from lines of code. With a passion for both frontend
               finesse and backend robustness, I strive to create seamless experiences
               that delight users and simplify their lives. From brainstorming ideas to
