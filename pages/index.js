@@ -55,15 +55,14 @@ const Home = () => {
             </h4>
             <p className="bold-16">I turn coffee into code.</p>
             <p className="py-4 regular-16">
-              Welcome to my portfolio website! I'm a passionate web developer
-              <br />
+              Welcome to my portfolio website! I'm a passionate software engineer
               with over{" "}
               <span className="text-secondaryStrong font-extrabold">
                 {" "}
                 2 years{" "}
               </span>
               of experience in building web applications.
-              <br /> I specialize in JavaScript, React.js, Node.js, MongoDB, etc.
+              <br /> I specialize in Java, JavaScript, React.js, Node.js, MongoDB, etc.
               and I'm dedicated to delivering high-quality software solutions.
             </p>
             <SocialIcons />
