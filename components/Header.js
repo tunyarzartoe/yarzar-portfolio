@@ -22,7 +22,7 @@ const Header = () => {
             // width={90}
             style={{background:"#f0f0f0"}}
           />         
-          <h3 className="bold-20 font-extrabold ml-2  text-secondary" style={{marginTop:"6px"}}><span>TYZT</span></h3>
+          <h3 className="bold-20 font-extrabold ml-2  text-secondary" style={{marginTop:"6px"}}><span>yarzar.dev</span></h3>
         </Link>
       </div>
       <div className="col-span-1 flex flex-col items-center justify-center text-center">
@@ -38,9 +38,9 @@ const Header = () => {
           {/* <div>
             <LanguageMenuItem />
           </div> */}
-          <div className="gap-2">
+          {/* <div className="gap-2">
             <ThemeSwitcher />
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

@@ -43,7 +43,7 @@ const SocialIcons = () => {
           <RiLinkedinBoxFill />
         </Link>
         <Link
-          href={"https://github.com/tunyarzartoe-coding"}
+          href={"https://github.com/tunyarzartoe"}
           target="_bank"
           className="bg-[#5272f2] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
