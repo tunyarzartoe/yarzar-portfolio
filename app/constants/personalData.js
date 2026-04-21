@@ -139,7 +139,7 @@ export const personalData = [
         logo: DF,
       },
       {
-        title: "Host Myanmar Software Solutions",
+        title: "Host Myanmar Software Solutions Mandalay",
         year: "2022-2023",
         logo: HM,
       },
