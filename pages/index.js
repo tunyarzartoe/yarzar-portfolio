@@ -63,7 +63,7 @@ const Home = () => {
                 2 years{" "}
               </span>
               of experience in building web applications.
-              <br /> I specialize in JavaScript, React.js, Node.js, MongoDB, etc.
+              <br /> I specialize in Java, JavaScript, React.js, Node.js, MongoDB, etc.
               and I'm dedicated to delivering high-quality software solutions.
             </p>
             <SocialIcons />

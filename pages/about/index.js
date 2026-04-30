@@ -52,10 +52,10 @@ const About = () => {
                 Currently working mostly with React, Node JS, C#, and Java, as well as
                 other JavaScript technologies.
               </p>
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 In addition to coding, I create content on my YouTube channel, covering
                 all things technology, coding vlogs, and personal development.
-              </p>
+              </p> */}
             </div>
           </div>
           {/* Image Section */}
