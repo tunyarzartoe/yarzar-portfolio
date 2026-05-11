@@ -22,14 +22,14 @@ const SocialIcons = () => {
           <RiYoutubeFill />
         </Link>
         <Link
-          href={"https://www.instagram.com/tunyarzartoe/"}
+          href={"https://www.instagram.com/tunyarzartoe"}
           target="_bank"
           className="bg-[#f08a5d] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiInstagramFill />
         </Link>
         <Link
-          href={""}
+          href={"https://x.com/tunyarzartoe"}
           target="_bank"
           className="bg-[#ff2863] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
