@@ -36,7 +36,7 @@ const SocialIcons = () => {
           <RiTwitterXFill />
         </Link>
         <Link
-          href={"https://www.linkedin.com/in/tun-yar-zar-toe"}
+          href={"https://www.linkedin.com/in/tunyarzartoe/"}
           target="_bank"
           className="bg-[#eaeaea] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
