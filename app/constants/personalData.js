@@ -25,6 +25,8 @@ import KUMO from "../../public/logos/kumo_logo.jpeg";
 import HM from "../../public/logos/hm_logo.jpeg";
 import EC from "../../public/logos/es_logo.jpeg";
 import TU from "../../public/logos/tu_logo.png";
+import DF from "../../public/logos/default-logo-img.jpg";
+// import DF from "../../public/logos/default-logo-img.png";
 
 import P1 from "../../public/works/project-weather-app.png";
 import P2 from "../../public/works/project-calculator-app.png";
@@ -107,12 +109,12 @@ export const personalData = [
     info: [
       {
         title: "Web Developer - Kumo Solutions Software Company",
-        year: "2023 - Present",
+        year: "2023 - 2024",
         logo: KUMO,
       },
       {
         title: "Web Developer - Evercomm Sigapore",
-        year: "2023 - Present",
+        year: "2023 - 2024",
         logo: EC,
       },
       {
@@ -127,7 +129,17 @@ export const personalData = [
     type: "Education",
     info: [
       {
-        title: "Host Myanmar Software Solutions",
+        title: "東京IT&プログラミング＆会計専門学校",
+        year: "2026-Present",
+        logo: DF,
+      },
+      {
+        title: "東京明日アカデミー日本語学校",
+        year: "2024-2026",
+        logo: DF,
+      },
+      {
+        title: "Host Myanmar Software Solutions Mandalay",
         year: "2022-2023",
         logo: HM,
       },

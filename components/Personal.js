@@ -52,7 +52,7 @@ const Personal = () => {
                   <h3 className="regular-16">{item.title}</h3>
                 </div>
                 <div className="hidden lg:flex">-</div>
-                <div>{item.year}</div>
+                <div className="regular-14 margin-left" >{item.year}</div>
                 <div className="flex gap-x-2">
                   {item.icons?.map((iconObject, itemIndex) => (
                     <div key={itemIndex} style={{ color: iconObject.color }}>
