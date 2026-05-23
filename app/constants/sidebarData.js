@@ -13,7 +13,7 @@ export const sidebarData = [
   { name: "home", path: "/", icon: <HiHome /> },
   { name: "about", path: "/about", icon: <HiUser /> },
   // { name: "services", path: "/services", icon: <HiRectangleGroup /> },
-  // { name: "work", path: "/work", icon: <HiSquare2Stack /> },
+  { name: "work", path: "/work", icon: <HiSquare2Stack /> },
   // {
   //   name: "testimonials",
   //   path: "/testimonial",
