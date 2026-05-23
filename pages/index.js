@@ -12,7 +12,7 @@ import { workData } from "@/app/constants/personalData";
 import Personal from "@/components/Personal";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
-import profileImage from "@/public/profile.jpg"; 
+import profileImage from "@/public/profile.jpg";
 import About from "./about";
 import { FaArrowUp } from "react-icons/fa";
 import BackToTopButton from "@/components/main/BackToTopButton";
@@ -69,7 +69,7 @@ const Home = () => {
             <SocialIcons />
           </div>
           <div className="flex justify-center lg:justify-end pt-2 lg:pt-24 px-10">
-            <div className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg" style={{width:330,height:380}}>
+            <div className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg" style={{ width: 330, height: 380 }}>
               <Image
                 src={profileImage}
                 alt="Tun Yar Zar Toe"
@@ -83,10 +83,10 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <About/>
+      <About />
 
       {/* Projects Section */}
-      {/* <section className="padding-container max-container mb-16 lg:mb-4">
+      <section className="padding-container max-container mb-16 lg:mb-4">
         <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
@@ -98,14 +98,14 @@ const Home = () => {
         </div>
         <div className="personal">
           <Personal />
-        </div> *
-      </section> */}
-        
-        {/* Contact Page Section */}
-        <Contact/>
-        
-       {/* Back to Top Button */}
-       <BackToTopButton/>
+        </div>
+      </section>
+
+      {/* Contact Page Section */}
+      <Contact />
+
+      {/* Back to Top Button */}
+      <BackToTopButton />
     </>
   );
 };
