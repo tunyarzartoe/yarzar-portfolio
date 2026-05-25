@@ -38,7 +38,7 @@ const Header = () => {
           {/* <div>
             <LanguageMenuItem />
           </div> */}
-          <div className="gap-2">
+          <div className="gap-">
             <ThemeSwitcher />
           </div>
         </div>

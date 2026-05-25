@@ -11,30 +11,23 @@ const ThemeSwitcher = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
-  if (!mounted) {
-    return null;
-  }
-  const handleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+
+  if (!mounted) return null;
   return (
     <Switch
-    className="cursor-pinter py-1 px-10 xs:px-6"
-      defaultSelected
+      className="cursor-pinter py-1 px-10 xs:px-6"
+      // defaultSelected
       size="lg"
-      color="default"
-      thumbIcon={({ isSelected, className }) =>
+      isSelected={theme === "dark"}
+      onValueChange={(isSelected) => setTheme(isSelected ? "dark" : "light")}
+      thumbIcon={({ isSelected }) =>
         isSelected ? (
-          <MoonIcon className={className} />
+          <MoonIcon className="text-black" />
         ) : (
-          <SunIcon className={className} />
+          <SunIcon className="text-yellow-500" />
         )
       }
-      onClick={handleTheme}
+    // onClick={handleTheme}
     ></Switch>
   );
 };
