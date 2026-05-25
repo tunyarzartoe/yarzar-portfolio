@@ -18,7 +18,8 @@ const LoadingAnimation = () => {
         stroke-length="0.15"
         bg-opacity="0.1"
         speed="1.4"
-        color="black"
+        color="#dc143c"
+        // bg-color="#dc143c"
       ></l-trefoil>
       {/* <p className="mt-1 ml-2 text-backgroundDark">Loading...</p> */}
     </div>
