@@ -12,7 +12,7 @@ import { workData } from "@/app/constants/personalData";
 import Personal from "@/components/Personal";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
-import profileImage from "@/public/profile.jpg";
+import profileImage from "@/public/new_profile.jpeg";
 import About from "./about";
 import { FaArrowUp } from "react-icons/fa";
 import BackToTopButton from "@/components/main/BackToTopButton";
