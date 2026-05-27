@@ -19,6 +19,7 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiPython,
   SiSpringboot,
 } from "react-icons/si";
 import KUMO from "../../public/logos/kumo_logo.jpeg";
@@ -63,6 +64,7 @@ export const personalData = [
         title: "Backend Development",
         icons: [
           { icon: <FaJava style={{ fontSize: "35px", color: "#007396" }} /> },
+          {icon: <SiPython style={{ fontSize: "35px", color: "#306998" }} />},
           { icon: <SiDotnet style={{ fontSize: "35px", color: "#512BD4" }} /> },
           {
             icon: (
