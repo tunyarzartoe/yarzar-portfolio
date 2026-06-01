@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#FFB74D"/>
+      <stop offset="1" stop-color="#FF8A65"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    <text x="50%" y="45%" text-anchor="middle" font-size="48">Burmese Recipe App</text>
+    <text x="50%" y="55%" text-anchor="middle" font-size="22" opacity="0.9">Recipes • Ingredients • Instructions</text>
+  </g>
+</svg>
