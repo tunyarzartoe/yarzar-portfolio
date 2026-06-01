@@ -35,6 +35,8 @@ import P3 from "../../public/works/project-shopping-cart.png";
 import P4 from "../../public/works/project-counter-app.png";
 import P5 from "../../public/works/project-social-app.png";
 
+import PR from "../../public/works/project-burmese-recipe.svg";
+
 
 import POS1 from "../../public/works/project-weather-app.png";
 import POS2 from "../../public/works/pos2.jpeg";
@@ -241,6 +243,19 @@ export const workData = [
     logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
     languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
     demoLink: "https://redux-counter-app-orcin.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 5,
+    description: "A Burmese recipe collection app built with React (Create React App). Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
+    title: "Burmese Recipe App",
+    name: "Burmese Recipe App - Recipes & Instructions",
+    images: [
+      { url: PR },
+    ],
+    logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
+    languages: ["ReactJS", "MobX", "React Router", "CSS"],
+    demoLink: "https://burmese-recipe-app-iota.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   // Add more projects as needed
