@@ -34,12 +34,14 @@ const ProjectDetail = ({ project }) => {
             key={index}
             className="relative overflow-hidden group rounded-lg cursor-pointer bg-white/10 p-3 card-container"
           >
-            <Image
-              src={image.url}
-              alt={`Project Image ${index + 1}`}
-              width={500}
-              height={500}
-            />
+            <div className="relative w-full" style={{ paddingTop: "60%" }}>
+              <Image
+                src={image.url}
+                alt={`Project Image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div className="mt-1 flex justify-between items-center">
               <div className="flex items-center">
                 {/* Render the icon */}

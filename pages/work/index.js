@@ -47,14 +47,15 @@ const Work = () => {
               key={index}
               className="relative group bg-white shadow-lg rounded-lg overflow-hidden"
             >
-              <Image
-                src={data.images[0].url}
-                alt="work_image"
-                layout="responsive"
-                width={400}
-                height={300}
-                className="transition-transform duration-500 group-hover:scale-105"
-              />
+              <div className="relative w-full" style={{ paddingTop: "75%" }}>
+                <Image
+                  src={data.images[0].url}
+                  alt="work_image"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
               <div className="p-5 relative">
                 <h3 className="text-xl text-gray-600 text-start font-bold mb-3">
                   {data.title}

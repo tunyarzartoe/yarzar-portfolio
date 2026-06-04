@@ -247,7 +247,7 @@ export const workData = [
   },
   {
     id: 5,
-    description: "A Burmese recipe collection app built with React (Create React App). Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
+    description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
     title: "Burmese Recipe App",
     name: "Burmese Recipe App - Recipes & Instructions",
     images: [
