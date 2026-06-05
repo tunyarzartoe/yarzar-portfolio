@@ -258,6 +258,19 @@ export const workData = [
     demoLink: "https://burmese-recipe-app-iota.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
+  {
+    id: 6,
+    description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
+    title: "J4U Frontend",
+    name: "J4U - Job Portal Platform",
+    images: [
+      { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop" },
+    ],
+    logo: "https://cdn-icons-png.flaticon.com/128/1995/1995467.png",
+    languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
+    demoLink: "https://j4u-frontend.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
   // Add more projects as needed
 ];
 
