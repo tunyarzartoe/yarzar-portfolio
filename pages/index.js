@@ -91,9 +91,12 @@ const Home = () => {
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:p-5">
-            {workData.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+            {/** Show latest added projects first by sorting descending on `id` */}
+            { [...workData]
+                .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+                .map((project, index) => (
+                  <ProjectCard key={project.id ?? index} project={project} />
+                ))}
           </div>
         </div>
         <div className="personal">
