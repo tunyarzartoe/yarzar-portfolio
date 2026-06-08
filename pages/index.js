@@ -37,34 +37,23 @@ const Home = () => {
           <div className="flex flex-col justify-center">
             <h3 className="bold-16 pt-24">
               Hi Everyone! <br />
-              I&apos;m{" "}
-              <span className="regular-24 text-secondary">Tun Yar Zar Toe</span>
+              I&apos;m <span className="regular-24 text-secondary">Tun Yar Zar Toe</span>
             </h3>
-            <h4 className="bold-20">
-              A Software Engineer.
-              <span className="pl-2">
-                {/* <Typewriter
-                  words={["Full Stack Developer", "Youtuber", "Programmer"]}
-                  loop={true}
-                  cursorStyle={"_"}
-                  typeSpeed={90}
-                  deleteSpeed={70}
-                  delaySpeed={1000}
-                /> */}
-              </span>
-            </h4>
+            <h4 className="bold-20">A Software Engineer.</h4>
             <p className="bold-16">I turn coffee into code.</p>
             <p className="py-4 regular-16">
-              Welcome to my portfolio website! I'm a passionate web developer
-              <br />
-              with over{" "}
-              <span className="text-secondaryStrong font-extrabold">
-                {" "}
-                2 years{" "}
-              </span>
-              of experience in building web applications.
-              <br /> I specialize in Java, JavaScript, React.js, Node.js, MongoDB, etc.
-              and I'm dedicated to delivering high-quality software solutions.
+              Welcome to my portfolio website! I&apos;m a passionate software
+              engineer with over <span className="text-secondaryStrong font-extrabold">2 years</span> of
+              experience building web applications. I specialize in Java,
+              JavaScript/TypeScript, React.js (Next.js), Node.js, and MongoDB.
+              I focus on delivering high-quality, maintainable software with an
+              emphasis on performance, accessibility, and scalable architecture.
+            </p>
+            <p className="regular-16 mt-2">
+              Core strengths: Performance optimization, Responsive & accessible
+              UI, API design, Test automation, and DevOps-friendly deployments.
+              Interested in collaborating? Reach out via the contact form or my
+              socials below.
             </p>
             <SocialIcons />
           </div>

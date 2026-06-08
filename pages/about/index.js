@@ -39,19 +39,24 @@ const About = () => {
               About
             </h3>
             <div className="leading-7 text-gray-200 text-lg">
-              <p className="mb-4">
-                As a software engineer , I see myself as a digital craftsman, sculpting
-                elegant solutions from lines of code. With a passion for both frontend
-                finesse and backend robustness, I strive to create seamless experiences
-                that delight users and simplify their lives. From brainstorming ideas to
-                deploying polished applications, I relish every step of the development
-                journey. Let's work together to build innovative solutions that make a
-                difference in the digital world.
-              </p>
-              <p className="mb-4">
-                Currently working mostly with React, Node JS, C#, and Java, as well as
-                other JavaScript technologies.
-              </p>
+                <p className="mb-4">
+                  I&apos;m a software engineer who builds reliable and delightful web
+                  applications. I care about clean, maintainable code, performance, and
+                  user experience. I enjoy turning product ideas into production-ready
+                  software by combining thoughtful UX, solid engineering, and automated
+                  testing. I also mentor others, learn new tools continuously, and
+                  contribute to open-source when possible.
+                </p>
+                <p className="mb-4">
+                  My main stack includes React, Next.js, Node.js, Java (Spring Boot),
+                  and C#. I frequently use TypeScript, MongoDB, and PostgreSQL. I focus
+                  on shipping features that solve real user problems while keeping
+                  apps fast and maintainable.
+                </p>
+                <p className="mb-4">
+                  I&apos;m available for collaborations and freelance work — feel free
+                  to reach out via the contact form below or on my socials.
+                </p>
               {/* <p className="mb-4">
                 In addition to coding, I create content on my YouTube channel, covering
                 all things technology, coding vlogs, and personal development.
