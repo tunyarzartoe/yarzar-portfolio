@@ -181,6 +181,19 @@ export const servicesData = [
 
 export const workData = [
   {
+    id: 6,
+    description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
+    title: "Weather App",
+    name:"A Dynamic Weather App",
+    images: [
+      { url: P1 },
+    ],
+    logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
+    languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
+    demoLink: "https://react-weather-app-eta-bay.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
     id: 5,
     description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
     title: "Social App",
@@ -194,16 +207,16 @@ export const workData = [
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
-    id: 6,
-    description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
-    title: "Weather App",
-    name:"A Dynamic Weather App",
+    id: 4,
+    description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
+    title: "Counter App",
+    name:"React Redux Counter App",
     images: [
-      { url: P1 },
+      { url: P4 },
     ],
-    logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
-    languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
-    demoLink: "https://react-weather-app-eta-bay.vercel.app/",
+    logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
+    languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
+    demoLink: "https://redux-counter-app-orcin.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
@@ -232,19 +245,6 @@ export const workData = [
   //   demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
   //   lang: { name: "JavaScript", icon: "FaJs" }
   // },
-  {
-    id: 4,
-    description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
-    title: "Counter App",
-    name:"React Redux Counter App",
-    images: [
-      { url: P4 },
-    ],
-    logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
-    languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
-    demoLink: "https://redux-counter-app-orcin.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
   {
     id: 2,
     description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",

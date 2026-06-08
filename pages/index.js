@@ -37,43 +37,37 @@ const Home = () => {
           <div className="flex flex-col justify-center">
             <h3 className="bold-16 pt-24">
               Hi Everyone! <br />
-              I&apos;m{" "}
-              <span className="regular-24 text-secondary">Tun Yar Zar Toe</span>
+              I&apos;m <span className="regular-24 text-secondary">Tun Yar Zar Toe</span>
             </h3>
-            <h4 className="bold-20">
-              A Software Engineer.
-              <span className="pl-2">
-                {/* <Typewriter
-                  words={["Full Stack Developer", "Youtuber", "Programmer"]}
-                  loop={true}
-                  cursorStyle={"_"}
-                  typeSpeed={90}
-                  deleteSpeed={70}
-                  delaySpeed={1000}
-                /> */}
-              </span>
-            </h4>
+            <h4 className="bold-20">A Software Engineer.</h4>
             <p className="bold-16">I turn coffee into code.</p>
             <p className="py-4 regular-16">
-              Welcome to my portfolio website! I'm a passionate software engineer
-              with over{" "}
-              <span className="text-secondaryStrong font-extrabold">
-                {" "}
-                2 years{" "}
-              </span>
-              of experience in building web applications.
-              <br /> I specialize in Java, JavaScript, React.js, Node.js, MongoDB, etc.
-              and I'm dedicated to delivering high-quality software solutions.
+              Welcome to my portfolio website! I&apos;m a passionate software
+              engineer with over <span className="text-secondaryStrong font-extrabold">2 years</span> of
+              experience building web applications. I specialize in Java, Python,
+              JavaScript/TypeScript, React.js (Next.js), Node.js, and database
+              management with MongoDB, PostgreSQL, and MySQL. I focus on
+              delivering high-quality, maintainable software with an emphasis on
+              performance, accessibility, and scalable architecture.
+            </p>
+            <p className="regular-16 mt-2">
+              Core strengths: Performance optimization, responsive & accessible
+              UI, API design, test automation, and DevOps-friendly deployments.
+              Interested in collaborating? Reach out via the contact form or my
+              socials below.
             </p>
             <SocialIcons />
           </div>
           <div className="flex justify-center lg:justify-end pt-2 lg:pt-24 px-10">
-            <div className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg" style={{ width: 330, height: 380 }}>
+            <div
+              className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg"
+              style={{ width: 330, height: 380 }}
+            >
               <Image
                 src={profileImage}
                 alt="Tun Yar Zar Toe"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 quality={100}
               />
             </div>
@@ -90,9 +84,9 @@ const Home = () => {
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:p-5">
-            {/** Show latest added projects first by sorting descending on `id` */}
-            { [...workData]
-                .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+            { /** Show projects in ascending order by `id` (1,2,3...) */
+              [...workData]
+                .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
                 .map((project, index) => (
                   <ProjectCard key={project.id ?? index} project={project} />
                 ))}

@@ -36,20 +36,18 @@ export const ProjectCard = ({ project }) => {
           </span>
         ))}
       </div>
-      <div className="flex items-center mt-auto  ">
-        <Button
-          className="view-demo rounded-full"
+      <div className="flex items-center mt-auto">
+        <a
           href={project.demoLink}
-          as={Link}
-          color="primary"
-          variant="solid"
-          target="_bank"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="view-demo relative inline-flex items-center px-4 py-2 rounded-full bg-primary text-black"
         >
-          <span className="mr-8 text-black">View Demo</span>
-          <span className="absolute  right-2 font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-8 w-8 rounded-full opacity-100 flexCenter -rotate-45">
+          <span className="mr-8">View Demo</span>
+          <span className="absolute right-2 top-1/2 transform -translate-y-1/2 font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-8 w-8 rounded-full flex items-center justify-center -rotate-45">
             <FaArrowRight />
           </span>
-        </Button>
+        </a>
       </div>
       {/* <Link href={project.demoLink}>
         <button className=" btn flex items-center mt-auto ">
