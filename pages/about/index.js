@@ -57,10 +57,6 @@ const About = () => {
                   I&apos;m available for collaborations and freelance work — feel free
                   to reach out via the contact form below or on my socials.
                 </p>
-              {/* <p className="mb-4">
-                In addition to coding, I create content on my YouTube channel, covering
-                all things technology, coding vlogs, and personal development.
-              </p> */}
             </div>
           </div>
           {/* Image Section */}
