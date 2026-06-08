@@ -42,7 +42,9 @@ const Work = () => {
           exit="hidden"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-10"
         >
-          {workData.map((data, index) => (
+          {[...workData]
+            .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+            .map((data, index) => (
             <div
               key={index}
               className="relative group bg-white shadow-lg rounded-lg overflow-hidden"
@@ -51,8 +53,8 @@ const Work = () => {
                 <Image
                   src={data.images[0].url}
                   alt="work_image"
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: "cover" }}
                   className="transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -70,7 +72,8 @@ const Work = () => {
                   </span>
                   <Link
                     href={data.demoLink}
-                    target="_bank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
                   >
                     <FaArrowRight />

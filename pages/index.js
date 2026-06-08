@@ -69,12 +69,15 @@ const Home = () => {
             <SocialIcons />
           </div>
           <div className="flex justify-center lg:justify-end pt-2 lg:pt-24 px-10">
-            <div className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg" style={{ width: 330, height: 380 }}>
+            <div
+              className="relative rounded-full overflow-hidden border-4 border-secondary shadow-lg"
+              style={{ width: 330, height: 380 }}
+            >
               <Image
                 src={profileImage}
                 alt="Tun Yar Zar Toe"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 quality={100}
               />
             </div>
@@ -91,9 +94,9 @@ const Home = () => {
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:p-5">
-            {/** Show latest added projects first by sorting descending on `id` */}
-            { [...workData]
-                .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+            { /** Show projects in ascending order by `id` (1,2,3...) */
+              [...workData]
+                .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
                 .map((project, index) => (
                   <ProjectCard key={project.id ?? index} project={project} />
                 ))}

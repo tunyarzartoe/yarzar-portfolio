@@ -62,13 +62,13 @@ const About = () => {
           <div className="relative flex justify-center items-center order-2 lg:order-1">
             <div
               className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-secondary shadow-lg"
-            // onClick={handleImageClick}
+              // onClick={handleImageClick}
             >
               <Image
                 src={aboutImage}
                 alt="Tun Yar Zar Toe"
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 quality={100}
               />
             </div>

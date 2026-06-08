@@ -38,8 +38,8 @@ const ProjectDetail = ({ project }) => {
               <Image
                 src={image.url}
                 alt={`Project Image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
               />
             </div>
             <div className="mt-1 flex justify-between items-center">
