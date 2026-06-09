@@ -16,51 +16,46 @@ const SocialIcons = () => {
       <div className="flex  gap-2  lg:gap-6 pr-2 lg:pr-4">
         <Link
           href="https://www.youtube.com/@tunyarzartoe"
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_bank"
           className="bg-[#08d9d5] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiYoutubeFill />
         </Link>
         <Link
           href={"https://www.instagram.com/tunyarzartoe"}
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_bank"
           className="bg-[#f08a5d] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiInstagramFill />
         </Link>
         <Link
           href={"https://x.com/tunyarzartoe"}
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_bank"
           className="bg-[#ff2863] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiTwitterXFill />
         </Link>
         <Link
           href={"https://www.linkedin.com/in/tunyarzartoe/"}
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_bank"
           className="bg-[#eaeaea] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiLinkedinBoxFill />
         </Link>
         <Link
           href={"https://github.com/tunyarzartoe"}
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_bank"
           className="bg-[#5272f2] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
         >
           <RiGithubFill />
         </Link>
       </div>
       {/* <div className="">
-        <Button
+      <Button
         className="view-demo rounded-full flexCenter mt-1"
         href=""
         variant="solid"
-        target="_blank"
+        target="_bank"
         style={{background:"#dc143c"}}
       >
         <span className="mr-8 regular-16 text-tertiary">Resume</span>

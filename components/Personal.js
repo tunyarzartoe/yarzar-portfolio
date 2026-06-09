@@ -17,7 +17,7 @@ const Personal = () => {
     >
       <div className="leading-[2.5] text-lg">
         <div className="">
-          <div className="flex flex-start gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0 personal-title">
+          <div className="flex items-start gap-x-6 sm:gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0 personal-title">
             {personalData.map((item, itemIndex) => (
               <h3
                 key={itemIndex}
