@@ -43,7 +43,7 @@ const Home = () => {
             <p className="bold-16">I turn coffee into code.</p>
             <p className="py-4 regular-16">
               Welcome to my portfolio website! I&apos;m a passionate software
-              engineer with over <span className="text-secondaryStrong font-extrabold">2 years</span> of
+              engineer with over <span className="text-secondaryStrong font-extrabold">3 years</span> of
               experience building web applications. I specialize in Java, Python,
               JavaScript/TypeScript, React.js (Next.js), Node.js, and database
               management with MongoDB, PostgreSQL, and MySQL. I focus on

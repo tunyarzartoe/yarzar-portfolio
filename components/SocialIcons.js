@@ -13,7 +13,22 @@ import {
 const SocialIcons = () => {
   return (
     <div className="flex">
+
       <div className="flex  gap-2  lg:gap-6 pr-2 lg:pr-4">
+        <Link
+          href={"https://github.com/tunyarzartoe"}
+          target="_bank"
+          className="bg-[#5272f2] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
+        >
+          <RiGithubFill />
+        </Link>
+         <Link
+          href={"https://www.linkedin.com/in/tunyarzartoe/"}
+          target="_bank"
+          className="bg-[#eaeaea] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
+        >
+          <RiLinkedinBoxFill />
+        </Link>
         <Link
           href="https://www.youtube.com/@tunyarzartoe"
           target="_bank"
@@ -35,20 +50,8 @@ const SocialIcons = () => {
         >
           <RiTwitterXFill />
         </Link>
-        <Link
-          href={"https://www.linkedin.com/in/tunyarzartoe/"}
-          target="_bank"
-          className="bg-[#eaeaea] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiLinkedinBoxFill />
-        </Link>
-        <Link
-          href={"https://github.com/tunyarzartoe"}
-          target="_bank"
-          className="bg-[#5272f2] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiGithubFill />
-        </Link>
+       
+
       </div>
       {/* <div className="">
       <Button
@@ -64,7 +67,7 @@ const SocialIcons = () => {
         </span>
       </Button>
       </div> */}
-      
+
     </div>
   );
 };
