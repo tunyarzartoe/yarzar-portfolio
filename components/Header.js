@@ -29,7 +29,7 @@ const Header = () => {
       </div>
       <div className=" flex items-center justify-center">
         <a
-          href="/resume.pdf"
+          href="/TUNYARZARTOE-(履歴書).pdf"
           download
           className="inline-flex items-center px-3 py-2 sm:px-5 rounded-full text-white bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 transition-transform transform hover:-translate-y-0.5 shadow-md text-sm sm:text-base"
           aria-label="Download resume"
