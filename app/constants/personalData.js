@@ -180,58 +180,58 @@ export const servicesData = [
 ];
 
 export const workData = [
-  {
-    id: 6,
-    description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
-    title: "Weather App",
-    name:"A Dynamic Weather App",
-    images: [
-      { url: P1 },
-    ],
-    logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
-    languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
-    demoLink: "https://react-weather-app-eta-bay.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 5,
-    description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
-    title: "Social App",
-    name:"A React Social App",
-    images: [
-      { url: P5 },
-    ],
-    logo :"https://cdn-icons-png.flaticon.com/128/719/719680.png",
-    languages: ["ReactJS", "Bootstrap","React-dom","React-redux","Date-fns","Axios","Jquery","Datatable"],
-    demoLink: "https://react-social-app-gules.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 4,
-    description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
-    title: "Counter App",
-    name:"React Redux Counter App",
-    images: [
-      { url: P4 },
-    ],
-    logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
-    languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
-    demoLink: "https://redux-counter-app-orcin.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 3,
-    description: "A simple and user-friendly calculator app for basic arithmetic operations like IOS Calculator Design.",
-    title: "Calculator App",
-    name:"A Simple Calculator App",
-    images: [
-      { url: P2 },
-    ],
-    logo :"https://cdn-icons-png.flaticon.com/128/891/891175.png",
-    languages: ["ReactJS", "Bootstrap"],
-    demoLink: "https://react-calculator-app-sandy.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
+  // {
+  //   id: 6,
+  //   description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
+  //   title: "Weather App",
+  //   name:"A Dynamic Weather App",
+  //   images: [
+  //     { url: P1 },
+  //   ],
+  //   logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
+  //   languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
+  //   demoLink: "https://react-weather-app-eta-bay.vercel.app/",
+  //   lang: { name: "ReactJs", icon: "FaReact" }
+  // },
+  // {
+  //   id: 5,
+  //   description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
+  //   title: "Social App",
+  //   name:"A React Social App",
+  //   images: [
+  //     { url: P5 },
+  //   ],
+  //   logo :"https://cdn-icons-png.flaticon.com/128/719/719680.png",
+  //   languages: ["ReactJS", "Bootstrap","React-dom","React-redux","Date-fns","Axios","Jquery","Datatable"],
+  //   demoLink: "https://react-social-app-gules.vercel.app/",
+  //   lang: { name: "ReactJs", icon: "FaReact" }
+  // },
+  // {
+  //   id: 4,
+  //   description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
+  //   title: "Counter App",
+  //   name:"React Redux Counter App",
+  //   images: [
+  //     { url: P4 },
+  //   ],
+  //   logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
+  //   languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
+  //   demoLink: "https://redux-counter-app-orcin.vercel.app/",
+  //   lang: { name: "ReactJs", icon: "FaReact" }
+  // },
+  // {
+  //   id: 3,
+  //   description: "A simple and user-friendly calculator app for basic arithmetic operations like IOS Calculator Design.",
+  //   title: "Calculator App",
+  //   name:"A Simple Calculator App",
+  //   images: [
+  //     { url: P2 },
+  //   ],
+  //   logo :"https://cdn-icons-png.flaticon.com/128/891/891175.png",
+  //   languages: ["ReactJS", "Bootstrap"],
+  //   demoLink: "https://react-calculator-app-sandy.vercel.app/",
+  //   lang: { name: "ReactJs", icon: "FaReact" }
+  // },
   // {
   //   id: 4,
   //   description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
@@ -245,19 +245,19 @@ export const workData = [
   //   demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
   //   lang: { name: "JavaScript", icon: "FaJs" }
   // },
-  {
-    id: 2,
-    description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
-    title: "Burmese Recipe App",
-    name: "Burmese Recipe App - Recipes & Instructions",
-    images: [
-      { url: PR },
-    ],
-    logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
-    languages: ["ReactJS", "MobX", "React Router", "CSS"],
-    demoLink: "https://burmese-recipe-app-iota.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
+  // {
+  //   id: 2,
+  //   description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
+  //   title: "Burmese Recipe App",
+  //   name: "Burmese Recipe App - Recipes & Instructions",
+  //   images: [
+  //     { url: PR },
+  //   ],
+  //   logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
+  //   languages: ["ReactJS", "MobX", "React Router", "CSS"],
+  //   demoLink: "https://burmese-recipe-app-iota.vercel.app/",
+  //   lang: { name: "ReactJs", icon: "FaReact" }
+  // },
   {
     id: 1,
     description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",

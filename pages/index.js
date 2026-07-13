@@ -80,18 +80,18 @@ const Home = () => {
 
       {/* Projects Section */}
       <section className="padding-container max-container mb-16 lg:mb-4">
-        <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
+        {/* <h2 className="text-3xl font-bold mb-4 lg:p-5 pb-0 mobile-head">Projects</h2>
         <div className="project-section px-0">
           <h2 className="text-3xl font-bold mb-1 p-2 lg:p-5 pb-0 project-head">Projects</h2>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:p-5">
-            { /** Show projects in ascending order by `id` (1,2,3...) */
+            { 
               [...workData]
                 .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
                 .map((project, index) => (
                   <ProjectCard key={project.id ?? index} project={project} />
                 ))}
           </div>
-        </div>
+        </div> */}
         <div className="personal">
           <Personal />
         </div>
