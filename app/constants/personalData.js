@@ -245,19 +245,32 @@ export const workData = [
   //   demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
   //   lang: { name: "JavaScript", icon: "FaJs" }
   // },
-  // {
-  //   id: 2,
-  //   description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
-  //   title: "Burmese Recipe App",
-  //   name: "Burmese Recipe App - Recipes & Instructions",
-  //   images: [
-  //     { url: PR },
-  //   ],
-  //   logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
-  //   languages: ["ReactJS", "MobX", "React Router", "CSS"],
-  //   demoLink: "https://burmese-recipe-app-iota.vercel.app/",
-  //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
+  {
+    id: 3,
+    description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
+    title: "AI Carbon Calculator",
+    name: "AI Carbon Calculator - Carbon Footprint Estimator",
+    images: [
+      { url: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=500&h=300&fit=crop" },
+    ],
+    logo: "https://cdn-icons-png.flaticon.com/128/3844/3844724.png",
+    languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
+    demoLink: "https://ai-carbon-calculator.vercel.app/",
+    lang: { name: "JavaScript", icon: "FaReact" }
+  },
+  {
+    id: 2,
+    description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
+    title: "Burmese Recipe App",
+    name: "Burmese Recipe App - Recipes & Instructions",
+    images: [
+      { url: PR },
+    ],
+    logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
+    languages: ["ReactJS", "MobX", "React Router", "CSS"],
+    demoLink: "https://burmese-recipe-app-iota.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
   {
     id: 1,
     description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
