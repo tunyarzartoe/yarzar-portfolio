@@ -17,6 +17,7 @@ import About from "./about";
 import { FaArrowUp } from "react-icons/fa";
 import BackToTopButton from "@/components/main/BackToTopButton";
 import Contact from "./contact";
+import GitHubStats from "@/components/GitHubStats";
 
 const Home = () => {
   const metadata = useMetadata();
@@ -98,6 +99,7 @@ const Home = () => {
       </section>
 
       {/* Contact Page Section */}
+      <GitHubStats />
       <Contact />
 
       {/* Back to Top Button */}
