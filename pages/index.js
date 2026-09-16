@@ -149,7 +149,8 @@ const Home = () => {
                 <div className="h-10 sm:h-12 flex items-center text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300">
                   <span className="mr-2 font-mono text-slate-400">&gt;</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-amber-500">
-                    <Typewriter
+                    Software Engineer
+                    {/* <Typewriter
                       words={[
                         "Full-Stack Software Engineer",
                         "React & Next.js 14 Specialist",
@@ -163,7 +164,7 @@ const Home = () => {
                       typeSpeed={60}
                       deleteSpeed={35}
                       delaySpeed={1800}
-                    />
+                    /> */}
                   </span>
                 </div>
               </div>
