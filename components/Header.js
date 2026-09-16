@@ -64,7 +64,7 @@ const Header = () => {
             aria-label="Download resume"
             title="Download CV / 履歴書"
           >
-            <span className="tracking-wide">CV</span>
+            <span className="tracking-wide text-xs sm:text-sm">履歴書 (CV)</span>
             <svg
               className="w-3.5 h-3.5 transform group-hover:translate-y-0.5 transition-transform"
               viewBox="0 0 24 24"

@@ -30,10 +30,11 @@ const CredentialsPage = () => {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const tabs = [
-    { id: "all", label: "All Overview", count: certificationsData.length + experienceData.length + educationData.length },
-    { id: "certs", label: "Certifications", count: certificationsData.length, icon: <HiCheckBadge className="text-lg" /> },
-    { id: "experience", label: "Experience", count: experienceData.length, icon: <HiBriefcase className="text-lg" /> },
-    { id: "education", label: "Education", count: educationData.length, icon: <HiAcademicCap className="text-lg" /> },
+    { id: "all", label: "All Overview", shortLabel: "All", count: certificationsData.length + experienceData.length + educationData.length },
+    { id: "japan", label: "日本就活 (Self-PR)", shortLabel: "Self-PR", count: "JLPT N2", icon: <span className="text-sm">🇯🇵</span> },
+    { id: "certs", label: "Certifications", shortLabel: "Certs", count: certificationsData.length, icon: <HiCheckBadge className="text-lg" /> },
+    { id: "experience", label: "Experience", shortLabel: "Experience", count: experienceData.length, icon: <HiBriefcase className="text-lg" /> },
+    { id: "education", label: "Education", shortLabel: "Education", count: educationData.length, icon: <HiAcademicCap className="text-lg" /> },
   ];
 
   return (
@@ -90,44 +91,52 @@ const CredentialsPage = () => {
         </motion.div>
 
         {/* Tab Filters */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/70 dark:bg-slate-800/80 backdrop-blur-md border border-slate-300/60 dark:border-slate-700/60 shadow-inner">
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`relative flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                    isActive
-                      ? "text-white shadow-md shadow-red-500/25"
-                      : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-                  }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTabIndicator"
-                      className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-600 to-rose-600"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  <span className="relative z-10 flex items-center gap-1.5">
-                    {tab.icon}
-                    <span>{tab.label}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                        isActive
-                          ? "bg-white/20 text-white"
-                          : "bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
-                      }`}
-                    >
-                      {tab.count}
+        <div className="mb-3 sm:mb-10 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex sm:justify-center">
+            <div
+              className="flex sm:inline-flex gap-1.5 p-1.5 rounded-2xl bg-slate-200/70 dark:bg-slate-800/80 backdrop-blur-md border border-slate-300/60 dark:border-slate-700/60 shadow-inner overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full sm:w-auto"
+            >
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`relative flex-shrink-0 snap-start flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 ${
+                      isActive
+                        ? "text-white shadow-md shadow-red-500/25"
+                        : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeTabIndicator"
+                        className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-600 to-rose-600"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                    <span className="relative z-10 flex items-center gap-1.5">
+                      {tab.icon}
+                      <span className="sm:hidden">{tab.shortLabel}</span>
+                      <span className="hidden sm:inline">{tab.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                          isActive
+                            ? "bg-white/20 text-white"
+                            : "bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
+                        }`}
+                      >
+                        {tab.count}
+                      </span>
                     </span>
-                  </span>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
+          <p className="text-center text-[10px] text-slate-400 dark:text-slate-500 mt-2 sm:hidden">
+            ← swipe for more →
+          </p>
         </div>
 
         {/* CONTENT SECTIONS */}
@@ -446,6 +455,106 @@ const CredentialsPage = () => {
               </div>
             </motion.div>
           )}
+
+          {/* 4. JAPAN JOB HUNTING & SELF-PR */}
+          {(activeTab === "all" || activeTab === "japan") && (
+            <motion.div
+              id="japan-career"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-xl">
+                    🇯🇵
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                      日本就活プロフィール & 自己PR (Japan Job Hunting Profile)
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                      採用担当者様向け：日本語能力、自己PR、志望動機、勤務希望条件
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="/TUNYARZARTOE-(履歴書).pdf"
+                  download
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-md transition-all self-start sm:self-auto"
+                >
+                  <span>履歴書PDF (CV) をダウンロード</span>
+                </a>
+              </div>
+
+              {/* Quick Summary Card */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+                  <div className="text-xs font-semibold text-secondary uppercase mb-1">語学力 (Languages)</div>
+                  <div className="text-lg font-bold text-slate-900 dark:text-white">JLPT N2 合格</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                    • 日本語：ビジネス会話・日常会話・技術仕様書の理解可能<br />
+                    • 英語：技術ドキュメント読解・簡単な読み書き<br />
+                    • ミャンマー語：母語
+                  </div>
+                </div>
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+                  <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase mb-1">在留資格 & 所在地</div>
+                  <div className="text-lg font-bold text-slate-900 dark:text-white">東京都江東区在住</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                    • 在留資格：留学（東京ITプログラミング＆会計専門学校）<br />
+                    • 通勤：東京都内・23区内全域通勤可能（リモート可）<br />
+                    • 就労形態：正社員就職（新卒・中途）／インターン
+                  </div>
+                </div>
+                <div className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+                  <div className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-1">希望職種 (Target Roles)</div>
+                  <div className="text-lg font-bold text-slate-900 dark:text-white">Web / Software Engineer</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                    • フロントエンド：React.js, Next.js, TypeScript<br />
+                    • バックエンド：Java (Spring Boot), Node.js, Python<br />
+                    • データベース：MySQL, PostgreSQL, MongoDB
+                  </div>
+                </div>
+              </div>
+
+              {/* Detailed Self-PR & Motivation */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 自己PR */}
+                <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 dark:bg-rose-950/50 text-red-600 dark:text-rose-400 border border-red-200 dark:border-rose-900/50">
+                    自己PR（自分の強み）
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                    実践的なWeb開発スキルと、責任感を持って学び続ける自走力
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    私は現在、東京のIT専門学校でプログラミングを学びながら、React.js・JavaScriptを中心としたWeb開発スキルを高めています。これまでに天気予報アプリ、ショッピングカートアプリ、カウンターアプリ、AI炭素排出量計算アプリなどを開発し、API連携、状態管理、レスポンシブ対応を経験しました。
+                  </p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Git・GitHubによるバージョン管理や、Figmaを使ったデザイン確認など、チーム開発の基本も理解しています。日本語はJLPT N2レベルで、日常会話や技術内容の理解が可能です。新しい技術を積極的に学び続ける姿勢と、責任感を持って最後まで取り組むところが私の強みです。
+                  </p>
+                </div>
+
+                {/* 志望動機 */}
+                <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
+                    志望動機（日本で働く熱意）
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                    日本企業での実務経験を通じ、社会に貢献できるエンジニアへ
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    私は日本での実務経験を通して、Webエンジニアとしてのスキルと日本語能力をさらに伸ばしたいと考えております。React.jsやNext.jsを中心に複数のアプリを開発し、GitHubとポートフォリオで成果物を公開しています。
+                  </p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    開発現場でチームの一員として働き、実際の開発フローや日本語での業務連携（報連相・コードレビュー・要件定義）を経験することで、将来は日本企業で長く活躍し、周囲から信頼されるエンジニアを目指しています。学ぶ姿勢と熱意をもって、貴社の業務に貢献いたします。
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Bottom CTA Banner */}
@@ -572,4 +681,3 @@ const CredentialsPage = () => {
 };
 
 export default CredentialsPage;
-

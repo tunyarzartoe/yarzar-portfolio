@@ -148,20 +148,45 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* Phone Card */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+                <div className="p-3 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xl flex-shrink-0">
+                  <HiPhone />
+                </div>
+                <div>
+                  <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">Phone (電話番号)</div>
+                  <a
+                    href="tel:07089694368"
+                    className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 hover:text-secondary transition-colors"
+                  >
+                    070-8969-4368
+                  </a>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    日本国内通話・SMS対応
+                  </div>
+                </div>
+              </div>
+
               {/* Language & Availability */}
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 space-y-2">
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 dark:text-slate-400 font-medium">Japanese:</span>
-                  <span className="font-bold text-secondary">JLPT N2 (Business & Tech)</span>
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">日本語能力:</span>
+                  <span className="font-bold text-secondary">JLPT N2 (ビジネス会話可能)</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 dark:text-slate-400 font-medium">English:</span>
-                  <span className="font-bold text-slate-800 dark:text-slate-200">Professional Working</span>
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">在留資格:</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">留学（東京IT専門学校）</span>
                 </div>
                 <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="text-slate-500 dark:text-slate-400 font-medium">Work Authorization:</span>
-                  <span className="font-bold text-slate-800 dark:text-slate-200">Student Visa (Tokyo)</span>
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">希望雇用形態:</span>
+                  <span className="font-bold text-emerald-600 dark:text-emerald-400">正社員（新卒・中途）・インターン</span>
                 </div>
+              </div>
+
+              {/* Recruiter Note */}
+              <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200/60 dark:border-rose-900/40 text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+                <span className="font-bold text-secondary block mb-1">採用ご担当者様へ</span>
+                カジュアル面談、会社説明、書類選考に関するご連絡を歓迎しております。オンライン面談（Zoom / Google Meet）も即座に対応可能です。
               </div>
 
               {/* Socials */}
