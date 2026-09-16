@@ -1,68 +1,103 @@
 import { personalData } from "@/app/constants/personalData";
 import Image from "next/image";
 import React, { useState } from "react";
-import fadeIn from "./Variants";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { HiArrowRight } from "react-icons/hi2";
 
 const Personal = () => {
   const [index, setIndex] = useState(0);
 
   return (
     <motion.div
-      // variants={fadeIn("down", 0.4)}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      className="flex flex-col gap-6 regular-14 my-5"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="my-10"
     >
-      <div className="leading-[2.5] text-lg">
-        <div className="">
-          <div className="flex items-start gap-x-6 sm:gap-x-10 xl:gap-x-40 mx-auto xl:mx-0 mt-8 sm:mt-0 personal-title">
-            {personalData.map((item, itemIndex) => (
-              <h3
+      <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 backdrop-blur-md shadow-sm">
+        {/* Tab Headers */}
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+          {personalData.map((item, itemIndex) => {
+            const isActive = index === itemIndex;
+            return (
+              <button
                 key={itemIndex}
-                className={`${
-                  index === itemIndex &&
-                  "after:w-[100%] after:!bg-secondary after:transition-all after:duration-500"
-                } medium-16 font-bold lg:text-3xl py-0 capitalize relative after:absolute after:h-[2px] after:w-9 after:bg-light after:left-0 after:-bottom-1 cursor-pointer`}
                 onClick={() => setIndex(itemIndex)}
+                className={`relative pb-2 text-sm sm:text-base font-bold capitalize transition-colors ${
+                  isActive
+                    ? "text-secondary"
+                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                }`}
               >
-                {item.title}
-              </h3>
-            ))}
-          </div>
-          <div className="py-8 regular-14 xl:py-8 flex flex-col gap-2 items-center lg:items-start  text-gray-20">
-            {personalData[index].info.map((item, itemIndex) => (
-              <div
-                key={itemIndex}
-                className="flex xl:mb-4 flex-1 flex-col md:flex-row gap-x-3 items-center lg:items-start"
-              >
-                <div className="flex flex-row items-center lg:items-start">
-                  {item.logo && (
-                    <div className="flex flex-col mr-5 ">
-                      <Image
-                        className="rounded-full"
-                        src={item.logo}
-                        alt="logo"
-                        width={50}
-                        height={50}
-                      />
-                    </div>
+                <span>{item.title}</span>
+                {isActive && (
+                  <motion.div
+                    layoutId="personalTabActive"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-secondary rounded-full"
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Tab Content */}
+        <div className="space-y-4">
+          {personalData[index].info.map((item, itemIndex) => (
+            <div
+              key={itemIndex}
+              className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 gap-3"
+            >
+              <div className="flex items-center gap-3.5">
+                {item.logo && (
+                  <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0 p-1">
+                    <Image
+                      className="rounded-lg object-contain"
+                      src={item.logo}
+                      alt="logo"
+                      fill
+                    />
+                  </div>
+                )}
+                <div>
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                    {item.title}
+                  </h4>
+                  {item.year && (
+                    <span className="text-xs text-secondary font-medium">
+                      {item.year}
+                    </span>
                   )}
-                  <h3 className="regular-16">{item.title}</h3>
                 </div>
-                <div className="hidden lg:flex">-</div>
-                <div className="regular-14 margin-left" >{item.year}</div>
-                <div className="flex gap-x-2">
-                  {item.icons?.map((iconObject, itemIndex) => (
-                    <div key={itemIndex} style={{ color: iconObject.color }}>
+              </div>
+
+              {/* Skills Icons if present */}
+              {item.icons && item.icons.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-1 sm:pt-0">
+                  {item.icons.map((iconObject, iIdx) => (
+                    <div
+                      key={iIdx}
+                      className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"
+                    >
                       {iconObject.icon}
                     </div>
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Link to full Credentials Page */}
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+          <Link
+            href="/credentials"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-secondary hover:text-red-700 dark:hover:text-rose-300 transition-colors"
+          >
+            <span>View Full Timeline & Certificates</span>
+            <HiArrowRight />
+          </Link>
         </div>
       </div>
     </motion.div>

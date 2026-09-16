@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { HiArrowRight } from "react-icons/hi2";
+import { HiArrowRight, HiEnvelope, HiPhone, HiMapPin, HiSparkles, HiCheck } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CircleLoader } from "react-spinners";
+import SocialIcons from "@/components/SocialIcons";
+import BackToTopButton from "@/components/main/BackToTopButton";
 
 const Contact = () => {
   const metadata = useMetadata();
@@ -15,133 +17,267 @@ const Contact = () => {
     phNo: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("htunyarzar2001@gmail.com");
+    setCopied(true);
+    toast.info("Email copied to clipboard!");
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); 
+    setLoading(true);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const result = await res.json();
-    setLoading(false); // Set loading to false after the request is completed
+      const result = await res.json();
+      setLoading(false);
 
-    if (result.success) {
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", phNo: "", message: "" });
-    } else {
-      toast.error("Failed to send message.");
+      if (result.success) {
+        toast.success("Message sent successfully! I will reply soon.");
+        setFormData({ name: "", email: "", phNo: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please contact me directly via email.");
+      }
+    } catch (err) {
+      setLoading(false);
+      toast.error("Network error. Please try reaching out via email directly.");
     }
   };
 
-  const isFormValid = formData.name && formData.email && formData.phNo; // Check if required fields are filled
+  const isFormValid = formData.name && formData.email && formData.message;
 
   return (
-    <section
-      className="max-container padding-container py-8 xl:py-12 mb-8"
-      style={{ height: "76vh" }}
-    >
+    <>
       <Head>
-        <title>{metadata.title}</title>
+        <title>Contact | Tun Yar Zar Toe</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>
-      <div className="flex flex-col gap-6">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="pb-14 "
-        >
-          <div className="text-center justify-center flex">
-            <h3 className="bold-20 font-extrabold relative leading-normal uppercase text-center">
-              Contact U<span className="text-secondary">s</span>
-              <span className="tex-[30px] lg:text-[34px] font-extrabold text-white/30 absolute top-[50%] left-1/2 -translate-y-1/2 -translate-x-1/2 uppercase">
-                Get in touch
-              </span>
-            </h3>
-          </div>
-        </motion.div>
-        <motion.form
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="flex flex-1 flex-col gap-4 w-full mx-auto max-w-[33rem]"
-          onSubmit={handleSubmit}
-        >
-          <div className="flex gap-2 w-full">
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="regular-14 placeholder:text-gray-50 rounded-full px-4 py-1 bg-white/20 outline-none w-1/2"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Enter Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="regular-14 placeholder:text-gray-50 rounded-full px-4 py-1 bg-white/20 outline-none w-1/2"
-            />
-          </div>
-          <input
-            type="text"
-            name="phNo"
-            placeholder="Enter Phone Number"
-            value={formData.phNo}
-            onChange={handleChange}
-            className="regular-14 placeholder:text-gray-50 rounded-full px-4 py-1 bg-white/20 outline-none"
-          />
-          <textarea
-            name="message"
-            cols="10"
-            rows="8"
-            placeholder="Enter Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            className="regular-14 placeholder:text-gray-50 rounded-xl px-4 py-1 bg-white/20 outline-none resize-none"
-          />
-          <button
-            className={`p-2 rounded-full flexCenter gap-2 w-[11rem] medium-14 relative ${
-              isFormValid
-                ? "bg-secondary hover:animate-pulse"
-                : "bg-secondary cursor-not-allowed"
-            }`}
-            type="submit"
-            disabled={!isFormValid}
-          >
-            {loading ? (
-              <>
-                <span className="">Send Message</span>
 
-                <CircleLoader color="#fff" className="ml-2" size={20} />
-              </>
-            ) : (
-              <>
-                Send Message
-                <span>
-                  <HiArrowRight />
-                </span>
-              </>
-            )}
-          </button>
-        </motion.form>
-        <ToastContainer />
-      </div>
-    </section>
+      <section className="min-h-screen py-8 sm:py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-12"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 dark:bg-rose-500/15 border border-red-500/20 text-red-600 dark:text-rose-400 text-xs sm:text-sm font-semibold mb-4">
+            <HiSparkles className="animate-spin-slow" />
+            <span>Get in Touch</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
+            Let&apos;s Build Something <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-amber-500">
+              Exceptional Together
+            </span>
+          </h1>
+
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+            Have a project, a question, or a career opportunity? Feel free to reach out.
+            I am currently based in Tokyo and available for discussions.
+          </p>
+        </motion.div>
+
+        {/* 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Direct Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 space-y-6"
+          >
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md space-y-6">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                Contact Information
+              </h2>
+
+              {/* Email Card */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+                <div className="p-3 rounded-xl bg-red-500/10 dark:bg-rose-500/20 text-secondary text-xl flex-shrink-0">
+                  <HiEnvelope />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">Email</div>
+                  <a
+                    href="mailto:htunyarzar2001@gmail.com"
+                    className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200 truncate block hover:text-secondary transition-colors"
+                  >
+                    htunyarzar2001@gmail.com
+                  </a>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-1 text-xs text-secondary font-semibold mt-1 hover:underline"
+                  >
+                    {copied ? <HiCheck /> : null}
+                    <span>{copied ? "Copied to Clipboard!" : "Copy Email"}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Location Card */}
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+                <div className="p-3 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 text-xl flex-shrink-0">
+                  <HiMapPin />
+                </div>
+                <div>
+                  <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">Location</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200">
+                    Tokyo, Japan
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    Koto-ku, Tokyo (東京都江東区)
+                  </div>
+                </div>
+              </div>
+
+              {/* Language & Availability */}
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 space-y-2">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">Japanese:</span>
+                  <span className="font-bold text-secondary">JLPT N2 (Business & Tech)</span>
+                </div>
+                <div className="flex items-center justify-between text-xs sm:text-sm">
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">English:</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">Professional Working</span>
+                </div>
+                <div className="flex items-center justify-between text-xs sm:text-sm">
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">Work Authorization:</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">Student Visa (Tokyo)</span>
+                </div>
+              </div>
+
+              {/* Socials */}
+              <div className="pt-2">
+                <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase mb-2">
+                  Social Profiles
+                </div>
+                <SocialIcons />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Interactive Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-7"
+          >
+            <div className="p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                Send a Direct Message
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">
+                      Your Name <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="e.g. Satoshi Tanaka"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">
+                      Your Email <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="name@company.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">
+                    Phone Number (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    name="phNo"
+                    placeholder="+81 or your contact number"
+                    value={formData.phNo}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1.5">
+                    Message <span className="text-secondary">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={6}
+                    placeholder="Tell me about your project, idea, or open role..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all text-sm resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!isFormValid || loading}
+                  className={`w-full py-3.5 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 shadow-lg transition-all duration-300 ${
+                    isFormValid && !loading
+                      ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5 cursor-pointer"
+                      : "bg-slate-400 dark:bg-slate-700 cursor-not-allowed opacity-70"
+                  }`}
+                >
+                  {loading ? (
+                    <>
+                      <span>Sending Message...</span>
+                      <CircleLoader color="#ffffff" size={18} />
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <HiArrowRight className="text-base" />
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+
+        <ToastContainer position="bottom-right" theme="colored" autoClose={4000} />
+      </section>
+
+      <BackToTopButton />
+    </>
   );
 };
 

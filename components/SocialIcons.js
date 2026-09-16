@@ -11,65 +11,54 @@ import {
   RiYoutubeFill,
 } from "react-icons/ri";
 const SocialIcons = () => {
+  const socials = [
+    {
+      name: "GitHub",
+      href: "https://github.com/tunyarzartoe",
+      icon: <RiGithubFill />,
+      color: "hover:text-[#24292e] dark:hover:text-white hover:border-slate-400",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/tunyarzartoe/",
+      icon: <RiLinkedinBoxFill />,
+      color: "hover:text-[#0077b5] hover:border-[#0077b5]/50",
+    },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/@tunyarzartoe",
+      icon: <RiYoutubeFill />,
+      color: "hover:text-[#ff0000] hover:border-[#ff0000]/50",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/tunyarzartoe",
+      icon: <RiInstagramFill />,
+      color: "hover:text-[#e1306c] hover:border-[#e1306c]/50",
+    },
+    {
+      name: "Twitter",
+      href: "https://x.com/tunyarzartoe",
+      icon: <RiTwitterXFill />,
+      color: "hover:text-black dark:hover:text-white hover:border-slate-400",
+    },
+  ];
+
   return (
-    <div className="flex">
-
-      <div className="flex  gap-2  lg:gap-6 pr-2 lg:pr-4">
+    <div className="flex items-center gap-3 pt-2">
+      {socials.map((social) => (
         <Link
-          href={"https://github.com/tunyarzartoe"}
-          target="_bank"
-          className="bg-[#5272f2] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
+          key={social.name}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.name}
+          className={`flex items-center justify-center w-10 h-10 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 text-lg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ${social.color}`}
         >
-          <RiGithubFill />
+          {social.icon}
         </Link>
-         <Link
-          href={"https://www.linkedin.com/in/tunyarzartoe/"}
-          target="_bank"
-          className="bg-[#eaeaea] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiLinkedinBoxFill />
-        </Link>
-        <Link
-          href="https://www.youtube.com/@tunyarzartoe"
-          target="_bank"
-          className="bg-[#08d9d5] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiYoutubeFill />
-        </Link>
-        <Link
-          href={"https://www.instagram.com/tunyarzartoe"}
-          target="_bank"
-          className="bg-[#f08a5d] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiInstagramFill />
-        </Link>
-        <Link
-          href={"https://x.com/tunyarzartoe"}
-          target="_bank"
-          className="bg-[#ff2863] p-3 text-primary text-lg rounded-full rounded-bl-none hover:bg-white hover:text-secondary hover:-translate-y-1  transition-all duration-500"
-        >
-          <RiTwitterXFill />
-        </Link>
-       
-
-      </div>
-      {/* <div className="">
-      <Button
-        className="view-demo rounded-full flexCenter mt-1"
-        href=""
-        variant="solid"
-        target="_bank"
-        style={{background:"#dc143c"}}
-      >
-        <span className="mr-8 regular-16 text-tertiary">Resume</span>
-        <span className="absolute  right-2 font-extrabold text-tertiary bg-white/20 border-white/30 border-[3px] h-8 w-8 rounded-full opacity-100 flexCenter ">
-          <FaArrowDown />
-        </span>
-      </Button>
-      </div> */}
-
+      ))}
     </div>
   );
 };
-
 export default SocialIcons;

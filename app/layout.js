@@ -1,20 +1,17 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import StarsCanvas from "@/components/main/StarBackground";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({ children }) {
   return (
-    <div className={inter.className}>
+    <div className="font-sans antialiased min-h-screen flex flex-col justify-between">
       <StarsCanvas />
       <Header />
       <Sidebar />
-      <main>{children}</main>
-      <Footer/>
+      <main className="flex-1">{children}</main>
+      <Footer />
     </div>
   );
 }

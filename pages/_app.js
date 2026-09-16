@@ -39,7 +39,7 @@ const MyApp = ({ Component, pageProps }) => {
   }
 
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <I18nextProvider i18n={i18n}>
         <RootLayout>
           <AnimatePresence mode="wait">

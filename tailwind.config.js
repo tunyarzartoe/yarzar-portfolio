@@ -13,26 +13,25 @@ module.exports = {
       fontFamily: {
         theme: ["Inter", "sans-serif"],
       },
-      colors:{
+      colors: {
         primary: '#121212',
-        backgroundDark: '#',
-        backgroundLight:'#1c1f24',
+        backgroundDark: '#0b0f19',
+        backgroundLight: '#f8fafc',
         secondaryStrong: '#dc143c',
-        secondary:'#dc143c',
+        secondary: '#dc143c',
         tertiary: '#202020',
-        white:'#EAEAEA',
-        light:'#ffffff',
-        transitionColor:'#2f528f',
-        slate:
-        {
+        white: '#EAEAEA',
+        light: '#ffffff',
+        transitionColor: '#2f528f',
+        slate: {
           10: '#f1f3f4',
         },
         gray: {
-          10:'#EEEEEE',
-          20:'#A2A2A2',
-          30:'#7B7B7B',
-          50:'#3585859',
-          90:'#141414'
+          10: '#EEEEEE',
+          20: '#A2A2A2',
+          30: '#7B7B7B',
+          50: '#585859',
+          90: '#141414'
         }
       },
       screens:{

@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { workData } from "@/app/constants/personalData";
 import { ProjectCard } from "@/components/ProjectCard";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
 import BackToTopButton from "@/components/main/BackToTopButton";
+import { HiSparkles, HiCodeBracketSquare } from "react-icons/hi2";
+import Link from "next/link";
 
 const Work = () => {
   const metadata = useMetadata();
+  const [filter, setFilter] = useState("all");
 
-  // Featured projects (AI Carbon, Burmese Recipe, J4U)
-  const featuredProjects = workData.filter(p => [3, 2, 1].includes(p.id));
-  const otherProjects = workData.filter(p => ![1, 2, 3].includes(p.id));
+  const categories = [
+    { id: "all", label: "All Projects" },
+    { id: "react", label: "React / Next.js" },
+    { id: "ai", label: "AI & Innovation" },
+  ];
+
+  const filteredProjects = workData.filter((project) => {
+    if (filter === "all") return true;
+    if (filter === "ai") return project.title.toLowerCase().includes("ai") || project.name.toLowerCase().includes("carbon");
+    if (filter === "react") return project.languages.some(l => l.toLowerCase().includes("react") || l.toLowerCase().includes("next"));
+    return true;
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -19,18 +31,18 @@ const Work = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
@@ -39,95 +51,103 @@ const Work = () => {
   return (
     <>
       <Head>
-        <title>{metadata.title}</title>
+        <title>Portfolio & Projects | Tun Yar Zar Toe</title>
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>
 
-      <section className="min-h-screen bg-gradient-to-b via-slate-900 to-slate-950 relative overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
-          <div className="absolute top-1/2 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl animate-pulse animation-delay-4000" />
-        </div>
-
-        <div className="max-container padding-container relative z-10">
-          {/* Header Section */}
+      <section className="min-h-screen py-8 sm:py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+        {/* Header Section */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="flex flex-col items-center text-center mb-12"
+        >
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-            className="flex flex-col items-center text-center mb-16 mt-8"
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 dark:bg-rose-500/15 border border-red-500/20 text-red-600 dark:text-rose-400 text-xs sm:text-sm font-semibold mb-4"
           >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/50 mb-6"
-            >
-              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-              <span className="text-sm font-semibold text-blue-300">My Portfolio</span>
-            </motion.div>
-
-            <motion.h2
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent"
-            >
-              Featured<span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text"> Works</span>
-            </motion.h2>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed"
-            >
-              Each project represents my commitment to creating seamless digital experiences 
-              that blend innovation, design excellence, and robust functionality.
-            </motion.p>
+            <HiSparkles className="animate-spin-slow" />
+            <span>Featured Works & Applications</span>
           </motion.div>
 
-          {/* Featured Projects Section */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="mb-20"
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {featuredProjects.map((data, index) => (
-                <motion.div key={index} variants={itemVariants} className="h-full">
-                  <ProjectCard project={data} isFeatured={true} />
-                </motion.div>
-              ))}
-            </div>
+            Showcasing Real-World <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-amber-500">
+              Web & Software Projects
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
+          >
+            Each project represents my commitment to creating seamless digital experiences
+            that blend innovation, responsive design, and scalable architecture.
+          </motion.p>
+
+          {/* Category Filter Pills */}
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 mt-8">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setFilter(cat.id)}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  filter === cat.id
+                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-md shadow-rose-500/25"
+                    : "bg-white/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 border border-slate-200/80 dark:border-slate-700/80 hover:text-slate-900 dark:hover:text-white"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </motion.div>
+        </motion.div>
 
-          {/* Other Projects Section */}
-          {otherProjects.length > 0 && (
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={containerVariants}
-              className="mb-12"
-            >
-              <motion.div variants={itemVariants} className="mb-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                  Additional<span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text"> Projects</span>
-                </h3>
-                <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                {otherProjects
-                  .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
-                  .map((data, index) => (
-                  <motion.div key={index} variants={itemVariants} className="h-full">
-                    <ProjectCard project={data} isFeatured={false} />
-                  </motion.div>
-                ))}
-              </div>
+        {/* Projects Grid */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div key={project.id ?? index} variants={itemVariants} className="h-full">
+              <ProjectCard project={project} isFeatured={[3, 2, 1].includes(project.id)} />
             </motion.div>
-          )}
-        </div>
+          ))}
+        </motion.div>
+
+        {/* Bottom Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 p-8 sm:p-10 rounded-3xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left"
+        >
+          <div>
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-2">
+              Looking for more repositories & open source code?
+            </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl">
+              Check out my full GitHub profile featuring additional codebases, full-stack experiments, and learning milestones.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link
+              href="https://github.com/tunyarzartoe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-bold text-xs sm:text-sm bg-slate-900 dark:bg-white dark:text-slate-900 hover:opacity-90 transition-opacity shadow-md"
+            >
+              <HiCodeBracketSquare className="text-base" />
+              <span>Visit GitHub</span>
+            </Link>
+          </div>
+        </motion.div>
       </section>
 
       <BackToTopButton />

@@ -1,18 +1,37 @@
 // components/Footer.js
 import React from 'react';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
+import { HiMapPin } from 'react-icons/hi2';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-container">         
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} | yarzar.dev. All rights reserved.</p>
+    <footer className="w-full mt-20 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md py-8 transition-colors">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+          <span className="font-bold text-slate-900 dark:text-white">Tun Yar Zar Toe</span>
+          <span>•</span>
+          <span className="inline-flex items-center gap-1">
+            <HiMapPin className="text-secondary text-base" /> Tokyo, Japan
+          </span>
+        </div>
+
+        <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400 text-sm">
+          <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
+          <Link href="/about" className="hover:text-secondary transition-colors">About</Link>
+          <Link href="/credentials" className="hover:text-secondary transition-colors">Credentials</Link>
+          <Link href="/work" className="hover:text-secondary transition-colors">Work</Link>
+          <Link href="/contact" className="hover:text-secondary transition-colors">Contact</Link>
+        </div>
+
+        <div className="text-xs text-slate-500 dark:text-slate-500">
+          &copy; {new Date().getFullYear()} yarzar.dev. All rights reserved.
+        </div>
       </div>
     </footer>
   );
 };
-export default Footer
+export default Footer;
 
 {/* <section className="max-container padding-container flex flex-col flexCenter md:flex-row md:gap-8" style={{ height: "80vh" }}>
       <Head>
