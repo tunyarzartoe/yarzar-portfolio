@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="42" fill="#FFF5E8"/>
+  <circle cx="100" cy="100" r="72" fill="#FDE7C8"/>
+  <path d="M62 82C62 70 72 60 84 60H116C128 60 138 70 138 82V108C138 120 129 129 117 129H83C71 129 62 120 62 108V82Z" fill="#E49A3A"/>
+  <path d="M68 100H132" stroke="#F8F3ED" stroke-width="8" stroke-linecap="round"/>
+  <path d="M93 60V46C93 39 99 33 106 33H110C117 33 123 39 123 46V60" stroke="#B96C1C" stroke-width="7" stroke-linecap="round"/>
+  <path d="M82 108C82 95 92 84 105 84H109C122 84 132 95 132 108V116C132 128 122 138 109 138H92C79 138 69 128 69 116V108H82Z" fill="#F4B14C"/>
+  <path d="M95 80C102 68 111 59 126 54C119 68 114 75 109 86C103 90 98 90 95 80Z" fill="#4DB67A"/>
+  <path d="M88 88C81 78 76 67 72 54C66 61 65 74 67 82C70 90 79 95 88 88Z" fill="#73C98C"/>
+  <path d="M113 145L124 162H102L113 145Z" fill="#D98F2E"/>
+  <path d="M78 145H148" stroke="#D98F2E" stroke-width="8" stroke-linecap="round"/>
+  <text x="100" y="170" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" font-weight="700" fill="#874D12">Recipe</text>
+</svg>

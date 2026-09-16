@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="42" fill="#EAF7FF"/>
+  <circle cx="100" cy="100" r="70" fill="#CFEFFF"/>
+  <circle cx="100" cy="92" r="36" fill="#FFD76A"/>
+  <path d="M70 124C78 112 89 106 100 106C111 106 122 112 130 124" stroke="#6FB6FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M58 137H142" stroke="#57A7FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M97 52L104 72H130L108 86L115 108L97 93L79 108L86 86L64 72H90L97 52Z" fill="#F8C94B"/>
+  <text x="100" y="170" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" font-weight="700" fill="#1F5FBF">Weather</text>
+</svg>

@@ -34,13 +34,26 @@ import P2 from "../../public/works/project-calculator-app.png";
 import P3 from "../../public/works/project-shopping-cart.png";
 import P4 from "../../public/works/project-counter-app.png";
 import P5 from "../../public/works/project-social-app.png";
-
-import PR from "../../public/works/project-burmese-recipe.svg";
-
-
 import POS1 from "../../public/works/project-weather-app.png";
 import POS2 from "../../public/works/pos2.jpeg";
 import POS3 from "../../public/works/pos3.jpeg";
+
+// Use public paths for project media so they load consistently in the UI.
+const PR = "/works/project-burmese-recipe.svg";
+const AI_CARBON = "/works/project-ai-carbon-calculator.png";
+// import profileImage from "@/public/new_profile.jpeg";
+import AI_CARBON_LOGO from "@/public/logos/ai-carbon-logo.svg";
+import RECIPE_LOGO from "@/public/logos/recipe-logo.svg";
+import J4U_LOGO from "@/public/logos/j4u-logo.svg";
+import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
+import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
+
+// const PR = "/works/project-burmese-recipe.svg";
+// const AI_CARBON_LOGO = "/logos/ai-carbon-logo.svg";
+// const RECIPE_LOGO = "/logos/recipe-logo.svg";
+// const J4U_LOGO = "/logos/j4u-logo.svg";
+// const WEATHER_LOGO = "/logos/weather-logo.svg";
+// const SOCIAL_LOGO = "/logos/social-logo.svg";
 
 export const personalData = [
   {
@@ -181,69 +194,26 @@ export const servicesData = [
 
 export const workData = [
   // {
-  //   id: 6,
+  //   id: 8,
   //   description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
   //   title: "Weather App",
-  //   name:"A Dynamic Weather App",
-  //   images: [
-  //     { url: P1 },
-  //   ],
-  //   logo :"https://cdn-icons-png.flaticon.com/128/6451/6451205.png",
-  //   languages: ["ReactJS", "Bootstrap","Axios","React-icons"],
+  //   name: "A Dynamic Weather App",
+  //   images: [{ url: P1 }],
+  //   logo: WEATHER_LOGO,
+  //   languages: ["ReactJS", "Bootstrap", "Axios", "React-icons"],
   //   demoLink: "https://react-weather-app-eta-bay.vercel.app/",
   //   lang: { name: "ReactJs", icon: "FaReact" }
   // },
   // {
-  //   id: 5,
+  //   id: 7,`
   //   description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
   //   title: "Social App",
-  //   name:"A React Social App",
-  //   images: [
-  //     { url: P5 },
-  //   ],
-  //   logo :"https://cdn-icons-png.flaticon.com/128/719/719680.png",
-  //   languages: ["ReactJS", "Bootstrap","React-dom","React-redux","Date-fns","Axios","Jquery","Datatable"],
+  //   name: "A React Social App",
+  //   images: [{ url: P5 }],
+  //   logo: SOCIAL_LOGO,
+  //   languages: ["ReactJS", "Bootstrap", "React-dom", "React-redux", "Date-fns", "Axios", "Jquery", "Datatable"],
   //   demoLink: "https://react-social-app-gules.vercel.app/",
   //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
-  // {
-  //   id: 4,
-  //   description: "A counter app built with Redux for state management, demonstrating increment and decrement functionality.",
-  //   title: "Counter App",
-  //   name:"React Redux Counter App",
-  //   images: [
-  //     { url: P4 },
-  //   ],
-  //   logo :"https://cdn.iconscout.com/icon/free/png-512/free-redux-2336949-1982830.png",
-  //   languages: ["ReactJS", "Bootstrap","React-dom","React-redux"],
-  //   demoLink: "https://redux-counter-app-orcin.vercel.app/",
-  //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
-  // {
-  //   id: 3,
-  //   description: "A simple and user-friendly calculator app for basic arithmetic operations like IOS Calculator Design.",
-  //   title: "Calculator App",
-  //   name:"A Simple Calculator App",
-  //   images: [
-  //     { url: P2 },
-  //   ],
-  //   logo :"https://cdn-icons-png.flaticon.com/128/891/891175.png",
-  //   languages: ["ReactJS", "Bootstrap"],
-  //   demoLink: "https://react-calculator-app-sandy.vercel.app/",
-  //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
-  // {
-  //   id: 4,
-  //   description: "An intuitive shopping cart application to manage products and track purchases and using sweetalert and notiflix.",
-  //   title: "Shopping Cart",
-  //   name:"An Intutitive Shopping Cart",
-  //   images: [
-  //     { url: P3 },
-  //   ],
-  //   logo :"https://cdn-icons-png.flaticon.com/512/1170/1170576.png",
-  //   languages: ["Javascript", "JQuery", "Bootstrap","Sweetalert","Notiflix"],
-  //   demoLink: "https://shopping-cart-nine-lilac-38.vercel.app/index.html",
-  //   lang: { name: "JavaScript", icon: "FaJs" }
   // },
   {
     id: 3,
@@ -251,12 +221,12 @@ export const workData = [
     title: "AI Carbon Calculator",
     name: "AI Carbon Calculator - Carbon Footprint Estimator",
     images: [
-      { url: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=500&h=300&fit=crop" },
+      { url: AI_CARBON_LOGO },
     ],
-    logo: "https://cdn-icons-png.flaticon.com/128/3844/3844724.png",
+    logo: AI_CARBON_LOGO,
     languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
     demoLink: "https://ai-carbon-calculator.vercel.app/",
-    lang: { name: "JavaScript", icon: "FaReact" }
+    lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
     id: 2,
@@ -264,9 +234,9 @@ export const workData = [
     title: "Burmese Recipe App",
     name: "Burmese Recipe App - Recipes & Instructions",
     images: [
-      { url: PR },
+      { url: RECIPE_LOGO },
     ],
-    logo: "https://cdn-icons-png.flaticon.com/128/3075/3075977.png",
+    logo: RECIPE_LOGO,
     languages: ["ReactJS", "MobX", "React Router", "CSS"],
     demoLink: "https://burmese-recipe-app-iota.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
@@ -277,9 +247,9 @@ export const workData = [
     title: "J4U Frontend",
     name: "J4U - Job Portal Platform",
     images: [
-      { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop" },
+      { url: J4U_LOGO },
     ],
-    logo: "https://cdn-icons-png.flaticon.com/128/1995/1995467.png",
+    logo: J4U_LOGO,
     languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
     demoLink: "https://j4u-frontend.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }

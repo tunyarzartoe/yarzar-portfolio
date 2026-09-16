@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="42" fill="#F3F0FF"/>
+  <circle cx="70" cy="84" r="22" fill="#7C5CFF"/>
+  <circle cx="130" cy="84" r="22" fill="#4CC9F0"/>
+  <circle cx="100" cy="110" r="24" fill="#F15BB5"/>
+  <path d="M48 138C55 124 65 117 78 117H122C135 117 145 124 152 138" stroke="#3D2B8F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M88 130H112" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <text x="100" y="170" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" font-weight="700" fill="#3D2B8F">Social</text>
+</svg>

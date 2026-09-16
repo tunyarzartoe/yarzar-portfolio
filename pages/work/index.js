@@ -1,15 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { workData } from "@/app/constants/personalData";
-import Image from "next/image";
+import { ProjectCard } from "@/components/ProjectCard";
 import { useMetadata } from "@/app/metaData";
 import Head from "next/head";
-import { FaArrowRight } from "react-icons/fa";
-import Link from "next/link";
 import BackToTopButton from "@/components/main/BackToTopButton";
 
 const Work = () => {
   const metadata = useMetadata();
+
+  // Featured projects (AI Carbon, Burmese Recipe, J4U)
+  const featuredProjects = workData.filter(p => [3, 2, 1].includes(p.id));
+  const otherProjects = workData.filter(p => ![1, 2, 3].includes(p.id));
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <>
@@ -18,77 +43,93 @@ const Work = () => {
         {metadata.icon && <link rel="icon" href={metadata.icon.src} />}
       </Head>
 
-      <section className="max-container padding-container flex flex-col items-center text-center mb-12 sm:mb-0">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="mb-10"
-        >
-          <h3 className="bold-20 font-extrabold relative leading-normal uppercase mb-5">
-            My Work<span className="text-secondary">s</span>
-          </h3>
-          <p className="regular-16 text-gray-200 text-lg max-w-2xl mx-auto">
-            Each project reflects my dedication to crafting seamless digital
-            solutions that captivate and engage users. Discover the art of
-            innovation through concise, impactful design and robust
-            functionality.
-          </p>
-        </motion.div>
+      <section className="min-h-screen bg-gradient-to-b via-slate-900 to-slate-950 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+          <div className="absolute top-1/2 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl animate-pulse animation-delay-4000" />
+        </div>
 
-        <motion.div
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-10"
-        >
-          {[...workData]
-            .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
-            .map((data, index) => (
-            <div
-              key={index}
-              className="relative group bg-white shadow-lg rounded-lg overflow-hidden"
+        <div className="max-container padding-container relative z-10">
+          {/* Header Section */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="flex flex-col items-center text-center mb-16 mt-8"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/50 mb-6"
             >
-              <div className="relative w-full" style={{ paddingTop: "75%" }}>
-                <Image
-                  src={data.images[0].url}
-                  alt="work_image"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-5 relative">
-                <h3 className="text-xl text-gray-600 text-start font-bold mb-3">
-                  {data.title}
-                </h3>
-                <p className="text-gray-600 text-start">{data.description}</p>
-                <div className="flex flex-warp mb-0 my-1">
-                  <span
-                    // key={index}
-                    className="tag text-gray-10 px-2 py-1 rounded mr-2 "
-                  >
-                    {data.lang.name}
-                  </span>
-                  <Link
-                    href={data.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-extrabold text-tertiary bg-white/20 border-secondary border-[3px] h-10 w-10 flexCenter rounded-full absolute right-14 bottom-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-500 -rotate-45"
-                  >
-                    <FaArrowRight />
-                  </Link>
-                </div>
-              </div>
-              {/* <span className="bottom-2 left-2">
-                  {data.lang.icon}
-                </span> */}
+              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-sm font-semibold text-blue-300">My Portfolio</span>
+            </motion.div>
+
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent"
+            >
+              Featured<span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text"> Works</span>
+            </motion.h2>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed"
+            >
+              Each project represents my commitment to creating seamless digital experiences 
+              that blend innovation, design excellence, and robust functionality.
+            </motion.p>
+          </motion.div>
+
+          {/* Featured Projects Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="mb-20"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+              {featuredProjects.map((data, index) => (
+                <motion.div key={index} variants={itemVariants} className="h-full">
+                  <ProjectCard project={data} isFeatured={true} />
+                </motion.div>
+              ))}
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          {/* Other Projects Section */}
+          {otherProjects.length > 0 && (
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+              className="mb-12"
+            >
+              <motion.div variants={itemVariants} className="mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  Additional<span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text"> Projects</span>
+                </h3>
+                <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                {otherProjects
+                  .sort((a, b) => (b.id ?? 0) - (a.id ?? 0))
+                  .map((data, index) => (
+                  <motion.div key={index} variants={itemVariants} className="h-full">
+                    <ProjectCard project={data} isFeatured={false} />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </div>
       </section>
 
-      {/* Back to top button */}
       <BackToTopButton />
     </>
   );
