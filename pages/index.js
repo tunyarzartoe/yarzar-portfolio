@@ -112,15 +112,7 @@ const TECH_PILLS = [
 
 const Home = () => {
   const metadata = useMetadata();
-  const [activeCodeTab, setActiveCodeTab] = useState("profile");
-  const [copiedCode, setCopiedCode] = useState(false);
   const featuredWorks = workData.filter((p) => [3, 2, 1].includes(p.id));
-
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(CODE_SNIPPETS[activeCodeTab]);
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2000);
-  };
 
   return (
     <>
@@ -130,7 +122,7 @@ const Home = () => {
       </Head>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24 py-4 sm:py-8">
-        {/* HERO SECTION WITH DEVELOPER TERMINAL */}
+        {/* HERO SECTION */}
         <section className="relative pt-4 sm:pt-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
@@ -228,80 +220,49 @@ const Home = () => {
               <SocialIcons />
             </motion.div>
 
-            {/* Right: Interactive IDE / Code Terminal Window */}
+            {/* Right: Profile Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="lg:col-span-5 w-full"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl shadow-black/50 text-slate-200 font-mono text-xs sm:text-[13px]">
-                {/* IDE Window Titlebar */}
-                <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-slate-800 select-none">
-                  <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                    <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                    <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                    <span className="ml-2 text-[11px] text-slate-400 font-sans font-semibold hidden sm:inline">
-                      yarzar-dev-workspace
-                    </span>
+              <div className="relative rounded-3xl overflow-hidden bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md p-6 sm:p-8">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-br from-red-500 via-rose-500 to-amber-400 mb-4">
+                    <Image
+                      src={profileImage}
+                      alt="Tun Yar Zar Toe"
+                      className="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-900"
+                      priority
+                    />
                   </div>
-
-                  {/* Copy snippet button */}
-                  <button
-                    onClick={handleCopyCode}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-sans font-medium text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors"
-                    title="Copy code"
-                  >
-                    {copiedCode ? <HiCheck className="text-emerald-400 text-xs" /> : <HiClipboardDocument className="text-xs" />}
-                    <span>{copiedCode ? "Copied!" : "Copy"}</span>
-                  </button>
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">Tun Yar Zar Toe</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">Full-Stack Software Engineer</p>
                 </div>
 
-                {/* File Tabs */}
-                <div className="flex items-center bg-slate-950 border-b border-slate-800/80 px-2 overflow-x-auto scrollbar-none">
-                  {[
-                    { id: "profile", name: "profile.ts", icon: "TS" },
-                    { id: "stack", name: "stack.ts", icon: "TS" },
-                    { id: "recruiter", name: "japan-hiring.json", icon: "{}" },
-                  ].map((tab) => {
-                    const isActive = activeCodeTab === tab.id;
-                    return (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveCodeTab(tab.id)}
-                        className={`flex items-center gap-1.5 px-3 py-2 text-[11px] border-b-2 font-mono transition-colors whitespace-nowrap ${
-                          isActive
-                            ? "border-secondary text-white bg-slate-900/60 font-bold"
-                            : "border-transparent text-slate-400 hover:text-slate-200"
-                        }`}
-                      >
-                        <span className="text-[10px] text-blue-400 font-bold">{tab.icon}</span>
-                        <span>{tab.name}</span>
-                      </button>
-                    );
-                  })}
+                <div className="grid grid-cols-2 gap-3 mt-6">
+                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
+                    <div className="text-lg font-black text-slate-900 dark:text-white">N2</div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Japanese</div>
+                  </div>
+                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
+                    <div className="text-lg font-black text-slate-900 dark:text-white">3+ yrs</div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Experience</div>
+                  </div>
+                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
+                    <div className="text-lg font-black text-slate-900 dark:text-white">React</div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Next.js</div>
+                  </div>
+                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
+                    <div className="text-lg font-black text-slate-900 dark:text-white">Java</div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Spring Boot</div>
+                  </div>
                 </div>
 
-                {/* Code Body */}
-                <div className="p-4 sm:p-5 overflow-x-auto max-h-[380px] scrollbar-thin text-slate-300 leading-relaxed">
-                  <pre className="font-mono">
-                    <code>{CODE_SNIPPETS[activeCodeTab]}</code>
-                  </pre>
-                </div>
-
-                {/* Terminal Status Bar */}
-                <div className="flex items-center justify-between px-4 py-2 bg-slate-900/90 border-t border-slate-800/80 text-[11px] font-sans text-slate-400">
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> main*
-                    </span>
-                    <span>UTF-8</span>
-                    <span>TypeScript</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-slate-500">
-                    <span>Tokyo, JP</span>
-                  </div>
+                <div className="flex items-center justify-center gap-2 mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>Available for hire • Tokyo, JP</span>
                 </div>
               </div>
             </motion.div>
@@ -314,33 +275,33 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-slate-800/90 shadow-2xl relative overflow-hidden"
+          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800/90 shadow-xl dark:shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 dark:bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 border border-white/20 text-rose-300">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-rose-500/10 dark:bg-white/10 border border-rose-500/20 dark:border-white/20 text-secondary dark:text-rose-300">
                 <span>🇯🇵</span>
                 <span>採用担当者様向けサマリー (Candidate Profile for Japan)</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
                 トゥンヤーザートー (Tun Yar Zar Toe) • Webエンジニア
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-300 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 pt-1">
                 <div className="flex items-center gap-2">
                   <span className="text-secondary font-bold">✓ 語学力:</span>
                   <span>JLPT N2 合格（ビジネス会話・仕様書理解）</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-blue-400 font-bold">✓ 在留資格:</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓ 在留資格:</span>
                   <span>留学（東京IT専門学校・都内通勤可能）</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-emerald-400 font-bold">✓ 実務経験:</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓ 実務経験:</span>
                   <span>3年以上（React / Next.js / Java / MySQL）</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-purple-400 font-bold">✓ 希望雇用:</span>
+                  <span className="text-purple-600 dark:text-purple-400 font-bold">✓ 希望雇用:</span>
                   <span>正社員・インターン（新卒・第二新卒）</span>
                 </div>
               </div>
@@ -356,7 +317,7 @@ const Home = () => {
               </a>
               <Link
                 href="/credentials"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-all text-center"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-900/5 hover:bg-slate-900/10 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-900/10 dark:border-white/20 text-slate-800 dark:text-white transition-all text-center"
               >
                 <span>自己PR・志望動機を見る</span>
               </Link>
