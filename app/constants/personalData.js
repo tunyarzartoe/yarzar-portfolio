@@ -218,7 +218,7 @@ export const workData = [
   {
     id: 3,
     description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
-    title: "AI Carbon Calculator",
+    title: "CO2 AI",
     name: "AI Carbon Calculator - Carbon Footprint Estimator",
     images: [
       { url: AI_CARBON_LOGO },
@@ -231,7 +231,7 @@ export const workData = [
   {
     id: 2,
     description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
-    title: "Burmese Recipe App",
+    title: "Recipe App",
     name: "Burmese Recipe App - Recipes & Instructions",
     images: [
       { url: RECIPE_LOGO },
@@ -244,7 +244,7 @@ export const workData = [
   {
     id: 1,
     description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
-    title: "J4U Frontend",
+    title: "J4U",
     name: "J4U - Job Portal Platform",
     images: [
       { url: J4U_LOGO },
