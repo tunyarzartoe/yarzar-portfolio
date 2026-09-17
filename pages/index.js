@@ -239,7 +239,7 @@ const Home = () => {
                     />
                   </div>
                   <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">Tun Yar Zar Toe</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Full-Stack Software Engineer</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">Software Engineer</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 mt-6">
