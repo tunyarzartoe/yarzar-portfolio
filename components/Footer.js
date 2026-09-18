@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
 
         <div className="text-xs text-slate-500 dark:text-slate-500">
-          &copy; {new Date().getFullYear()} yarzar.dev. All rights reserved.
+          &copy; {new Date().getFullYear()} tun.dev. All rights reserved.
         </div>
       </div>
     </footer>

@@ -18,7 +18,7 @@ const Header = () => {
           <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-secondary via-rose-500 to-amber-500 shadow-md group-hover:scale-105 transition-transform duration-300">
             <Image
               src={Logo}
-              alt="Tun Yar Zar Toe - yarzar.dev"
+              alt="Tun Yar Zar Toe - tun.dev"
               width={44}
               height={44}
               className="rounded-[10px] w-full h-full object-cover bg-slate-950"
