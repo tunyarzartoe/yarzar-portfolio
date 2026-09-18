@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import ThemeSwitcher from "@/app/ThemeSwitcher";
 import { sidebarData } from "@/app/constants/sidebarData";
-import Logo from "../public/logo_icon.png";
+import Logo from "../public/logos/logo.svg";
 
 const Header = () => {
   const pathname = usePathname();
