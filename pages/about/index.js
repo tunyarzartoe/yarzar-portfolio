@@ -112,7 +112,13 @@ const About = () => {
 
                   {/* Code-style caption */}
                   <div className="px-4 py-3 bg-slate-50 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800 text-[11px] leading-relaxed">
-                    <p><span className="text-slate-400 dark:text-slate-600">// </span><span className="text-slate-500 dark:text-slate-400">current status</span></p>
+                    {/* <p><span className="text-slate-400 dark:text-slate-600">// </span><span className="text-slate-500 dark:text-slate-400">current status</span></p> */}
+                    <p>
+                      <span className="text-slate-400 dark:text-slate-600">{"// "}</span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        current status
+                      </span>
+                    </p>
                     <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">location</span> = <span className="text-[#ce9178]">&quot;Tokyo, Japan&quot;</span>;</p>
                     <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">japanese</span> = <span className="text-[#ce9178]">&quot;JLPT N2&quot;</span>;</p>
                     <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">school</span> = <span className="text-[#ce9178]">&quot;Tokyo IT Specialist College&quot;</span>;</p>
