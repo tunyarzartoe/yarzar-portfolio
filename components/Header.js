@@ -27,7 +27,7 @@ const Header = () => {
           </div>
           <div className="flex flex-col">
             <span className="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-secondary transition-colors">
-              yarzar<span className="text-secondary">.dev</span>
+              tun<span className="text-secondary">.dev</span>
             </span>
             <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider leading-none mt-1">
               Software Engineer
