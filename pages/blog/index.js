@@ -1,9 +1,9 @@
-"use client";
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
+import { BLOG_POSTS } from "@/app/constants/blogData";
 import BackToTopButton from "@/components/main/BackToTopButton";
 import {
   HiPencilSquare,
@@ -33,154 +33,6 @@ import {
   SiSpringboot,
 } from "react-icons/si";
 
-// ── Blog Data ────────────────────────────────────────────────────────────────
-const BLOG_POSTS = [
-  {
-    id: 1,
-    slug: "getting-started-nextjs-japan",
-    title: "Building a Portfolio for Japan Job Hunting with Next.js",
-    titleJa: "Next.jsで日本就活ポートフォリオを作る",
-    excerpt:
-      "A deep dive into how I built this portfolio specifically optimized for Japanese tech recruiters — from JLPT N2 highlights to 履歴書 (CV) downloads and Japanese UI patterns.",
-    category: "Next.js",
-    tags: ["Next.js", "React", "Japan", "Portfolio"],
-    readTime: "8 min read",
-    date: "2026-09-10",
-    dateJa: "2026年9月10日",
-    icon: <SiNextdotjs />,
-    iconColor: "text-white",
-    gradient: "from-slate-700 to-slate-900",
-    featured: true,
-    emoji: "🇯🇵",
-  },
-  {
-    id: 2,
-    slug: "jlpt-n2-tech-vocabulary",
-    title: "JLPT N2 Tech Vocabulary for Software Engineers",
-    titleJa: "エンジニアのためのJLPT N2技術語彙まとめ",
-    excerpt:
-      "Essential Japanese technical terms every software engineer working in Japan needs to know — from 要件定義 (requirements definition) to 報連相 (reporting, contacting, consulting).",
-    category: "Japanese",
-    tags: ["Japanese", "JLPT", "Career", "Japan"],
-    readTime: "6 min read",
-    date: "2026-08-28",
-    dateJa: "2026年8月28日",
-    icon: <HiGlobeAlt />,
-    iconColor: "text-blue-400",
-    gradient: "from-blue-700 to-blue-900",
-    featured: true,
-    emoji: "📚",
-  },
-  {
-    id: 3,
-    slug: "react-hooks-deep-dive",
-    title: "React Hooks Deep Dive: useCallback, useMemo & useRef",
-    titleJa: "Reactフック深堀り：useCallback、useMemo、useRef",
-    excerpt:
-      "Understanding when and why to use React's performance hooks. Real-world examples from production code with before/after performance comparisons.",
-    category: "React",
-    tags: ["React", "JavaScript", "Performance"],
-    readTime: "12 min read",
-    date: "2026-08-15",
-    dateJa: "2026年8月15日",
-    icon: <FaReact />,
-    iconColor: "text-cyan-400",
-    gradient: "from-cyan-700 to-cyan-900",
-    featured: false,
-    emoji: "⚛️",
-  },
-  {
-    id: 4,
-    slug: "spring-boot-rest-api",
-    title: "Spring Boot REST API Best Practices",
-    titleJa: "Spring Boot RESTful APIのベストプラクティス",
-    excerpt:
-      "Building production-ready REST APIs with Spring Boot — covering error handling, validation, JWT authentication, and database transaction management.",
-    category: "Java",
-    tags: ["Java", "Spring Boot", "Backend", "API"],
-    readTime: "15 min read",
-    date: "2026-07-22",
-    dateJa: "2026年7月22日",
-    icon: <SiSpringboot />,
-    iconColor: "text-green-400",
-    gradient: "from-green-700 to-green-900",
-    featured: false,
-    emoji: "🍃",
-  },
-  {
-    id: 5,
-    slug: "tailwind-dark-mode",
-    title: "Implementing Perfect Dark Mode with Tailwind CSS & next-themes",
-    titleJa: "TailwindCSS＆next-themesでダークモードを完璧に実装する",
-    excerpt:
-      "A complete guide to implementing dark mode in a Next.js project without flash-of-white issues, using CSS variables and Tailwind's class strategy.",
-    category: "CSS",
-    tags: ["Tailwind CSS", "Next.js", "Dark Mode", "UI"],
-    readTime: "7 min read",
-    date: "2026-07-05",
-    dateJa: "2026年7月5日",
-    icon: <SiTailwindcss />,
-    iconColor: "text-teal-400",
-    gradient: "from-teal-700 to-teal-900",
-    featured: false,
-    emoji: "🎨",
-  },
-  {
-    id: 6,
-    slug: "typescript-for-react-devs",
-    title: "TypeScript for React Developers: A Practical Guide",
-    titleJa: "React開発者向けTypeScript実践ガイド",
-    excerpt:
-      "Moving from JavaScript to TypeScript in a React project — typing props, hooks, API responses, and common patterns that eliminate runtime bugs.",
-    category: "TypeScript",
-    tags: ["TypeScript", "React", "JavaScript"],
-    readTime: "10 min read",
-    date: "2026-06-18",
-    dateJa: "2026年6月18日",
-    icon: <SiTypescript />,
-    iconColor: "text-blue-300",
-    gradient: "from-blue-600 to-indigo-900",
-    featured: false,
-    emoji: "🔷",
-  },
-  {
-    id: 7,
-    slug: "git-workflow-japan-team",
-    title: "Git Workflow for Japanese Engineering Teams",
-    titleJa: "日本エンジニアチームのためのGitワークフロー",
-    excerpt:
-      "How Japanese software companies typically use Git — branch naming conventions, PR reviews (プルリクエスト), and commit message conventions in Japanese.",
-    category: "DevOps",
-    tags: ["Git", "DevOps", "Japan", "Teamwork"],
-    readTime: "5 min read",
-    date: "2026-05-30",
-    dateJa: "2026年5月30日",
-    icon: <FaGitAlt />,
-    iconColor: "text-orange-400",
-    gradient: "from-orange-700 to-red-900",
-    featured: false,
-    emoji: "🔧",
-  },
-  {
-    id: 8,
-    slug: "nodejs-express-api",
-    title: "Node.js & Express: Building Scalable Microservices",
-    titleJa: "Node.js＆Express：スケーラブルなマイクロサービスの構築",
-    excerpt:
-      "Designing microservices with Node.js and Express — covering rate limiting, logging, error boundaries, and containerization with Docker.",
-    category: "Node.js",
-    tags: ["Node.js", "Express", "Microservices", "Docker"],
-    readTime: "14 min read",
-    date: "2026-05-10",
-    dateJa: "2026年5月10日",
-    icon: <FaNodeJs />,
-    iconColor: "text-green-500",
-    gradient: "from-green-800 to-gray-900",
-    featured: false,
-    emoji: "🚀",
-  },
-];
-
 const CATEGORIES = [
   { id: "all", label: "All Posts", icon: <HiBookOpen /> },
   { id: "Next.js", label: "Next.js", icon: <SiNextdotjs /> },
@@ -200,27 +52,38 @@ const STATS = [
   { label: "Languages", value: "EN / JA", icon: <HiGlobeAlt /> },
 ];
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
 const formatDate = (dateStr) => {
   const d = new Date(dateStr);
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
 
 const getCategoryColor = (category) => {
   const map = {
-    "Next.js": "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
-    React: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300",
-    TypeScript: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+    "Next.js":
+      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+    React:
+      "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300",
+    TypeScript:
+      "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
     Java: "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300",
-    "Node.js": "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
-    Japanese: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
+    "Node.js":
+      "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+    Japanese:
+      "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300",
     CSS: "bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300",
-    DevOps: "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+    DevOps:
+      "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
   };
-  return map[category] || "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300";
+  return (
+    map[category] ||
+    "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+  );
 };
 
-// ── Blog Card ─────────────────────────────────────────────────────────────────
 const BlogCard = ({ post, index, featured = false }) => (
   <motion.article
     initial={{ opacity: 0, y: 30 }}
@@ -235,23 +98,27 @@ const BlogCard = ({ post, index, featured = false }) => (
       ${featured ? "md:col-span-2" : ""}
     `}
   >
-    {/* Top gradient bar */}
-    <div className={`h-1.5 w-full bg-gradient-to-r ${post.gradient} opacity-80 group-hover:opacity-100 transition-opacity`} />
+    <div
+      className={`h-1.5 w-full bg-gradient-to-r ${post.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}
+    />
 
     <div className={`flex flex-col ${featured ? "md:flex-row" : ""} flex-1`}>
-      {/* Icon block */}
-      <div className={`flex items-center justify-center
+      <div
+        className={`flex items-center justify-center
         ${featured ? "md:w-48 min-h-[120px]" : "min-h-[80px]"}
-        bg-gradient-to-br ${post.gradient} text-4xl ${post.iconColor}
-      `}>
+        bg-gradient-to-br ${post.gradient} text-4xl text-white
+      `}
+      >
         <span className="text-5xl drop-shadow-lg">{post.emoji}</span>
       </div>
 
-      {/* Content */}
       <div className="flex flex-col flex-1 p-5 sm:p-6 gap-3">
-        {/* Meta row */}
         <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-          <span className={`px-2.5 py-1 rounded-full font-semibold text-xs ${getCategoryColor(post.category)}`}>
+          <span
+            className={`px-2.5 py-1 rounded-full font-semibold text-xs ${getCategoryColor(
+              post.category
+            )}`}
+          >
             {post.category}
           </span>
           <span className="flex items-center gap-1">
@@ -270,20 +137,21 @@ const BlogCard = ({ post, index, featured = false }) => (
           )}
         </div>
 
-        {/* Title */}
         <div>
-          <h2 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white leading-snug group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors">
-            {post.title}
-          </h2>
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5 italic">{post.titleJa}</p>
+          <Link href={`/blog/${post.slug}`}>
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white leading-snug group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors">
+              {post.title}
+            </h2>
+          </Link>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5 italic">
+            {post.titleJa}
+          </p>
         </div>
 
-        {/* Excerpt */}
         <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
           {post.excerpt}
         </p>
 
-        {/* Tags & Read More */}
         <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gray-100 dark:border-gray-800">
           <div className="flex flex-wrap gap-1.5">
             {post.tags.slice(0, 3).map((tag) => (
@@ -308,14 +176,14 @@ const BlogCard = ({ post, index, featured = false }) => (
   </motion.article>
 );
 
-// ── Main Page ─────────────────────────────────────────────────────────────────
 const BlogPage = () => {
   const metadata = useMetadata();
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filtered = BLOG_POSTS.filter((post) => {
-    const matchCategory = activeCategory === "all" || post.category === activeCategory;
+    const matchCategory =
+      activeCategory === "all" || post.category === activeCategory;
     const q = searchQuery.toLowerCase();
     const matchSearch =
       !q ||
@@ -341,16 +209,14 @@ const BlogPage = () => {
       </Head>
 
       <section className="min-h-screen py-8 sm:py-14 px-4 sm:px-6 max-w-6xl mx-auto">
-
-        {/* ── Hero ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-10 sm:mb-14"
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
             bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400
             border border-rose-200 dark:border-rose-800/50 mb-5"
           >
@@ -368,11 +234,11 @@ const BlogPage = () => {
             テックブログ | Software Engineering & Japan Career
           </p>
           <p className="text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-            Sharing what I learn as a full-stack engineer studying in Tokyo — React, Next.js, Java,
-            TypeScript, and navigating the Japanese tech industry.
+            Sharing what I learn as a full-stack engineer studying in Tokyo —
+            React, Next.js, Java, TypeScript, and navigating the Japanese tech
+            industry.
           </p>
 
-          {/* Stats row */}
           <div className="flex flex-wrap gap-4 mt-6">
             {STATS.map((stat) => (
               <div
@@ -380,24 +246,28 @@ const BlogPage = () => {
                 className="flex items-center gap-2 px-4 py-2 rounded-xl
                   bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700/50"
               >
-                <span className="text-rose-500 dark:text-rose-400 text-lg">{stat.icon}</span>
+                <span className="text-rose-500 dark:text-rose-400 text-lg">
+                  {stat.icon}
+                </span>
                 <div>
-                  <div className="text-lg font-black text-gray-900 dark:text-white leading-none">{stat.value}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">{stat.label}</div>
+                  <div className="text-lg font-black text-gray-900 dark:text-white leading-none">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </motion.div>
 
-        {/* ── Filters ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.4 }}
           className="mb-8 space-y-4"
         >
-          {/* Search */}
           <div className="relative max-w-md">
             <HiMagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
             <input
@@ -422,7 +292,6 @@ const BlogPage = () => {
             )}
           </div>
 
-          {/* Category pills */}
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
               <button
@@ -441,7 +310,6 @@ const BlogPage = () => {
             ))}
           </div>
 
-          {/* Result count */}
           {(activeCategory !== "all" || searchQuery) && (
             <p className="text-sm text-gray-500 dark:text-gray-400">
               {filtered.length} article{filtered.length !== 1 ? "s" : ""} found
@@ -451,7 +319,6 @@ const BlogPage = () => {
           )}
         </motion.div>
 
-        {/* ── Post Grid ── */}
         <AnimatePresence mode="wait">
           {filtered.length > 0 ? (
             <motion.div
@@ -461,7 +328,6 @@ const BlogPage = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              {/* Featured posts */}
               {featured.length > 0 && (
                 <div className="mb-8">
                   <h2 className="text-xs font-bold uppercase tracking-widest text-rose-500 dark:text-rose-400 mb-4 flex items-center gap-2">
@@ -475,7 +341,6 @@ const BlogPage = () => {
                 </div>
               )}
 
-              {/* Regular posts */}
               {regular.length > 0 && (
                 <div>
                   {featured.length > 0 && (
@@ -500,12 +365,17 @@ const BlogPage = () => {
               className="flex flex-col items-center justify-center py-24 gap-4 text-center"
             >
               <div className="text-6xl">📭</div>
-              <h3 className="text-xl font-bold text-gray-700 dark:text-gray-300">No articles found</h3>
+              <h3 className="text-xl font-bold text-gray-700 dark:text-gray-300">
+                No articles found
+              </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
                 Try a different category or search term.
               </p>
               <button
-                onClick={() => { setActiveCategory("all"); setSearchQuery(""); }}
+                onClick={() => {
+                  setActiveCategory("all");
+                  setSearchQuery("");
+                }}
                 className="mt-2 px-5 py-2.5 rounded-xl bg-rose-500 text-white text-sm font-semibold hover:bg-rose-600 transition-colors"
               >
                 Clear filters
@@ -514,7 +384,6 @@ const BlogPage = () => {
           )}
         </AnimatePresence>
 
-        {/* ── Newsletter / CTA ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -528,10 +397,12 @@ const BlogPage = () => {
           <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-2">
             Want to Connect?
           </h2>
-          <p className="text-sm text-gray-400 dark:text-gray-500 mb-1">フィードバック・質問・コラボレーション</p>
+          <p className="text-sm text-gray-400 dark:text-gray-500 mb-1">
+            フィードバック・質問・コラボレーション
+          </p>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 max-w-md mx-auto">
-            Have a question about an article, want to collaborate on a project, or interested in
-            hiring me as a software engineer in Japan?
+            Have a question about an article, want to collaborate on a project, or
+            interested in hiring me as a software engineer in Japan?
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
