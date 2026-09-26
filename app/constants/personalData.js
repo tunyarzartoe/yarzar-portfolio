@@ -47,6 +47,7 @@ import RECIPE_LOGO from "@/public/logos/recipe-logo.svg";
 import J4U_LOGO from "@/public/logos/j4u-logo.svg";
 import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
 import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
+import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
 
 // const PR = "/works/project-burmese-recipe.svg";
 // const AI_CARBON_LOGO = "/logos/ai-carbon-logo.svg";
@@ -453,6 +454,19 @@ export const workData = [
   //   demoLink: "https://react-social-app-gules.vercel.app/",
   //   lang: { name: "ReactJs", icon: "FaReact" }
   // },
+{
+  id: 4,
+  description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
+  title: "Japanese Study",
+  name: "Japanese Study Guide",
+  images: [
+    { url: JAPANESE_STUDY_LOGO },
+  ],
+  logo: JAPANESE_STUDY_LOGO,
+  languages: ["ReactJS", "React Router", "CSS"],
+  demoLink: "https://japanese-self-study-guide.vercel.app/",
+  lang: { name: "ReactJs" }
+},
   {
     id: 3,
     description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",

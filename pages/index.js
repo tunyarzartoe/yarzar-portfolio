@@ -112,7 +112,7 @@ const TECH_PILLS = [
 
 const Home = () => {
   const metadata = useMetadata();
-  const featuredWorks = workData.filter((p) => [3, 2, 1].includes(p.id));
+  const featuredWorks = workData.filter((p) => [4, 3, 2].includes(p.id));
 
   return (
     <>
