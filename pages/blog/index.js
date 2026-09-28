@@ -5,14 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
 import { BLOG_POSTS } from "@/app/constants/blogData";
 import BackToTopButton from "@/components/main/BackToTopButton";
+import GlobalSearch, { SearchTrigger } from "@/components/main/GlobalSearch";
 import {
   HiPencilSquare,
   HiTag,
   HiCalendar,
   HiClock,
   HiArrowRight,
-  HiMagnifyingGlass,
-  HiXMark,
   HiBookOpen,
   HiCodeBracket,
   HiGlobeAlt,
@@ -179,20 +178,11 @@ const BlogCard = ({ post, index, featured = false }) => (
 const BlogPage = () => {
   const metadata = useMetadata();
   const [activeCategory, setActiveCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
 
-  const filtered = BLOG_POSTS.filter((post) => {
-    const matchCategory =
-      activeCategory === "all" || post.category === activeCategory;
-    const q = searchQuery.toLowerCase();
-    const matchSearch =
-      !q ||
-      post.title.toLowerCase().includes(q) ||
-      post.titleJa.includes(q) ||
-      post.excerpt.toLowerCase().includes(q) ||
-      post.tags.some((t) => t.toLowerCase().includes(q));
-    return matchCategory && matchSearch;
-  });
+  // Category filter only — text search is handled by <GlobalSearch />
+  const filtered = BLOG_POSTS.filter(
+    (post) => activeCategory === "all" || post.category === activeCategory
+  );
 
   const featured = filtered.filter((p) => p.featured);
   const regular = filtered.filter((p) => !p.featured);
@@ -268,29 +258,8 @@ const BlogPage = () => {
           transition={{ delay: 0.15, duration: 0.4 }}
           className="mb-8 space-y-4"
         >
-          <div className="relative max-w-md">
-            <HiMagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-10 py-3 rounded-xl text-sm
-                bg-white dark:bg-gray-900/60
-                border border-gray-200 dark:border-gray-700/50
-                text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500
-                focus:outline-none focus:border-rose-400 dark:focus:border-rose-500
-                transition-colors"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery("")}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
-              >
-                <HiXMark className="text-lg" />
-              </button>
-            )}
-          </div>
+          {/* Opens the global live search (also Ctrl/Cmd + K or "/") */}
+          <SearchTrigger className="max-w-md" />
 
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
@@ -310,11 +279,10 @@ const BlogPage = () => {
             ))}
           </div>
 
-          {(activeCategory !== "all" || searchQuery) && (
+          {activeCategory !== "all" && (
             <p className="text-sm text-gray-500 dark:text-gray-400">
               {filtered.length} article{filtered.length !== 1 ? "s" : ""} found
-              {activeCategory !== "all" ? ` in ${activeCategory}` : ""}
-              {searchQuery ? ` for "${searchQuery}"` : ""}
+              in {activeCategory}
             </p>
           )}
         </motion.div>
@@ -322,7 +290,7 @@ const BlogPage = () => {
         <AnimatePresence mode="wait">
           {filtered.length > 0 ? (
             <motion.div
-              key={`${activeCategory}-${searchQuery}`}
+              key={activeCategory}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -369,13 +337,10 @@ const BlogPage = () => {
                 No articles found
               </h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
-                Try a different category or search term.
+                Try a different category.
               </p>
               <button
-                onClick={() => {
-                  setActiveCategory("all");
-                  setSearchQuery("");
-                }}
+                onClick={() => setActiveCategory("all")}
                 className="mt-2 px-5 py-2.5 rounded-xl bg-rose-500 text-white text-sm font-semibold hover:bg-rose-600 transition-colors"
               >
                 Clear filters
@@ -424,6 +389,7 @@ const BlogPage = () => {
         </motion.div>
       </section>
 
+      <GlobalSearch />
       <BackToTopButton />
     </>
   );
