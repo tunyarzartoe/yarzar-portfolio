@@ -121,7 +121,7 @@ const About = () => {
                     </p>
                     <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">location</span> = <span className="text-[#ce9178]">&quot;Tokyo, Japan&quot;</span>;</p>
                     <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">japanese</span> = <span className="text-[#ce9178]">&quot;JLPT N2&quot;</span>;</p>
-                    <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">school</span> = <span className="text-[#ce9178]">&quot;Tokyo IT Specialist College&quot;</span>;</p>
+                    <p><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">school</span> = <span className="text-[#ce9178]">&quot;東京ITプログラミング＆会計専門学校&quot;</span>;</p>
                   </div>
 
                   <div className="p-3 border-t border-slate-200 dark:border-slate-800">
@@ -164,7 +164,7 @@ const About = () => {
                   My professional experience includes developing commercial web applications at <strong>Kumo Solutions</strong> and enterprise energy analytics dashboards at <strong>Evercomm Singapore</strong>. I specialize in combining modern frontend architectures (React, Next.js, Tailwind CSS) with robust backend engines (Java Spring Boot, Node.js, Python) and relational databases (MySQL, PostgreSQL).
                 </p>
                 <p>
-                  Currently based in <strong>Tokyo, Japan</strong>, I am enrolled at <strong>Tokyo IT & Programming College</strong> and have achieved <strong>JLPT N2 (Japanese-Language Proficiency Test)</strong> certification. I am capable of working in bilingual Japanese-English engineering environments.
+                  Currently based in <strong>Tokyo, Japan</strong>, I am enrolled at <strong>東京ITプログラミング＆会計専門学校</strong> and have achieved <strong>JLPT N2 (Japanese-Language Proficiency Test)</strong> certification. I am capable of working in bilingual Japanese-English engineering environments.
                 </p>
               </div>
 

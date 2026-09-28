@@ -56,7 +56,7 @@ export const developer: DeveloperProfile = {
   name: "Tun Yar Zar Toe (トゥンヤーザートー)",
   role: "Full-Stack Software Engineer",
   location: "Tokyo, Japan 🇯🇵",
-  education: "Tokyo IT & Programming College (東京IT会計専門学校)",
+  education: "東京ITプログラミング＆会計専門学校 (東京IT会計専門学校)",
   languageProficiency: {
     japanese: "JLPT N2 Passed (ビジネス日本語 / 業務連携可能)",
     english: "Professional Working Proficiency",

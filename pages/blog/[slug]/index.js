@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { BLOG_POSTS } from "@/app/constants/blogData";
 import BackToTopButton from "@/components/main/BackToTopButton";
+import GlobalSearch, { SearchTrigger } from "@/components/main/GlobalSearch";
 import {
   HiArrowLeft,
   HiCalendar,
@@ -127,6 +128,9 @@ const BlogPostDetail = ({ post }) => {
           <span className="text-slate-700 dark:text-slate-300 font-medium truncate max-w-xs">
             {post.title}
           </span>
+          <div className="ml-auto">
+            <SearchTrigger variant="icon" />
+          </div>
         </div>
 
         {/* Hero Header Card */}
@@ -374,6 +378,7 @@ const BlogPostDetail = ({ post }) => {
         )}
       </article>
 
+      <GlobalSearch />
       <BackToTopButton />
     </>
   );
@@ -398,4 +403,3 @@ export async function getStaticProps({ params }) {
 }
 
 export default BlogPostDetail;
-
