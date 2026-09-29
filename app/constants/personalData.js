@@ -42,7 +42,7 @@ import POS3 from "../../public/works/pos3.jpeg";
 const PR = "/works/project-burmese-recipe.svg";
 const AI_CARBON = "/works/project-ai-carbon-calculator.png";
 // import profileImage from "@/public/new_profile.jpeg";
-import AI_CARBON_LOGO from "@/public/logos/ai-carbon-logo.svg";
+import AI_CARBON_LOGO from "@/public/logos/ai-carbon-logo.png";
 import RECIPE_LOGO from "@/public/logos/recipe-logo.svg";
 import J4U_LOGO from "@/public/logos/j4u-logo.svg";
 import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
@@ -457,7 +457,7 @@ export const workData = [
 {
   id: 4,
   description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
-  title: "Japanese Study",
+  title: "学習ガイド",
   name: "Japanese Study Guide",
   images: [
     { url: JAPANESE_STUDY_LOGO },
