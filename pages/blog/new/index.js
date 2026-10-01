@@ -9,7 +9,7 @@ const NewBlogPost = () => {
   return (
     <>
       <Head>
-        <title>New Post | Tun Yar Zar Toe Blog</title>
+        <title>Manage Posts | Tun Yar Zar Toe Blog</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 
@@ -24,26 +24,28 @@ const NewBlogPost = () => {
           </Link>
           <span>/</span>
           <span className="text-gray-700 dark:text-gray-300 font-medium">
-            New post
+            Manage posts
           </span>
         </div>
 
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400 border border-rose-200 dark:border-rose-800/50 mb-5">
             <HiPencilSquare className="text-sm" />
-            Draft a new article
+            Write, edit, or delete an article
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-3 leading-tight">
-            Write a new post
+            Manage blog posts
           </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-            Fill in the fields below, then copy the generated code into the{" "}
+            Pick a mode below — new post, edit an existing one, or delete one
+            — fill in the fields (add a cover image if you like), then copy
+            the generated code into the{" "}
             <code className="font-mono text-sm">BLOG_POSTS</code> array in{" "}
             <code className="font-mono text-sm">
               app/constants/blogData.js
             </code>
-            . This page doesn't save anything on its own — nothing is
-            published until you paste the code in and redeploy.
+            . Nothing here saves on its own — nothing changes on the live
+            site until you paste the code in and redeploy.
           </p>
         </div>
 

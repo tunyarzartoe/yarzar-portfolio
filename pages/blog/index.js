@@ -102,14 +102,29 @@ const BlogCard = ({ post, index, featured = false }) => (
     />
 
     <div className={`flex flex-col ${featured ? "md:flex-row" : ""} flex-1`}>
-      <div
-        className={`flex items-center justify-center
-        ${featured ? "md:w-48 min-h-[120px]" : "min-h-[80px]"}
-        bg-gradient-to-br ${post.gradient} text-4xl text-white
-      `}
-      >
-        <span className="text-5xl drop-shadow-lg">{post.emoji}</span>
-      </div>
+      {post.coverImage ? (
+        <div
+          className={`relative overflow-hidden ${
+            featured ? "md:w-48 min-h-[120px]" : "min-h-[140px]"
+          }`}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+      ) : (
+        <div
+          className={`flex items-center justify-center
+          ${featured ? "md:w-48 min-h-[120px]" : "min-h-[80px]"}
+          bg-gradient-to-br ${post.gradient} text-4xl text-white
+        `}
+        >
+          <span className="text-5xl drop-shadow-lg">{post.emoji}</span>
+        </div>
+      )}
 
       <div className="flex flex-col flex-1 p-5 sm:p-6 gap-3">
         <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
@@ -258,8 +273,17 @@ const BlogPage = () => {
           transition={{ delay: 0.15, duration: 0.4 }}
           className="mb-8 space-y-4"
         >
-          {/* Opens the global live search (also Ctrl/Cmd + K or "/") */}
-          <SearchTrigger className="max-w-md" />
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Opens the global live search (also Ctrl/Cmd + K or "/") */}
+            <SearchTrigger className="max-w-md flex-1" />
+            {/* <Link
+              href="/blog/new"
+              className="flex items-center gap-1.5 px-3.5 py-3 rounded-xl text-sm font-semibold bg-white dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 hover:border-rose-400/50 dark:hover:border-rose-500/40 hover:text-rose-500 transition-colors whitespace-nowrap"
+            >
+              <HiPencilSquare className="text-base" />
+              Manage posts
+            </Link> */}
+          </div>
 
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
