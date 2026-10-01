@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import i18n from "@/i18n";
 import dynamic from "next/dynamic";
-import RootLayout from "@/app/layout";
+import "@/app/globals.css";
+import Layout from "@/components/Layout";
 import Logo from "../public/logo_icon.png";
 import Profile from "../public/profile.jpg";
 import Icon from "../app/favicon.ico";
@@ -41,7 +42,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <I18nextProvider i18n={i18n}>
-        <RootLayout>
+        <Layout>
           <AnimatePresence mode="wait">
             <motion.div key={router.route} className="h-full">
               <Suspense fallback={<LoadingAnimation />}>
@@ -49,7 +50,7 @@ const MyApp = ({ Component, pageProps }) => {
               </Suspense>
             </motion.div>
           </AnimatePresence>
-        </RootLayout>
+        </Layout>
       </I18nextProvider>
     </ThemeProvider>
   );

@@ -40,6 +40,11 @@ export const useMetadata = () => {
           title: "Tun Yar Zar Toe | Contact",
           description: "Description for the Contact page",
         });
+      } else if (pathname === "/404") {
+        setMetadata({
+          title: "404 - Page Not Found | Tun Yar Zar Toe",
+          description: "The page you are looking for does not exist.",
+        });
       } else {
         setMetadata({
           title: "Tun Yar Zar Toe | Articles ",

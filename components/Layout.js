@@ -1,10 +1,10 @@
-import "./globals.css";
+import React from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import StarsCanvas from "@/components/main/StarBackground";
 import Footer from "@/components/Footer";
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="font-sans antialiased min-h-screen flex flex-col justify-between">
       <StarsCanvas />
@@ -15,3 +15,4 @@ export default function RootLayout({ children }) {
     </div>
   );
 }
+
