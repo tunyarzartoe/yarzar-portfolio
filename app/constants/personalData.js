@@ -48,7 +48,7 @@ import J4U_LOGO from "@/public/logos/j4u-logo.svg";
 import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
 import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
 import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
-import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio.png";
+import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio-logo.svg";
 
 // const PR = "/works/project-burmese-recipe.svg";
 // const AI_CARBON_LOGO = "/logos/ai-carbon-logo.svg";
