@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export const ProjectCard = ({ project, isFeatured = false }) => {
-  const featuredProjects = [4,3,2];
+  const featuredProjects = [5,4,3,2];
   const isSpecial = isFeatured || featuredProjects.includes(project.id);
 
   return (

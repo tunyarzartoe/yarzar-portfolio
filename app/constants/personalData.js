@@ -48,6 +48,7 @@ import J4U_LOGO from "@/public/logos/j4u-logo.svg";
 import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
 import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
 import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
+import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio.png";
 
 // const PR = "/works/project-burmese-recipe.svg";
 // const AI_CARBON_LOGO = "/logos/ai-carbon-logo.svg";
@@ -454,6 +455,19 @@ export const workData = [
   //   demoLink: "https://react-social-app-gules.vercel.app/",
   //   lang: { name: "ReactJs", icon: "FaReact" }
   // },
+  {
+    id: 5,
+    description: "An interactive terminal portfolio that mimics macOS, with a live command system, boot animation, draggable windows, and a dock.",
+    title: "Mac Portfolio",
+    name: "Mac Portfolio - Interactive macOS Terminal Portfolio",
+    images: [
+      { url: MAC_PORTFOLIO_LOGO },
+    ],
+    logo: MAC_PORTFOLIO_LOGO,
+    languages: ["Next.js 15", "TypeScript", "Tailwind CSS"],
+    demoLink: "https://yarzardevportfolio.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
 {
   id: 4,
   description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
@@ -508,4 +522,3 @@ export const workData = [
   },
   // Add more projects as needed
 ];
-
