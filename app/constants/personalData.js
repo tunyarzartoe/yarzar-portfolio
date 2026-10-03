@@ -50,13 +50,6 @@ import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
 import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
 import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio-logo.svg";
 
-// const PR = "/works/project-burmese-recipe.svg";
-// const AI_CARBON_LOGO = "/logos/ai-carbon-logo.svg";
-// const RECIPE_LOGO = "/logos/recipe-logo.svg";
-// const J4U_LOGO = "/logos/j4u-logo.svg";
-// const WEATHER_LOGO = "/logos/weather-logo.svg";
-// const SOCIAL_LOGO = "/logos/social-logo.svg";
-
 export const personalData = [
   {
     title: "expertise",
@@ -433,28 +426,6 @@ export const servicesData = [
 ];
 
 export const workData = [
-  // {
-  //   id: 8,
-  //   description: "A dynamic weather forecasting app providing real-time weather updates and a 5-day forecast.",
-  //   title: "Weather App",
-  //   name: "A Dynamic Weather App",
-  //   images: [{ url: P1 }],
-  //   logo: WEATHER_LOGO,
-  //   languages: ["ReactJS", "Bootstrap", "Axios", "React-icons"],
-  //   demoLink: "https://react-weather-app-eta-bay.vercel.app/",
-  //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
-  // {
-  //   id: 7,`
-  //   description: "A social app built with Redux for state management, demonstrating posts with author and post CRUD.",
-  //   title: "Social App",
-  //   name: "A React Social App",
-  //   images: [{ url: P5 }],
-  //   logo: SOCIAL_LOGO,
-  //   languages: ["ReactJS", "Bootstrap", "React-dom", "React-redux", "Date-fns", "Axios", "Jquery", "Datatable"],
-  //   demoLink: "https://react-social-app-gules.vercel.app/",
-  //   lang: { name: "ReactJs", icon: "FaReact" }
-  // },
   {
     id: 5,
     description: "An interactive terminal portfolio that mimics macOS, with a live command system, boot animation, draggable windows, and a dock.",
