@@ -1,14 +1,29 @@
-"use client"
+"use client";
 import * as THREE from "three";
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
-import { inSphere } from "maath/random";
 
+/** Generate random points uniformly distributed inside a sphere of given radius */
+function randomInSphere(count, radius) {
+  const positions = new Float32Array(count * 3);
+  let i = 0;
+  while (i < count * 3) {
+    const x = (Math.random() - 0.5) * 2;
+    const y = (Math.random() - 0.5) * 2;
+    const z = (Math.random() - 0.5) * 2;
+    if (x * x + y * y + z * z <= 1) {
+      positions[i++] = x * radius;
+      positions[i++] = y * radius;
+      positions[i++] = z * radius;
+    }
+  }
+  return positions;
+}
 
 const StarBackground = (props) => {
   const ref = useRef();
-  const sphere = inSphere(new Float32Array(5000), { radius: 1.2 });
+  const sphere = useMemo(() => randomInSphere(7000, 1.2), []);
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -21,7 +36,7 @@ const StarBackground = (props) => {
         <PointMaterial
           transparent
           color="#ffffff"
-          size={0.001}
+          size={0.0018}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -32,7 +47,7 @@ const StarBackground = (props) => {
 
 const StarsCanvas = () => (
   <div
-    className="w-full h-full fixed inset-0 z-[-1] pointer-events-none opacity-20 dark:opacity-90 transition-opacity duration-700"
+    className="w-full h-full fixed inset-0 z-[-1] pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-700"
     style={{ position: "fixed", top: 0, left: 0 }}
   >
     <Canvas camera={{ position: [0, 0, 1] }}>
