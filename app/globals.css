@@ -15,7 +15,7 @@
 }
 
 .dark, [data-theme="dark"] {
-  --bg-color: #000000;
+  --bg-color: #0b0f19;
   --text-color: #f8fafc;
 }
 
@@ -49,7 +49,7 @@ body {
 
 @layer base {
   body {
-    @apply leading-relaxed relative text-slate-800 dark:text-slate-100 bg-[#f8fafc] dark:bg-[#000000];
+    @apply leading-relaxed relative text-slate-800 dark:text-slate-100 bg-[#f8fafc] dark:bg-[#0b0f19];
     overflow-y: auto;
   }
   .page {
