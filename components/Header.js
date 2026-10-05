@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-3 sm:top-5 z-50 px-3 sm:px-6 max-w-6xl mx-auto w-full mb-6">
-      <nav className="rounded-2xl sm:rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-lg dark:shadow-2xl dark:shadow-black/40 flex items-center justify-between py-2 sm:py-2.5 px-3 sm:px-6 transition-all duration-300">
+      <nav className="rounded-2xl sm:rounded-full bg-white/85 dark:bg-gradient-to-r dark:from-[#13131f]/95 dark:via-[#1a1a2e]/95 dark:to-[#13131f]/95 backdrop-blur-xl border border-slate-200/80 dark:border-violet-500/20 shadow-lg dark:shadow-2xl dark:shadow-violet-950/50 flex items-center justify-between py-2 sm:py-2.5 px-3 sm:px-6 transition-all duration-300">
         {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
           <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-secondary via-rose-500 to-amber-500 shadow-md group-hover:scale-105 transition-transform duration-300">
