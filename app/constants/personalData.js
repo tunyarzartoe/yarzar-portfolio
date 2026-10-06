@@ -49,6 +49,8 @@ import WEATHER_LOGO from "@/public/logos/weather-logo.svg";
 import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
 import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
 import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio-logo.svg";
+import YSK from "@/public/logos/ysk_logo.jpg";
+// import YSK from "../../public/logos/ysk_logo.jpeg";
 
 export const personalData = [
   {
@@ -132,7 +134,7 @@ export const personalData = [
       {
         title: "Technical Staff / IT - YSK Japanese Language School",
         year: "2022.07 - 2023.02",
-        logo: DF,
+        logo: YSK,
       },
       {
         title: "Web Developer - Host Myanmar Mandalay",
@@ -312,7 +314,7 @@ export const experienceData = [
     period: "Jul 2022 – Feb 2023",
     duration: "8 mos",
     type: "Part-time",
-    logo: DF,
+    logo: YSK,
     current: false,
     description: "Administered internal school systems, student learning portals, website content, and hardware network infrastructure.",
     highlights: [
