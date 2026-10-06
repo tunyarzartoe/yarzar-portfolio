@@ -1,44 +1,8 @@
-"use client"
-import * as THREE from "three";
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial } from "@react-three/drei";
-import { inSphere } from "maath/random";
+import React from "react";
 
+// Star background cleared per user request to maintain clean dark & light gradient theme
+const StarBackground = () => null;
+const StarsCanvas = () => null;
 
-const StarBackground = (props) => {
-  const ref = useRef();
-  const sphere = inSphere(new Float32Array(5000), { radius: 1.2 });
-
-  useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
-  });
-
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
-        <PointMaterial
-          transparent
-          color="#ffffff"
-          size={0.001}
-          sizeAttenuation={true}
-          depthWrite={false}
-        />
-      </Points>
-    </group>
-  );
-};
-
-const StarsCanvas = () => (
-  <div
-    className="w-full h-full fixed inset-0 z-[-1] pointer-events-none opacity-20 dark:opacity-90 transition-opacity duration-700"
-    style={{ position: "fixed", top: 0, left: 0 }}
-  >
-    <Canvas camera={{ position: [0, 0, 1] }}>
-      <StarBackground />
-    </Canvas>
-  </div>
-);
-
+export { StarBackground };
 export default StarsCanvas;

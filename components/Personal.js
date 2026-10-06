@@ -15,9 +15,9 @@ const Personal = () => {
       transition={{ duration: 0.5 }}
       className="my-10"
     >
-      <div className="rounded-3xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 backdrop-blur-md shadow-sm">
+      <div className="rounded-3xl bg-gradient-to-br from-white via-slate-50/90 to-slate-100/70 dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-[#0f172a]/90 dark:to-slate-950/95 border border-slate-200/80 dark:border-slate-800/80 p-6 sm:p-8 backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/60">
         {/* Tab Headers */}
-        <div className="flex flex-wrap items-center gap-3 sm:gap-6 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6 border-b border-slate-200 dark:border-slate-800/80 pb-4 mb-6">
           {personalData.map((item, itemIndex) => {
             const isActive = index === itemIndex;
             return (
@@ -47,11 +47,11 @@ const Personal = () => {
           {personalData[index].info.map((item, itemIndex) => (
             <div
               key={itemIndex}
-              className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 gap-3"
+              className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-slate-50 to-slate-100/70 dark:from-slate-800/60 dark:to-slate-900/60 border border-slate-200/70 dark:border-slate-700/60 gap-3 shadow-sm"
             >
               <div className="flex items-center gap-3.5">
                 {item.logo && (
-                  <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0 p-1">
+                  <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex-shrink-0 p-1 shadow-sm">
                     <Image
                       className="rounded-lg object-contain"
                       src={item.logo}
@@ -78,7 +78,7 @@ const Personal = () => {
                   {item.icons.map((iconObject, iIdx) => (
                     <div
                       key={iIdx}
-                      className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"
+                      className="p-2 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm"
                     >
                       {iconObject.icon}
                     </div>
@@ -90,7 +90,7 @@ const Personal = () => {
         </div>
 
         {/* Link to full Credentials Page */}
-        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex justify-end">
           <Link
             href="/credentials"
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-secondary hover:text-red-700 dark:hover:text-rose-300 transition-colors"

@@ -2,17 +2,25 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import ThemeSwitcher from "@/app/ThemeSwitcher";
 import { sidebarData } from "@/app/constants/sidebarData";
 import Logo from "../public/logos/logo.svg";
 
 const Header = () => {
-  const pathname = usePathname();
+  const router = useRouter();
+  const pathname = router?.pathname || "/";
+
+  const isLinkActive = (path) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname === path || pathname.startsWith(`${path}/`) || pathname.startsWith(path);
+  };
 
   return (
     <header className="sticky top-3 sm:top-5 z-50 px-3 sm:px-6 max-w-6xl mx-auto w-full mb-6">
-      <nav className="rounded-2xl sm:rounded-full bg-white/85 dark:bg-gradient-to-r dark:from-[#13131f]/95 dark:via-[#1a1a2e]/95 dark:to-[#13131f]/95 backdrop-blur-xl border border-slate-200/80 dark:border-violet-500/20 shadow-lg dark:shadow-2xl dark:shadow-violet-950/50 flex items-center justify-between py-2 sm:py-2.5 px-3 sm:px-6 transition-all duration-300">
+      <nav className="rounded-2xl sm:rounded-full bg-gradient-to-r from-white/95 via-slate-50/90 to-white/95 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-[#0f172a]/90 dark:to-slate-950/95 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/70 flex items-center justify-between py-2 sm:py-2.5 px-3 sm:px-6 transition-all duration-300">
         {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
           <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-secondary via-rose-500 to-amber-500 shadow-md group-hover:scale-105 transition-transform duration-300">
@@ -38,15 +46,15 @@ const Header = () => {
         {/* Center: Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-1 lg:gap-2">
           {sidebarData.map((item) => {
-            const isActive = pathname === item.path;
+            const isActive = isLinkActive(item.path);
             return (
               <Link
                 key={item.path}
                 href={item.path}
                 className={`relative px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold capitalize transition-all duration-200 ${
                   isActive
-                    ? "text-white bg-gradient-to-r from-red-600 to-rose-600 shadow-sm shadow-rose-500/20"
-                    : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60"
+                    ? "text-white bg-gradient-to-r from-red-600 to-rose-600 shadow-sm shadow-rose-500/25 font-bold"
+                    : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/60"
                 }`}
               >
                 {item.name}

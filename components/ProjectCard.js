@@ -3,30 +3,35 @@ import Image from "next/image";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export const ProjectCard = ({ project, isFeatured = false }) => {
-  const featuredProjects = [5,4,3,2];
+  const featuredProjects = [5, 4, 3, 2];
   const isSpecial = isFeatured || featuredProjects.includes(project.id);
 
   return (
-    <div className={`group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col ${
-      isSpecial ? "col-span-1 md:col-span-2 lg:col-span-1" : ""
-    }`}>
+    <div
+      className={`group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col ${
+        isSpecial ? "col-span-1 md:col-span-2 lg:col-span-1" : ""
+      }`}
+    >
       {/* Main Card Container */}
-      <div className={`relative h-full flex flex-col backdrop-blur-xl border rounded-2xl overflow-hidden transition-all duration-300 ${
-        isSpecial
-          ? "bg-white/90 dark:bg-slate-900/85 border-red-500/30 dark:border-red-500/40 shadow-lg dark:shadow-2xl hover:shadow-xl hover:border-red-500/60"
-          : "bg-white/80 dark:bg-slate-900/75 border-slate-200/80 dark:border-slate-800/80 shadow-md dark:shadow-xl hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700"
-      }`}>
-        
-        {/* Top Section - Logo & Title */}
-        <div className={`relative p-5 pb-4 border-b ${
+      <div
+        className={`relative h-full flex flex-col backdrop-blur-xl border rounded-2xl overflow-hidden transition-all duration-300 ${
           isSpecial
-            ? "border-red-500/20 bg-red-500/5 dark:bg-red-500/10"
-            : "border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30"
-        }`}>
+            ? "bg-gradient-to-br from-white via-rose-50/50 to-white dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-rose-950/20 dark:to-slate-950/95 border-red-500/30 dark:border-red-500/40 shadow-lg shadow-rose-500/5 dark:shadow-2xl dark:shadow-rose-950/20 hover:shadow-xl hover:border-red-500/60"
+            : "bg-gradient-to-br from-white via-slate-50/80 to-white dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-[#0f172a]/75 dark:to-slate-950/90 border-slate-200/80 dark:border-slate-800/80 shadow-md dark:shadow-xl dark:shadow-black/40 hover:shadow-lg hover:border-slate-300 dark:hover:border-slate-700"
+        }`}
+      >
+        {/* Top Section - Logo & Title */}
+        <div
+          className={`relative p-5 pb-4 border-b ${
+            isSpecial
+              ? "border-red-500/20 bg-gradient-to-r from-red-500/10 via-rose-500/5 to-transparent dark:from-red-500/15 dark:via-rose-500/10 dark:to-transparent"
+              : "border-slate-100 dark:border-slate-800/80 bg-gradient-to-r from-slate-100/60 via-slate-50/40 to-transparent dark:from-slate-800/40 dark:via-slate-800/20 dark:to-transparent"
+          }`}
+        >
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-3 flex-1 min-w-0">
               {/* Logo Container */}
-              <div className="relative w-14 h-14 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+              <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700/80 p-2 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform">
                 <Image
                   src={project.logo}
                   alt={project.title}
@@ -71,7 +76,7 @@ export const ProjectCard = ({ project, isFeatured = false }) => {
             {project.languages.slice(0, 4).map((lang, index) => (
               <span
                 key={index}
-                className="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60"
+                className="px-2.5 py-1 text-xs font-medium rounded-lg bg-gradient-to-r from-slate-100 to-slate-150 dark:from-slate-800/80 dark:to-slate-900/80 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60"
               >
                 {lang}
               </span>
@@ -85,7 +90,7 @@ export const ProjectCard = ({ project, isFeatured = false }) => {
         </div>
 
         {/* Bottom Section - CTA Button */}
-        <div className="p-5 pt-3 border-t border-slate-100 dark:border-slate-800 mt-auto">
+        <div className="p-5 pt-3 border-t border-slate-100 dark:border-slate-800/80 mt-auto">
           <a
             href={project.demoLink}
             target="_blank"
