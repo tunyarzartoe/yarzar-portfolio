@@ -157,7 +157,7 @@ export const personalData = [
       {
         title: "東京朝日アカデミー日本語学校 (Tokyo Asahi Academy)",
         year: "2024 - 2026",
-        logo: DF,
+        logo: TOKYO_ASAHI,
       },
       {
         title: "Host Myanmar Software Solutions Mandalay",
