@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="東京ITプログラミング＆会計専門学校 logo">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20c4d5"/><stop offset="1" stop-color="#3035d8"/></linearGradient>
+ <clipPath id="clip"><rect width="800" height="800" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+ <rect width="800" height="800" fill="url(#bg)"/>
+ <g opacity=".12" fill="#fff">
+  <path d="M0 0h230L0 230z"/><path d="M260 0h260L390 130z"/><path d="M650 0h150v150z"/>
+  <path d="M0 300l170-170 170 170z"/><path d="M360 300L650 10l150 150v140z"/>
+  <path d="M0 620l250-250 250 250z"/><path d="M500 800L800 500v300z"/>
+ </g>
+ <g fill="#fff" text-anchor="middle" font-family="Arial, 'Noto Sans JP', sans-serif" font-weight="700">
+   <text x="400" y="250" font-size="76">東京IT</text>
+   <text x="400" y="370" font-size="72">プログラミング</text>
+   <text x="400" y="490" font-size="82">＆会計</text>
+   <text x="400" y="610" font-size="68">専門学校</text>
+ </g>
+</g>
+</svg>

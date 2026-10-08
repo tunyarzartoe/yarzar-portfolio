@@ -50,6 +50,7 @@ import SOCIAL_LOGO from "@/public/logos/social-logo.svg";
 import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
 import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio-logo.svg";
 import YSK from "@/public/logos/ysk_logo.jpg";
+import TOKYO_ASAHI from "@/public/logos/tokyo-asahi-academy-logo.svg";
 // import YSK from "../../public/logos/ysk_logo.jpeg";
 
 export const personalData = [
@@ -370,7 +371,7 @@ export const educationData = [
     period: "Oct 2024 – Mar 2026",
     status: "Graduated",
     current: false,
-    logo: DF,
+    logo: TOKYO_ASAHI,
     description: "Completed comprehensive advanced Japanese curriculum up to JLPT N2 level, including professional business communication, technical reading, and workplace etiquette.",
     coursework: ["Business Japanese", "JLPT Preparation", "Workplace Communication", "Japanese Business Etiquette"],
   },
