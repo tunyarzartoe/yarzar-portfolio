@@ -152,7 +152,7 @@ export const personalData = [
       {
         title: "東京IT&プログラミング＆会計専門学校 (Tokyo IT Programming College)",
         year: "2026 - Present",
-        logo: DF,
+        logo: TOKYO_IT,
       },
       {
         title: "東京朝日アカデミー日本語学校 (Tokyo Asahi Academy)",
