@@ -51,6 +51,7 @@ import JAPANESE_STUDY_LOGO from "@/public/logos/japanese-study-logo.svg";
 import MAC_PORTFOLIO_LOGO from "@/public/logos/mac-portfolio-logo.svg";
 import YSK from "@/public/logos/ysk_logo.jpg";
 import TOKYO_ASAHI from "@/public/logos/tokyo-asahi-academy-logo.svg";
+import TOKYO_IT from "@/public/logos/tokyo-itkaikei-logo.svg";
 // import YSK from "../../public/logos/ysk_logo.jpeg";
 
 export const personalData = [
@@ -357,7 +358,7 @@ export const educationData = [
     period: "Apr 2026 – Present",
     status: "Currently Enrolled",
     current: true,
-    logo: DF,
+    logo: TOKYO_IT,
     description: "Intensive professional training in software architecture, enterprise application development, cloud deployment, and system security in Tokyo.",
     coursework: ["Advanced Web Systems", "Database Management", "System Architecture", "Software Engineering Best Practices"],
   },
