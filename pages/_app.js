@@ -36,7 +36,13 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
 
   if (isLoading) {
-    return <LoadingAnimation />;
+    return (
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <I18nextProvider i18n={i18n}>
+          <LoadingAnimation />
+        </I18nextProvider>
+      </ThemeProvider>
+    );
   }
 
   return (

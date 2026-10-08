@@ -57,7 +57,7 @@ const getThemeClasses = (isDark) => ({
     ? "border-[#21262d]"
     : "border-[#d8dee4]",
   skeleton: isDark
-    ? "bg-[#161b22]"
+    ? "bg-[#2d333b]"
     : "bg-[#eaeef2]",
   repoCard: isDark
     ? "border-[#21262d] bg-[#0d1117] hover:border-[#484f58] hover:bg-[#161b22]"
@@ -676,7 +676,9 @@ const LoadingSkeleton = ({ isDark }) => {
   const theme = getThemeClasses(isDark);
 
   return (
-    <div className="animate-pulse space-y-6">
+    <div
+      className={`animate-pulse space-y-6 rounded-xl border ${theme.shell}`}
+    >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         {[1, 2, 3, 4].map((item) => (
           <div
@@ -697,8 +699,10 @@ const LoadingSkeleton = ({ isDark }) => {
 };
 
 const GitHubStats = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const { resolvedTheme, theme: currentTheme } = useTheme();
+  const isDark =
+    resolvedTheme === "dark" ||
+    (!resolvedTheme && currentTheme === "dark");
   const theme = getThemeClasses(isDark);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -779,34 +783,6 @@ const GitHubStats = () => {
           ease: "easeOut",
         }}
       >
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <div className="mb-2 flex items-center gap-3">
-              <RiGithubFill className={`text-3xl ${theme.heading}`} />
-
-              <h2 className={`text-3xl font-bold ${theme.heading}`}>
-                GitHub
-              </h2>
-            </div>
-
-            <p className={`text-sm ${theme.secondary}`}>
-              Open source activity, projects and
-              contribution history.
-            </p>
-          </div>
-
-          <Link
-            href={GITHUB_PROFILE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex w-fit items-center gap-2 rounded-lg border px-4 py-2 text-xs font-medium ${theme.input} ${theme.inputHover}`}
-          >
-            <RiGithubFill />
-            @{GITHUB_USERNAME}
-            <AiOutlineLink />
-          </Link>
-        </div>
-
         <div className={`overflow-hidden rounded-2xl border shadow-2xl ${theme.shell}`}>
           {loading ? (
             <div className="p-5 md:p-7">
