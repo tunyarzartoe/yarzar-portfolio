@@ -431,6 +431,19 @@ export const servicesData = [
 
 export const workData = [
   {
+    id: 6,
+    description: "A full-featured responsive social networking application built with React and Redux, featuring posts, real-time user feeds, author details, comments, and responsive UI.",
+    title: "Social App",
+    name: "React Social App - Social Media Platform",
+    images: [
+      { url: P5 },
+    ],
+    logo: SOCIAL_LOGO,
+    languages: ["ReactJS", "Redux", "Bootstrap", "Axios", "REST APIs"],
+    demoLink: "https://react-social-app-gules.vercel.app",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
     id: 5,
     description: "An interactive terminal portfolio that mimics macOS, with a live command system, boot animation, draggable windows, and a dock.",
     title: "Mac Portfolio",
