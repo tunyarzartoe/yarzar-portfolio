@@ -68,6 +68,15 @@ const About = () => {
         { name: "Git & GitHub", icon: <FaGitAlt className="text-[#f05032]" />, level: "Advanced" },
       ],
     },
+    {
+      title: "Architecture & Collaboration",
+      skills: [
+        { name: "Docker & Containers", icon: <FaDocker className="text-[#2496ed]" />, level: "Proficient" },
+        { name: "Figma Prototyping", icon: <SiFigma className="text-[#f24e1e]" />, level: "Advanced" },
+        { name: "JLPT N2 Bilingual IT", icon: <HiLanguage className="text-rose-500" />, level: "Business" },
+        { name: "Agile / Scrum Sprints", icon: <HiSparkles className="text-amber-500" />, level: "Experienced" },
+      ],
+    },
   ];
 
   return (
@@ -208,7 +217,7 @@ const About = () => {
                 {skillCategories.map((cat, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md"
+                    className="p-6 rounded-3xl bg-gradient-to-br from-white/95 via-slate-50/90 to-white/95 dark:bg-gradient-to-br dark:from-slate-900/95 dark:via-[#0f172a]/90 dark:to-slate-950/95 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-lg shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/60 hover:shadow-xl hover:border-red-500/40 dark:hover:border-rose-500/40 transition-all duration-300"
                   >
                     <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">
                       {cat.title}
