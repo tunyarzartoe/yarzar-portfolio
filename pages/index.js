@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
 import { useMetadata } from "@/app/metaData";
 import profileImage from "@/public/new_profile.jpeg";
 import SocialIcons from "@/components/SocialIcons";
@@ -27,6 +26,8 @@ import {
   HiCubeTransparent,
   HiShieldCheck,
   HiBolt,
+  HiArrowUpRight,
+  HiMapPin,
 } from "react-icons/hi2";
 import {
   FaJava,
@@ -37,6 +38,7 @@ import {
   FaDocker,
   FaHtml5,
   FaCss3Alt,
+  FaGithub,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -50,54 +52,48 @@ import {
   SiRedux,
 } from "react-icons/si";
 
-const CODE_SNIPPETS = {
-  profile: `// engineer.config.ts
-export const developer: DeveloperProfile = {
-  name: "Tun Yar Zar Toe (トゥンヤーザートー)",
+const CODE_TABS = [
+  {
+    id: "profile",
+    label: "developer.ts",
+    code: `// developer.ts — Core Engineering Identity
+export const engineer = {
+  name: "Tun Yar Zar Toe (トゥン・ヤー・ザー・トー)",
   role: "Full-Stack Software Engineer",
   location: "Tokyo, Japan 🇯🇵",
-  education: "東京ITプログラミング＆会計専門学校 (東京IT会計専門学校)",
-  languageProficiency: {
-    japanese: "JLPT N2 Passed (ビジネス日本語 / 業務連携可能)",
-    english: "Professional Working Proficiency",
-    burmese: "Native",
+  experience: "3+ Years Commercial Experience",
+  languages: ["English (Professional)", "Japanese (JLPT N2)", "Burmese (Native)"],
+  architecture: "Scalable Full-Stack, Clean Code & API Design",
+  activeFocus: ["React 19 / Next.js 15", "Java Spring Boot", "Cloud & Microservices"],
+  isOpenForOpportunities: true,
+};`,
   },
-  status: "Actively Job Hunting in Japan (新卒・中途・正社員希望)",
-  coreStrengths: [
-    "Clean & Scalable Software Architecture",
-    "High-Performance Web Applications (React / Next.js)",
-    "Enterprise Backend Development (Java / Spring Boot)",
-    "Japanese Workplace Communication & Ho-Ren-So (報連相)",
-  ],
-};`,
-  stack: `// tech-stack.ts
-export const productionStack = {
-  frontend: ["React.js", "Next.js 14", "TypeScript", "Tailwind CSS", "Redux"],
-  backend: ["Java", "Spring Boot", "Node.js", "Express", "Python"],
-  database: ["MySQL", "PostgreSQL", "MongoDB"],
-  tooling: ["Git / GitHub", "Docker", "RESTful APIs", "Figma", "CI/CD"],
-  architecture: ["Component-Driven", "MVC", "Microservices", "REST API Design"],
-  testing: ["Unit Testing", "Cross-Browser Compatibility", "Lighthouse 95+"],
-};`,
-  recruiter: `// recruiter-summary.json
-{
-  "candidate": "Tun Yar Zar Toe",
-  "targetRoles": ["Web Engineer", "Frontend Developer", "Backend Developer"],
-  "visaStatus": "Student Visa (留学生ビザ・就労手続サポート可能)",
-  "commutableArea": "Tokyo 23 Wards & Surrounding Areas (リモート可)",
-  "certification": "JLPT N2 (Passed Dec 2025)",
-  "commercialExperience": "3+ Years (Kumo Solutions / Evercomm SG)",
-  "availableForInterview": "Immediate (Zoom / Google Meet / 対面面談歓迎)",
-  "contact": {
-    "email": "htunyarzar2001@gmail.com",
-    "phone": "070-8969-4368"
-  }
+  {
+    id: "stack",
+    label: "stack.json",
+    code: `{
+  "frontend": ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Redux"],
+  "backend": ["Java", "Spring Boot", "Node.js", "Express", "REST APIs"],
+  "databases": ["MySQL", "PostgreSQL", "MongoDB"],
+  "tooling": ["Git/GitHub", "Docker", "Figma", "Vercel", "CI/CD"],
+  "principles": ["Sub-second loads", "A11y", "Lighthouse 95+", "報連相"]
 }`,
-};
+  },
+  {
+    id: "recruiter",
+    label: "recruiter-memo.md",
+    code: `# Candidate Summary (採用ご担当者様向け)
+- 氏名: トゥンヤーザートー (Tun Yar Zar Toe)
+- 語学力: JLPT N2 合格 (日本語での仕様書読解・円滑な業務連携可能)
+- 実務経験: 3年以上 (Kumo Solutions / Evercomm SG)
+- 希望形態: 正社員 / インターン (Webエンジニア・新卒 / 中途)
+- 所在地: 東京都江東区 (23区内全域通勤可能 / リモート対応可)`,
+  },
+];
 
 const TECH_PILLS = [
   { name: "React.js", icon: <FaReact className="text-[#61dafb]" />, cat: "frontend" },
-  { name: "Next.js 14", icon: <SiNextdotjs className="text-slate-900 dark:text-white" />, cat: "frontend" },
+  { name: "Next.js 15", icon: <SiNextdotjs className="text-slate-900 dark:text-white" />, cat: "frontend" },
   { name: "TypeScript", icon: <SiTypescript className="text-[#3178c6]" />, cat: "frontend" },
   { name: "Java", icon: <FaJava className="text-[#007396]" />, cat: "backend" },
   { name: "Spring Boot", icon: <SiSpringboot className="text-[#6db33f]" />, cat: "backend" },
@@ -110,9 +106,28 @@ const TECH_PILLS = [
   { name: "Git / GitHub", icon: <FaGitAlt className="text-[#f05032]" />, cat: "tool" },
 ];
 
+const METRICS = [
+  { value: "3+ Years", label: "Commercial Experience", sub: "Production-tested code" },
+  { value: "6+ Live", label: "Shipped Projects", sub: "Web & SaaS applications" },
+  { value: "JLPT N2", label: "Business Japanese", sub: "Tokyo IT Specialist College" },
+  { value: "Full-Stack", label: "React + Spring Boot", sub: "End-to-end architecture" },
+];
+
 const Home = () => {
   const metadata = useMetadata();
-  const featuredWorks = workData.filter((p) => [4, 3, 2].includes(p.id));
+  const [activeCodeTab, setActiveCodeTab] = useState("profile");
+  const [copiedCode, setCopiedCode] = useState(false);
+
+  // Top featured works
+  const featuredWorks = workData.slice(0, 6);
+
+  const currentSnippet = CODE_TABS.find((t) => t.id === activeCodeTab) || CODE_TABS[0];
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(currentSnippet.code);
+    setCopiedCode(true);
+    setTimeout(() => setCopiedCode(false), 2000);
+  };
 
   return (
     <>
@@ -122,59 +137,53 @@ const Home = () => {
       </Head>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24 py-4 sm:py-8">
-        {/* HERO SECTION */}
-        <section className="relative pt-4 sm:pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content */}
+        {/* ========================================================= */}
+        {/* HERO SECTION — VANGUARD CYBER-MINIMALISM                  */}
+        {/* ========================================================= */}
+        <section className="relative pt-6 sm:pt-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            {/* Left Column: Engineer Identity & Vision */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="lg:col-span-7 flex flex-col items-start text-left"
             >
-              {/* Status Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm font-semibold mb-6">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>🇯🇵 日本での就職活動中 • Tokyo Job Hunting (JLPT N2)</span>
+              {/* Top Badges Bar: Available for hire + JLPT N2 Badge */}
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm font-semibold shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Available for Engineering Roles in Tokyo</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/5 dark:bg-white/5 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">
+                  <span>🇯🇵</span>
+                  <span>JLPT N2 Certified</span>
+                </div>
               </div>
 
               {/* Title & Headline */}
-              <div className="space-y-1 mb-4">
-                <p className="text-xs sm:text-sm font-bold text-secondary uppercase tracking-widest font-mono">
-                  &lt;SoftwareEngineer /&gt;
+              <div className="space-y-2 mb-5">
+                <p className="text-xs sm:text-sm font-bold text-secondary uppercase tracking-widest font-mono flex items-center gap-2">
+                  <span className="inline-block w-2 h-0.5 bg-secondary" />
+                  Full-Stack Software Engineer
                 </p>
                 <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-none">
                   Tun Yar Zar Toe
                 </h1>
-                <div className="h-10 sm:h-12 flex items-center text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300">
+                <div className="h-10 sm:h-12 flex items-center text-xl sm:text-3xl font-extrabold text-slate-700 dark:text-slate-300">
                   <span className="mr-2 font-mono text-slate-400">&gt;</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-amber-500">
-                    Software Engineer
-                    {/* <Typewriter
-                      words={[
-                        "Full-Stack Software Engineer",
-                        "React & Next.js 14 Specialist",
-                        "Java & Spring Boot Developer",
-                        "JLPT N2 Bilingual Engineer",
-                        "Tokyo IT Specialist College",
-                      ]}
-                      loop={true}
-                      cursor
-                      cursorStyle="_"
-                      typeSpeed={60}
-                      deleteSpeed={35}
-                      delaySpeed={1800}
-                    /> */}
+                    Architecting Scalable Web Platforms.
                   </span>
                 </div>
               </div>
 
               {/* Bio summary */}
               <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-6 max-w-xl">
-                Engineering modern, scalable web platforms with over <strong className="text-slate-900 dark:text-white font-bold">3+ years</strong> of
-                commercial experience across React, Next.js, and Java Spring Boot. Currently studying in Tokyo, Japan,
-                certified with <strong className="text-secondary font-bold">JLPT N2</strong>, and committed to clean architecture,
-                high performance, and seamless team collaboration.
+                Passionate software engineer with over{" "}
+                <strong className="text-slate-900 dark:text-white font-bold">3+ years</strong> of commercial experience crafting responsive, production-ready applications with{" "}
+                <strong className="text-slate-900 dark:text-white font-semibold">React, Next.js, and Java Spring Boot</strong>. Currently engineering in Tokyo, combining high-velocity delivery with robust architecture and bilingual team collaboration.
               </p>
 
               {/* Quick Tech Chips */}
@@ -182,7 +191,7 @@ const Home = () => {
                 {TECH_PILLS.slice(0, 6).map((tech, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800/90 border border-slate-200/90 dark:border-slate-700/80 text-slate-800 dark:text-slate-200 shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white/80 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-200 shadow-sm backdrop-blur-md"
                   >
                     {tech.icon}
                     <span>{tech.name}</span>
@@ -197,15 +206,15 @@ const Home = () => {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-white text-sm font-bold bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5 transition-all w-full sm:w-auto"
                 >
                   <HiCommandLine className="text-base" />
-                  <span>View Projects</span>
+                  <span>Explore Projects</span>
                   <HiArrowRight className="text-sm" />
                 </Link>
                 <Link
                   href="/credentials"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-slate-800 dark:text-slate-200 text-sm font-bold bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-750 hover:border-slate-300 dark:hover:border-slate-600 shadow-sm transition-all w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-slate-800 dark:text-slate-200 text-sm font-bold bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm transition-all w-full sm:w-auto backdrop-blur-md"
                 >
                   <HiCheckBadge className="text-secondary text-base" />
-                  <span>Credentials & JLPT N2</span>
+                  <span>Credentials & Background</span>
                 </Link>
                 <a
                   href="/TUNYARZARTOE-(履歴書).pdf"
@@ -221,62 +230,259 @@ const Home = () => {
               <SocialIcons />
             </motion.div>
 
-            {/* Right: Profile Card */}
+            {/* Right Column: Interactive Code Terminal & Profile Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-5 w-full"
+              className="lg:col-span-5 w-full flex flex-col gap-4"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md p-6 sm:p-8">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-br from-red-500 via-rose-500 to-amber-400 mb-4">
+              {/* Profile Identity Pill Card */}
+              <div className="relative rounded-3xl p-5 bg-gradient-to-br from-white/90 via-slate-50/80 to-white/90 dark:from-slate-900/90 dark:via-[#0e1424]/90 dark:to-slate-950/90 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/70 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl p-0.5 bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 shadow-md flex-shrink-0">
                     <Image
                       src={profileImage}
                       alt="Tun Yar Zar Toe"
-                      className="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-900"
+                      className="w-full h-full rounded-[14px] object-cover"
                       priority
                     />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">Tun Yar Zar Toe</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Software Engineer</p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 mt-6">
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
-                    <div className="text-lg font-black text-slate-900 dark:text-white">N2</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Japanese</div>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
-                    <div className="text-lg font-black text-slate-900 dark:text-white">3+ yrs</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Experience</div>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
-                    <div className="text-lg font-black text-slate-900 dark:text-white">React</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Next.js</div>
-                  </div>
-                  <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 p-3 text-center">
-                    <div className="text-lg font-black text-slate-900 dark:text-white">Java</div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400">Spring Boot</div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-tight">
+                      Tun Yar Zar Toe
+                    </h3>
+                    <p className="text-xs text-secondary font-semibold font-mono">
+                      @tun.dev • Tokyo, Japan
+                    </p>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                      Tokyo IT Specialist College
+                    </p>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-2 mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>Available for hire • Tokyo, JP</span>
+                <div className="text-right flex-shrink-0">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    ● Active
+                  </span>
                 </div>
+              </div>
+
+              {/* Interactive Code Window */}
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 bg-slate-950 text-slate-100 shadow-2xl font-mono text-xs">
+                {/* Window Titlebar with Tabs */}
+                <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-slate-800/80">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                  </div>
+
+                  {/* Snippet Tabs */}
+                  <div className="flex items-center gap-1">
+                    {CODE_TABS.map((tab) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveCodeTab(tab.id)}
+                        className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                          activeCodeTab === tab.id
+                            ? "bg-slate-800 text-rose-400 border border-slate-700/60"
+                            : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/40"
+                        }`}
+                      >
+                        {tab.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Copy Button */}
+                  <button
+                    onClick={handleCopyCode}
+                    className="text-slate-400 hover:text-white transition-colors text-xs flex items-center gap-1"
+                    title="Copy code"
+                  >
+                    {copiedCode ? <HiCheck className="text-emerald-400" /> : <HiClipboardDocument />}
+                  </button>
+                </div>
+
+                {/* Code Body */}
+                <pre className="p-4 sm:p-5 overflow-x-auto text-[11px] sm:text-xs leading-relaxed text-slate-300 max-h-[260px] scrollbar-thin">
+                  <code>{currentSnippet.code}</code>
+                </pre>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* JAPAN RECRUITER SPOTLIGHT / 採用担当者様向け概要 */}
+        {/* ========================================================= */}
+        {/* STATS & METRICS STRIP                                     */}
+        {/* ========================================================= */}
+        <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {METRICS.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="p-4 sm:p-5 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-md space-y-1 hover:border-secondary/40 transition-all"
+            >
+              <div className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                {item.value}
+              </div>
+              <div className="text-xs sm:text-sm font-bold text-secondary">
+                {item.label}
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">
+                {item.sub}
+              </div>
+            </motion.div>
+          ))}
+        </section>
+
+        {/* ========================================================= */}
+        {/* FEATURED PROJECTS SHOWCASE                                */}
+        {/* ========================================================= */}
+        <section className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest mb-1">
+                <HiSparkles /> Portfolio Preview
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+                Featured Engineering Projects
+              </h2>
+            </div>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-red-700 dark:hover:text-rose-300 transition-colors"
+            >
+              <span>View All ({workData.length}) Projects</span>
+              <HiArrowRight />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {featuredWorks.map((project) => (
+              <ProjectCard key={project.id} project={project} isFeatured={true} />
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* ENGINEERING DNA & CORE PILLARS BENTO GRID                 */}
+        {/* ========================================================= */}
+        <section className="space-y-6">
+          <div className="border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center justify-between">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest mb-1">
+                <HiCpuChip /> Architecture & DNA
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+                Engineering Principles & Pillars
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Pillar 1 */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-md space-y-3 hover:border-blue-500/40 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl">
+                <HiCubeTransparent />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Full-Stack Architecture
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Building cohesive web solutions combining React and Next.js modern user interfaces with robust Java Spring Boot and Node.js microservices.
+              </p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">REST APIs</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">State Management</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Schema Design</span>
+              </div>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-md space-y-3 hover:border-rose-500/40 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-red-500/10 dark:bg-rose-500/20 text-secondary flex items-center justify-center text-2xl">
+                <HiBolt />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Speed & Optimization
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Obsessed with sub-second page loads, accessible UI components, code-splitting, lazy loading, and responsive mobile-first experiences.
+              </p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Lighthouse 95+</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Accessibility</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SEO Ready</span>
+              </div>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-md space-y-3 hover:border-emerald-500/40 transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
+                <HiShieldCheck />
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Team Collaboration & Quality
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Disciplined Git version control, semantic pull requests, rigorous code reviews, automated builds, and effective Japanese workplace communication (報連相).
+              </p>
+              <div className="flex flex-wrap gap-1 pt-2">
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Git / GitHub</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Code Reviews</span>
+                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">報連相 (Ho-Ren-So)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* FULL TECH STACK MATRIX                                    */}
+        {/* ========================================================= */}
+        <section className="p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-md space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <div>
+              <div className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">
+                Technology Arsenal
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                Tools & Frameworks I Build With
+              </h2>
+            </div>
+            <span className="text-xs text-slate-500 font-mono">12+ Production Technologies</span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {TECH_PILLS.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/90 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 hover:border-secondary/40 hover:-translate-y-0.5 transition-all group shadow-sm"
+              >
+                <span className="text-2xl group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </span>
+                <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 truncate">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* JAPAN RECRUITER & CAREER SPOTLIGHT (BALANCED CARD)        */}
+        {/* ========================================================= */}
         <motion.section
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800/90 shadow-xl dark:shadow-2xl relative overflow-hidden"
+          className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white via-slate-50 to-rose-50/30 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-[#0f172a]/90 dark:to-slate-950/90 text-slate-900 dark:text-white border border-slate-200/90 dark:border-slate-800/90 shadow-xl relative overflow-hidden backdrop-blur-xl"
         >
           <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 dark:bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
@@ -326,135 +532,9 @@ const Home = () => {
           </div>
         </motion.section>
 
-        {/* ENGINEERING DNA & CORE PILLARS BENTO GRID */}
-        <section className="space-y-6">
-          <div className="border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center justify-between">
-            <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest mb-1">
-                <HiCpuChip /> Architecture & DNA
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                Engineering Principles & Pillars
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Pillar 1 */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl">
-                <HiCubeTransparent />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Full-Stack Architecture
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Building cohesive web solutions combining React and Next.js modern user interfaces with robust Java Spring Boot and Node.js microservices.
-              </p>
-              <div className="flex flex-wrap gap-1 pt-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">REST APIs</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">State Management</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Schema Design</span>
-              </div>
-            </div>
-
-            {/* Pillar 2 */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-red-500/10 dark:bg-rose-500/20 text-secondary flex items-center justify-center text-2xl">
-                <HiBolt />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Speed & Optimization
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Obsessed with sub-second page loads, accessible UI components, code-splitting, lazy loading, and responsive mobile-first experiences.
-              </p>
-              <div className="flex flex-wrap gap-1 pt-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Lighthouse 95+</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Accessibility</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SEO Ready</span>
-              </div>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
-                <HiShieldCheck />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Team Collaboration & Quality
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Disciplined Git version control, semantic pull requests, rigorous code reviews, automated builds, and effective Japanese workplace communication (報連相).
-              </p>
-              <div className="flex flex-wrap gap-1 pt-2">
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Git / GitHub</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Code Reviews</span>
-                <span className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">報連相 (Ho-Ren-So)</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FULL TECH STACK MATRIX */}
-        <section className="p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-md space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-            <div>
-              <div className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">
-                Technology Arsenal
-              </div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-                Tools & Frameworks I Build With
-              </h2>
-            </div>
-            <span className="text-xs text-slate-500 font-mono">12+ Production Technologies</span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {TECH_PILLS.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50/90 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 hover:border-secondary/40 hover:-translate-y-0.5 transition-all group"
-              >
-                <span className="text-2xl group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </span>
-                <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 truncate">
-                  {item.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FEATURED PROJECTS SHOWCASE */}
-        <section className="space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
-            <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest mb-1">
-                <HiSparkles /> Portfolio Preview
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                Featured Engineering Projects
-              </h2>
-            </div>
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:text-red-700 dark:hover:text-rose-300 transition-colors"
-            >
-              <span>View All Projects</span>
-              <HiArrowRight />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {featuredWorks.map((project) => (
-              <ProjectCard key={project.id} project={project} isFeatured={true} />
-            ))}
-          </div>
-        </section>
-
-        {/* GITHUB STATS SECTION */}
+        {/* ========================================================= */}
+        {/* GITHUB STATS SECTION                                      */}
+        {/* ========================================================= */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest mb-1">
@@ -467,8 +547,10 @@ const Home = () => {
           <GitHubStats />
         </section>
 
-        {/* CALL TO ACTION */}
-        <section className="p-8 sm:p-12 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-xl text-center max-w-3xl mx-auto space-y-6">
+        {/* ========================================================= */}
+        {/* CALL TO ACTION                                            */}
+        {/* ========================================================= */}
+        <section className="p-8 sm:p-12 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-xl text-center max-w-3xl mx-auto space-y-6">
           <div className="inline-flex p-3 rounded-2xl bg-red-500/10 dark:bg-rose-500/20 text-secondary text-3xl mx-auto">
             <HiEnvelope />
           </div>
