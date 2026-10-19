@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
 import profileImage from "@/public/new_profile.jpeg";
 import SocialIcons from "@/components/SocialIcons";
@@ -12,21 +12,15 @@ import GitHubStats from "@/components/GitHubStats";
 import BackToTopButton from "@/components/main/BackToTopButton";
 import {
   HiSparkles,
-  HiBriefcase,
-  HiAcademicCap,
   HiArrowRight,
   HiCheckBadge,
   HiEnvelope,
   HiCodeBracket,
   HiCommandLine,
-  HiClipboardDocument,
-  HiCheck,
   HiCpuChip,
-  HiGlobeAlt,
   HiCubeTransparent,
   HiShieldCheck,
   HiBolt,
-  HiArrowUpRight,
   HiMapPin,
 } from "react-icons/hi2";
 import {
@@ -36,9 +30,6 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaDocker,
-  FaHtml5,
-  FaCss3Alt,
-  FaGithub,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -52,43 +43,19 @@ import {
   SiRedux,
 } from "react-icons/si";
 
-const CODE_TABS = [
-  {
-    id: "profile",
-    label: "developer.ts",
-    code: `// developer.ts — Core Engineering Identity
-export const engineer = {
-  name: "Tun Yar Zar Toe (トゥン・ヤー・ザー・トー)",
-  role: "Full-Stack Software Engineer",
-  location: "Tokyo, Japan 🇯🇵",
-  experience: "3+ Years Commercial Experience",
-  languages: ["English (Professional)", "Japanese (JLPT N2)", "Burmese (Native)"],
-  architecture: "Scalable Full-Stack, Clean Code & API Design",
-  activeFocus: ["React 19 / Next.js 15", "Java Spring Boot", "Cloud & Microservices"],
-  isOpenForOpportunities: true,
-};`,
-  },
-  {
-    id: "stack",
-    label: "stack.json",
-    code: `{
-  "frontend": ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Redux"],
-  "backend": ["Java", "Spring Boot", "Node.js", "Express", "REST APIs"],
-  "databases": ["MySQL", "PostgreSQL", "MongoDB"],
-  "tooling": ["Git/GitHub", "Docker", "Figma", "Vercel", "CI/CD"],
-  "principles": ["Sub-second loads", "A11y", "Lighthouse 95+", "報連相"]
-}`,
-  },
-  {
-    id: "recruiter",
-    label: "recruiter-memo.md",
-    code: `# Candidate Summary (採用ご担当者様向け)
-- 氏名: トゥンヤーザートー (Tun Yar Zar Toe)
-- 語学力: JLPT N2 合格 (日本語での仕様書読解・円滑な業務連携可能)
-- 実務経験: 3年以上 (Kumo Solutions / Evercomm SG)
-- 希望形態: 正社員 / インターン (Webエンジニア・新卒 / 中途)
-- 所在地: 東京都江東区 (23区内全域通勤可能 / リモート対応可)`,
-  },
+const BENTO_STACK = [
+  { icon: <FaReact className="text-[#61dafb]" />, name: "React" },
+  { icon: <SiNextdotjs className="text-slate-900 dark:text-white" />, name: "Next.js" },
+  { icon: <SiTypescript className="text-[#3178c6]" />, name: "TypeScript" },
+  { icon: <FaJava className="text-[#007396]" />, name: "Java" },
+  { icon: <SiSpringboot className="text-[#6db33f]" />, name: "Spring" },
+  { icon: <FaNodeJs className="text-[#68a063]" />, name: "Node.js" },
+  { icon: <SiTailwindcss className="text-[#38bdf8]" />, name: "Tailwind" },
+  { icon: <SiMysql className="text-[#4479a1]" />, name: "MySQL" },
+  { icon: <SiPostgresql className="text-[#336791]" />, name: "Postgres" },
+  { icon: <SiMongodb className="text-[#47a248]" />, name: "MongoDB" },
+  { icon: <FaDocker className="text-[#2496ed]" />, name: "Docker" },
+  { icon: <FaGitAlt className="text-[#f05032]" />, name: "Git" },
 ];
 
 const TECH_PILLS = [
@@ -115,19 +82,27 @@ const METRICS = [
 
 const Home = () => {
   const metadata = useMetadata();
-  const [activeCodeTab, setActiveCodeTab] = useState("profile");
-  const [copiedCode, setCopiedCode] = useState(false);
+  const [tokyoTime, setTokyoTime] = useState("");
+
+  useEffect(() => {
+    const tick = () =>
+      setTokyoTime(
+        new Date().toLocaleTimeString("en-US", {
+          timeZone: "Asia/Tokyo",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        })
+      );
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   // Top featured works
   const featuredWorks = workData.slice(0, 6);
 
-  const currentSnippet = CODE_TABS.find((t) => t.id === activeCodeTab) || CODE_TABS[0];
-
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(currentSnippet.code);
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2000);
-  };
 
   return (
     <>
@@ -230,87 +205,92 @@ const Home = () => {
               <SocialIcons />
             </motion.div>
 
-            {/* Right Column: Interactive Code Terminal & Profile Card */}
+            {/* Right Column: Bento Profile Dashboard */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="lg:col-span-5 w-full flex flex-col gap-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5 w-full grid grid-cols-2 gap-3 auto-rows-auto"
             >
-              {/* Profile Identity Pill Card */}
-              <div className="relative rounded-3xl p-5 bg-gradient-to-br from-white/90 via-slate-50/80 to-white/90 dark:from-slate-900/90 dark:via-[#0e1424]/90 dark:to-slate-950/90 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/70 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3.5">
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl p-0.5 bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 shadow-md flex-shrink-0">
-                    <Image
-                      src={profileImage}
-                      alt="Tun Yar Zar Toe"
-                      className="w-full h-full rounded-[14px] object-cover"
-                      priority
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-tight">
-                      Tun Yar Zar Toe
-                    </h3>
-                    <p className="text-xs text-secondary font-semibold font-mono">
-                      @tun.dev • Tokyo, Japan
-                    </p>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                      Tokyo IT Specialist College
-                    </p>
-                  </div>
+              {/* ── Card 1: Profile Photo (full-width top) ── */}
+              <div className="col-span-2 relative rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#0d1120] dark:to-slate-950 border border-slate-200 dark:border-slate-800/80 shadow-lg dark:shadow-2xl p-5 flex items-center gap-5">
+                {/* Orb */}
+                <div className="absolute -top-10 -right-10 w-52 h-52 bg-rose-500/10 dark:bg-rose-600/20 rounded-full blur-3xl pointer-events-none" />
+
+                {/* Photo */}
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl p-[2px] bg-gradient-to-tr from-red-600 via-rose-500 to-amber-400 shadow-lg flex-shrink-0">
+                  <Image
+                    src={profileImage}
+                    alt="Tun Yar Zar Toe"
+                    className="w-full h-full rounded-[14px] object-cover"
+                    priority
+                  />
                 </div>
 
-                <div className="text-right flex-shrink-0">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                    ● Active
-                  </span>
+                {/* Identity text */}
+                <div className="relative flex-1 min-w-0">
+                  <p className="text-[11px] font-bold text-rose-500 dark:text-rose-400 uppercase tracking-widest mb-0.5 font-mono">
+                    Full-Stack Engineer
+                  </p>
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white leading-tight">
+                    Tun Yar Zar Toe
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                    トゥン・ヤー・ザー・トー
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                      Open to Work
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                      🇯🇵 Tokyo
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {/* Interactive Code Window */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 bg-slate-950 text-slate-100 shadow-2xl font-mono text-xs">
-                {/* Window Titlebar with Tabs */}
-                <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-slate-800/80">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                  </div>
-
-                  {/* Snippet Tabs */}
-                  <div className="flex items-center gap-1">
-                    {CODE_TABS.map((tab) => (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveCodeTab(tab.id)}
-                        className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all ${
-                          activeCodeTab === tab.id
-                            ? "bg-slate-800 text-rose-400 border border-slate-700/60"
-                            : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/40"
-                        }`}
-                      >
-                        {tab.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Copy Button */}
-                  <button
-                    onClick={handleCopyCode}
-                    className="text-slate-400 hover:text-white transition-colors text-xs flex items-center gap-1"
-                    title="Copy code"
-                  >
-                    {copiedCode ? <HiCheck className="text-emerald-400" /> : <HiClipboardDocument />}
-                  </button>
+              {/* ── Card 4: Tech Stack Grid (full-width) ── */}
+              <div className="col-span-2 rounded-3xl bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:to-[#0d1120] border border-slate-200 dark:border-slate-800/80 p-4 shadow-md dark:shadow-lg">
+                <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3">Tech Stack</div>
+                <div className="grid grid-cols-4 gap-2">
+                  {BENTO_STACK.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex flex-col items-center gap-1.5 p-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/50 dark:hover:bg-slate-700/60 border border-slate-200 dark:border-slate-700/40 hover:border-slate-300 dark:hover:border-slate-600/60 transition-all group"
+                    >
+                      <span className="text-xl group-hover:scale-110 transition-transform">
+                        {item.icon}
+                      </span>
+                      <span className="text-[10px] font-semibold text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-slate-200 transition-colors text-center leading-tight">
+                        {item.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                {/* Code Body */}
-                <pre className="p-4 sm:p-5 overflow-x-auto text-[11px] sm:text-xs leading-relaxed text-slate-300 max-h-[260px] scrollbar-thin">
-                  <code>{currentSnippet.code}</code>
-                </pre>
+              {/* ── Card 5: Recruiter Quick Note ── */}
+              <div className="col-span-2 rounded-3xl bg-gradient-to-r from-rose-50 via-white to-slate-50 dark:from-rose-600/20 dark:via-slate-900/60 dark:to-slate-900/80 border border-rose-200 dark:border-rose-500/20 p-4 flex items-center justify-between gap-4 shadow-md dark:shadow-lg">
+                <div>
+                  <div className="text-[10px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-1">
+                    採用担当者の方へ
+                  </div>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    JLPT N2 • 実務3年以上 • 東京在住 • 即戦力
+                  </p>
+                </div>
+                <Link
+                  href="/credentials"
+                  className="flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white transition-colors shadow-md"
+                >
+                  詳細を見る
+                  <HiArrowRight className="text-xs" />
+                </Link>
               </div>
             </motion.div>
+
+
           </div>
         </section>
 
