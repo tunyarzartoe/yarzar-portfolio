@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-3 sm:top-5 z-50 px-3 sm:px-6 max-w-6xl mx-auto w-full mb-6">
+    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 max-w-6xl mx-auto w-full">
       <nav className="rounded-2xl sm:rounded-full bg-gradient-to-r from-white/95 via-slate-50/90 to-white/95 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-[#0f172a]/90 dark:to-slate-950/95 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-200/50 dark:shadow-2xl dark:shadow-black/70 flex items-center justify-between py-2 sm:py-2.5 px-3 sm:px-6 transition-all duration-300">
         {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
