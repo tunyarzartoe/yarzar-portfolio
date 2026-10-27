@@ -21,6 +21,10 @@ import {
   HiSparkles,
   HiLanguage,
   HiCodeBracket,
+  HiBolt,
+  HiShieldCheck,
+  HiCheck,
+  HiCubeTransparent,
 } from "react-icons/hi2";
 import { FaGraduationCap } from "react-icons/fa";
 
@@ -519,38 +523,173 @@ const CredentialsPage = () => {
                 </div>
               </div>
 
-              {/* Detailed Self-PR & Motivation */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* 自己PR */}
-                <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 dark:bg-rose-950/50 text-red-600 dark:text-rose-400 border border-red-200 dark:border-rose-900/50">
-                    自己PR（自分の強み）
+              {/* 3 Core Strengths Cards (強みの3つの柱) */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold text-secondary uppercase tracking-widest font-mono">
+                    Core Strengths
+                  </span>
+                  <span className="h-px bg-slate-200 dark:bg-slate-800 flex-1" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                  エンジニアとしての3つの強み
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {/* 強み 1 */}
+                <div className="p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:border-rose-500/40 transition-all space-y-3 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-rose-500/10 dark:bg-rose-500/20 text-secondary flex items-center justify-center text-2xl">
+                      <HiCubeTransparent />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-secondary font-mono">STRENGTH 01</span>
+                      <h4 className="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+                        実務3年以上のフルスタック開発力
+                      </h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      React.js・Next.js 15・TypeScriptを用いたレスポンシブで高速なUI開発から、Java Spring Boot・Node.js・MySQLを用いたRESTful API設計まで一貫して対応。商用システム（Kumo Solutions）やIoTエネルギー可視化ダッシュボード（Evercomm SG）、求人ポータル「J4U」などの実践開発実績があります。
+                    </p>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                    実践的なWeb開発スキルと、責任感を持って学び続ける自走力
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    私は現在、東京のIT専門学校でプログラミングを学びながら、React.js・JavaScriptを中心としたWeb開発スキルを高めています。これまでに天気予報アプリ、ショッピングカートアプリ、カウンターアプリ、AI炭素排出量計算アプリなどを開発し、API連携、状態管理、レスポンシブ対応を経験しました。
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Git・GitHubによるバージョン管理や、Figmaを使ったデザイン確認など、チーム開発の基本も理解しています。日本語はJLPT N2レベルで、日常会話や技術内容の理解が可能です。新しい技術を積極的に学び続ける姿勢と、責任感を持って最後まで取り組むところが私の強みです。
-                  </p>
+                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">React / Next.js</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java Spring Boot</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">MySQL / REST API</span>
+                  </div>
                 </div>
 
-                {/* 志望動機 */}
-                <div className="p-6 sm:p-7 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
+                {/* 強み 2 */}
+                <div className="p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:border-blue-500/40 transition-all space-y-3 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl">
+                      <HiBolt />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 font-mono">STRENGTH 02</span>
+                      <h4 className="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+                        自走力と新技術へのキャッチアップ力
+                      </h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      指示待ちにならず、要件の意図やユーザー体験を理解して自ら調査・技術選定・実装を完遂する推進力があります。Git/GitHubを用いたバージョン管理、Figmaデザインからの精緻なコーディング、Dockerによる環境構築など、開発現場に必要なスキルを自発的に習得し実践しています。
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">課題解決力</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Git / GitHub</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Figma to Code</span>
+                  </div>
+                </div>
+
+                {/* 強み 3 */}
+                <div className="p-6 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:border-emerald-500/40 transition-all space-y-3 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
+                      <HiShieldCheck />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 font-mono">STRENGTH 03</span>
+                      <h4 className="text-base font-bold text-slate-900 dark:text-white mt-0.5">
+                        日本語での協調性と徹底した「報連相」
+                      </h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      日本語能力試験（JLPT）N2に合格。技術仕様書の正確な読解だけでなく、日々の進捗共有や問題発生時の早期相談（報告・連絡・相談）を徹底しています。多国籍チームや日本企業での実務経験を通じ、コードレビューやチームメンバーとの協調的な開発を大切にしています。
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">JLPT N2</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">報連相の徹底</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">チーム開発</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Detailed Self-PR & Motivation */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 自己PR 詳細 */}
+                <div className="p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 dark:bg-rose-950/50 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900/50">
+                    <HiSparkles />
+                    自己PR（自己アピール詳細）
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white leading-snug">
+                    実務3年のフルスタック開発力と、高い自走力で成果にコミット
+                  </h3>
+                  <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p>
+                      私の強みは、<strong className="text-slate-900 dark:text-white">「実務経験3年に裏打ちされたフルスタックWeb開発力」</strong>と、<strong className="text-slate-900 dark:text-white">「課題に対して自ら調査し最後まで完遂する自走力」</strong>です。
+                    </p>
+                    <p>
+                      これまでに商用Web開発企業（Kumo Solutions）やIoT・エネルギー可視化企業（Evercomm Singapore）での実務に従事し、Reactを用いた再利用可能なコンポーネント設計、RESTful API統合、リアルタイムデータ連携などを担当いたしました。また個人開発でも、求職者・企業をつなぐ求人ポータル「J4U」、SNSアプリ、AI炭素排出量計算アプリなどを要件定義からデプロイまで一貫して制作しています。
+                    </p>
+                    <p>
+                      さらに、日本での長期就労を見据えて<strong className="text-slate-900 dark:text-white">JLPT N2</strong>を取得。日本語での技術仕様書読解やコードレビューはもちろん、日本の職場文化である「報連相（報告・連絡・相談）」を誠実に実践し、チームに貢献いたします。
+                    </p>
+                  </div>
+                </div>
+
+                {/* 志望動機 詳細 */}
+                <div className="p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-md space-y-4">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50">
+                    <HiBriefcase />
                     志望動機（日本で働く熱意）
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                    日本企業での実務経験を通じ、社会に貢献できるエンジニアへ
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white leading-snug">
+                    技術品質とUXを重んじる日本の開発現場で、長期的に貢献したい
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    私は日本での実務経験を通して、Webエンジニアとしてのスキルと日本語能力をさらに伸ばしたいと考えております。React.jsやNext.jsを中心に複数のアプリを開発し、GitHubとポートフォリオで成果物を公開しています。
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    開発現場でチームの一員として働き、実際の開発フローや日本語での業務連携（報連相・コードレビュー・要件定義）を経験することで、将来は日本企業で長く活躍し、周囲から信頼されるエンジニアを目指しています。学ぶ姿勢と熱意をもって、貴社の業務に貢献いたします。
-                  </p>
+                  <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p>
+                      私が日本企業でのエンジニア就業を志望する理由は、<strong className="text-slate-900 dark:text-white">「細部へのこだわりと高い信頼性を重んじる日本のものづくり・開発文化」</strong>に強く共感し、その一員として社会に価値を届けたいからです。
+                    </p>
+                    <p>
+                      ミャンマーでの工学部在籍時よりWebテクノロジーに情熱を注ぎ、実務経験を経て現在は東京ITプログラミング＆会計専門学校で最新のソフトウェアアーキテクチャやシステム開発を深く学んでおります。
+                    </p>
+                    <p>
+                      入社後は、これまでに培ったReact・Next.js・Java・データベースの技術力と、柔軟な適応力・積極的な学習意欲を活かし、チームの開発スピード向上と高品質なサービス運用に即戦力として貢献いたします。周囲から信頼されるエンジニアを目指し、誠心誠意取り組む所存です。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Engineering Values / 開発において大切にしていること */}
+              <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-slate-50 via-white to-slate-50 dark:from-slate-900/90 dark:via-slate-900/70 dark:to-slate-950/90 border border-slate-200/80 dark:border-slate-800/80 shadow-sm space-y-4">
+                <div className="flex items-center gap-2">
+                  <HiCodeBracket className="text-secondary text-lg" />
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                    開発における行動指針・ポリシー (Engineering Principles)
+                  </h4>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+                  <div className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                      <HiCheck />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-slate-900 dark:text-white">保守性の高いクリーンコード</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">誰が見ても理解しやすく、再利用性の高いコンポーネント・API設計を意識します。</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                      <HiCheck />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-slate-900 dark:text-white">徹底した報連相と協調性</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">進捗や課題を早期に共有し、チームメンバーと建設的な議論を重ねます。</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-rose-500/15 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">
+                      <HiCheck />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-slate-900 dark:text-white">表示速度とUXの追求</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">サブセカンド表示、アクセシビリティ、Lighthouse高スコアを基準に開発します。</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
