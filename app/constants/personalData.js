@@ -431,6 +431,19 @@ export const servicesData = [
 
 export const workData = [
   {
+    id: 1,
+    description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
+    title: "J4U",
+    name: "J4U - Job Portal Platform",
+    images: [
+      { url: J4U_LOGO },
+    ],
+    logo: J4U_LOGO,
+    languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
+    demoLink: "https://j4u-frontend.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
     id: 6,
     description: "A full-featured responsive social networking application built with React and Redux, featuring posts, real-time user feeds, author details, comments, and responsive UI.",
     title: "Social App",
@@ -441,6 +454,19 @@ export const workData = [
     logo: SOCIAL_LOGO,
     languages: ["ReactJS", "Redux", "Bootstrap", "Axios", "REST APIs"],
     demoLink: "https://react-social-app-gules.vercel.app",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 3,
+    description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
+    title: "CO2 AI",
+    name: "AI Carbon Calculator - Carbon Footprint Estimator",
+    images: [
+      { url: AI_CARBON_LOGO },
+    ],
+    logo: AI_CARBON_LOGO,
+    languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
+    demoLink: "https://ai-carbon-calculator.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
@@ -456,35 +482,9 @@ export const workData = [
     demoLink: "https://yarzardevportfolio.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
-{
-  id: 4,
-  description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
-  title: "学習ガイド",
-  name: "Japanese Study Guide",
-  images: [
-    { url: JAPANESE_STUDY_LOGO },
-  ],
-  logo: JAPANESE_STUDY_LOGO,
-  languages: ["ReactJS", "React Router", "CSS"],
-  demoLink: "https://japanese-self-study-guide.vercel.app/",
-  lang: { name: "ReactJs" }
-},
-  {
-    id: 3,
-    description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
-    title: "CO2 AI",
-    name: "AI Carbon Calculator - Carbon Footprint Estimator",
-    images: [
-      { url: AI_CARBON_LOGO },
-    ],
-    logo: AI_CARBON_LOGO,
-    languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
-    demoLink: "https://ai-carbon-calculator.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
   {
     id: 2,
-    description: "A Burmese recipe collection app . Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
+    description: "A Burmese recipe collection app. Browse traditional recipes, view ingredients and instructions, and navigate between recipe pages.",
     title: "Recipe App",
     name: "Burmese Recipe App - Recipes & Instructions",
     images: [
@@ -496,17 +496,17 @@ export const workData = [
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
-    id: 1,
-    description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
-    title: "J4U",
-    name: "J4U - Job Portal Platform",
+    id: 4,
+    description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
+    title: "学習ガイド",
+    name: "Japanese Study Guide",
     images: [
-      { url: J4U_LOGO },
+      { url: JAPANESE_STUDY_LOGO },
     ],
-    logo: J4U_LOGO,
-    languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
-    demoLink: "https://j4u-frontend.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
+    logo: JAPANESE_STUDY_LOGO,
+    languages: ["ReactJS", "React Router", "CSS"],
+    demoLink: "https://japanese-self-study-guide.vercel.app/",
+    lang: { name: "ReactJs" }
   },
   // Add more projects as needed
 ];
