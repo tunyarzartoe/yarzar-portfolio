@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
-import profileImage from "@/public/new_profile.jpeg";
+import profileImage from "@/public/new_profile.png";
 import SocialIcons from "@/components/SocialIcons";
 import { ProjectCard } from "@/components/ProjectCard";
 import { workData } from "@/app/constants/personalData";

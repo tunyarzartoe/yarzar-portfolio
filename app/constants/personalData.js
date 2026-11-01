@@ -41,7 +41,7 @@ import POS3 from "../../public/works/pos3.jpeg";
 // Use public paths for project media so they load consistently in the UI.
 const PR = "/works/project-burmese-recipe.svg";
 const AI_CARBON = "/works/project-ai-carbon-calculator.png";
-// import profileImage from "@/public/new_profile.jpeg";
+// import profileImage from "@/public/new_profile.png";
 import AI_CARBON_LOGO from "@/public/logos/ai-carbon-logo.png";
 import RECIPE_LOGO from "@/public/logos/recipe-logo.svg";
 import J4U_LOGO from "@/public/logos/j4u-logo.svg";

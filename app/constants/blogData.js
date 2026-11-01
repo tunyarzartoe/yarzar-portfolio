@@ -17,7 +17,7 @@ export const BLOG_POSTS = [
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -90,7 +90,7 @@ export async function getStaticProps({ params }) {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -161,7 +161,7 @@ Here is a curated guide of high-frequency engineering terms used in daily standu
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -235,7 +235,7 @@ const handleSearch = (query) => {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -321,7 +321,7 @@ public class GlobalExceptionHandler {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -422,7 +422,7 @@ export default function ThemeSwitcher() {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -505,7 +505,7 @@ function renderState(state: FetchState<Project[]>) {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
@@ -569,7 +569,7 @@ function renderState(state: FetchState<Project[]>) {
     author: {
       name: "Tun Yar Zar Toe",
       role: "Full-Stack Engineer & Tokyo IT Student",
-      avatar: "/new_profile.jpeg",
+      avatar: "/new_profile.png",
       location: "Tokyo, Japan 🇯🇵",
     },
     sections: [
