@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
-import aboutImage from "@/public/about-photo.jpg";
+import cvPhoto from "@/public/new_profile.png";
 import Personal from "@/components/Personal";
 import BackToTopButton from "@/components/main/BackToTopButton";
 import {
@@ -150,26 +150,36 @@ const About = () => {
           >
             {/* Photo card */}
             <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl group">
-              {/* Glow accent */}
-              <div className="absolute -inset-px rounded-3xl bg-gradient-to-tr from-rose-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-
-              <div className="relative h-72 sm:h-80 lg:h-96 overflow-hidden">
+              {/* Photo Container - Completely clear, no blur overlay, no dark tint */}
+              <div className="relative w-full aspect-[3/4] overflow-hidden bg-slate-100 dark:bg-slate-800">
                 <Image
-                  src={aboutImage}
-                  alt="Tun Yar Zar Toe"
+                  src={cvPhoto}
+                  alt="Tun Yar Zar Toe - CV Photo"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 380px"
+                  className="object-cover object-top"
                   priority
+                  unoptimized={true}
+                  quality={100}
                 />
-                {/* Dark overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              </div>
 
-                {/* Floating name tag */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="rounded-2xl bg-white/10 dark:bg-black/30 backdrop-blur-md border border-white/20 px-4 py-3">
-                    <p className="text-white font-black text-base leading-none">Tun Yar Zar Toe</p>
-                    <p className="text-white/70 text-xs font-mono mt-1">トゥン・ヤー・ザー・トー</p>
-                  </div>
+              {/* Identity text - clean layout below photo without covering or blurring it */}
+              <div className="p-4 bg-slate-50/70 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
+                <p className="text-slate-900 dark:text-white font-black text-lg leading-tight">
+                  Tun Yar Zar Toe
+                </p>
+                <p className="text-secondary text-xs font-mono font-semibold mt-1">
+                  トゥン・ヤー・ザー・トー
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    Open to Work
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                    Full-Stack Engineer
+                  </span>
                 </div>
               </div>
 

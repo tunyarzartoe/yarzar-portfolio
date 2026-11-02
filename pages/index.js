@@ -222,8 +222,10 @@ const Home = () => {
                   <Image
                     src={profileImage}
                     alt="Tun Yar Zar Toe"
-                    className="w-full h-full rounded-[14px] object-cover"
+                    className="w-full h-full rounded-[14px] object-cover object-top"
                     priority
+                    unoptimized={true}
+                    quality={100}
                   />
                 </div>
 
