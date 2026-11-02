@@ -195,9 +195,10 @@ const GlobalSearch = () => {
 
   // Close on navigation
   useEffect(() => {
+    if (!router || !router.events) return;
     router.events.on("routeChangeStart", close);
     return () => router.events.off("routeChangeStart", close);
-  }, [router.events, close]);
+  }, [router, close]);
 
   // Focus + scroll lock while open; reset when closed
   useEffect(() => {

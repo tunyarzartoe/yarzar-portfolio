@@ -41,6 +41,7 @@ import {
   SiMongodb,
   SiFigma,
   SiRedux,
+  SiDotnet,
 } from "react-icons/si";
 
 const BENTO_STACK = [
@@ -49,6 +50,7 @@ const BENTO_STACK = [
   { icon: <SiTypescript className="text-[#3178c6]" />, name: "TypeScript" },
   { icon: <FaJava className="text-[#007396]" />, name: "Java" },
   { icon: <SiSpringboot className="text-[#6db33f]" />, name: "Spring" },
+  { icon: <SiDotnet className="text-[#512bd4]" />, name: ".NET" },
   { icon: <FaNodeJs className="text-[#68a063]" />, name: "Node.js" },
   { icon: <SiTailwindcss className="text-[#38bdf8]" />, name: "Tailwind" },
   { icon: <SiMysql className="text-[#4479a1]" />, name: "MySQL" },
@@ -64,6 +66,7 @@ const TECH_PILLS = [
   { name: "TypeScript", icon: <SiTypescript className="text-[#3178c6]" />, cat: "frontend" },
   { name: "Java", icon: <FaJava className="text-[#007396]" />, cat: "backend" },
   { name: "Spring Boot", icon: <SiSpringboot className="text-[#6db33f]" />, cat: "backend" },
+  { name: "C# / .NET", icon: <SiDotnet className="text-[#512bd4]" />, cat: "backend" },
   { name: "Node.js", icon: <FaNodeJs className="text-[#68a063]" />, cat: "backend" },
   { name: "Python", icon: <FaPython className="text-[#306998]" />, cat: "backend" },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#38bdf8]" />, cat: "frontend" },

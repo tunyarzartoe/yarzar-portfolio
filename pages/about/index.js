@@ -41,6 +41,7 @@ import {
   SiMongodb,
   SiFigma,
   SiRedux,
+  SiDotnet,
 } from "react-icons/si";
 
 /* ─── Skill level → colour mapping ─── */
@@ -73,6 +74,7 @@ const SKILL_CATEGORIES = [
     iconColor: "text-violet-500",
     skills: [
       { name: "Java + Spring Boot", icon: <FaJava className="text-[#007396]" />,         level: "Advanced" },
+      { name: "C# + .NET",          icon: <SiDotnet className="text-[#512bd4]" />,      level: "Proficient" },
       { name: "Node.js",            icon: <FaNodeJs className="text-[#68a063]" />,        level: "Proficient" },
       { name: "Python",             icon: <FaPython className="text-[#306998]" />,        level: "Proficient" },
       { name: "RESTful APIs",       icon: <SiSpringboot className="text-[#6db33f]" />,   level: "Advanced" },

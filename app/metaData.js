@@ -13,6 +13,8 @@ export const useMetadata = () => {
   const router = useRouter();
 
   useEffect(() => {
+    if (!router) return;
+
     const handleMetadata = () => {
       const { pathname } = router;
       if (pathname === "/") {
@@ -53,12 +55,17 @@ export const useMetadata = () => {
       }
     };
     handleMetadata();
-    router.events.on("routeChangeComplete", handleMetadata);
+
+    if (router.events) {
+      router.events.on("routeChangeComplete", handleMetadata);
+    }
 
     return () => {
-      router.events.off("routeChangeComplete", handleMetadata);
+      if (router.events) {
+        router.events.off("routeChangeComplete", handleMetadata);
+      }
     };
-  }, [router,Icon]);
+  }, [router, router?.pathname]);
 
   return metadata;
 };

@@ -50,7 +50,7 @@ const MyApp = ({ Component, pageProps }) => {
       <I18nextProvider i18n={i18n}>
         <Layout>
           <AnimatePresence mode="wait">
-            <motion.div key={router.route} className="h-full">
+            <motion.div key={router.asPath || router.route} className="h-full">
               <Suspense fallback={<LoadingAnimation />}>
                 <Component {...pageProps} />
               </Suspense>

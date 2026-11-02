@@ -267,6 +267,26 @@ export const certificationsData = [
 
 export const experienceData = [
   {
+    id: "dotnet-github-projects",
+    role: "C# / .NET Backend Developer (Self-Learning Portfolio)",
+    roleJapanese: "C# / .NET バックエンド開発（自己学習ポートフォリオ）",
+    company: "GitHub Portfolio Projects",
+    companyJapanese: "GitHub ポートフォリオプロジェクト",
+    location: "Remote / Self-Driven",
+    period: "2024 – Present",
+    duration: "Ongoing",
+    type: "Portfolio / Learning",
+    logo: DF,
+    current: true,
+    description: "Built C# and .NET training projects based on my GitHub repositories, focusing on object-oriented programming, ASP.NET Core web APIs, and backend system design.",
+    highlights: [
+      "Developed .NET learning projects such as DotNetBasic and DotNetTrainingBatch4 to strengthen C# fundamentals, OOP, LINQ, and clean code practices.",
+      "Implemented student result management and API-based backend modules using ASP.NET Core, RESTful routes, and structured CRUD workflows.",
+      "Practiced enterprise-style backend patterns including layered application structure, repository/service logic, and database-driven application design."
+    ],
+    techStack: ["C#", ".NET Core", "ASP.NET Core", "REST APIs", "MVC", "Entity Framework", "GitHub"],
+  },
+  {
     id: "kumo",
     role: "Junior Software Developer / Web Developer",
     roleJapanese: "ジュニアソフトウェア開発者",
