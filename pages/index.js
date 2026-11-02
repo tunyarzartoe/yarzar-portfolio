@@ -189,7 +189,7 @@ const Home = () => {
                 </Link>
                 <Link
                   href="/credentials"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-slate-800 dark:text-slate-200 text-sm font-bold bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm transition-all w-full sm:w-auto backdrop-blur-md"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-slate-800 dark:text-slate-200 text-sm font-bold bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-sm transition-all w-full sm:w-auto"
                 >
                   <HiCheckBadge className="text-secondary text-base" />
                   <span>Credentials & Background</span>
@@ -216,41 +216,41 @@ const Home = () => {
               className="lg:col-span-5 w-full grid grid-cols-2 gap-3 auto-rows-auto"
             >
               {/* ── Card 1: Profile Photo (full-width top) ── */}
-              <div className="col-span-2 relative rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#0d1120] dark:to-slate-950 border border-slate-200 dark:border-slate-800/80 shadow-lg dark:shadow-2xl p-5 flex items-center gap-5">
-                {/* Orb */}
+              <div className="col-span-2 relative rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-[#0d1120] dark:to-slate-950 border border-slate-200 dark:border-slate-800/80 shadow-lg dark:shadow-2xl p-4 sm:p-5">
                 <div className="absolute -top-10 -right-10 w-52 h-52 bg-rose-500/10 dark:bg-rose-600/20 rounded-full blur-3xl pointer-events-none" />
 
-                {/* Photo */}
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl p-[2px] bg-gradient-to-tr from-red-600 via-rose-500 to-amber-400 shadow-lg flex-shrink-0">
-                  <Image
-                    src={profileImage}
-                    alt="Tun Yar Zar Toe"
-                    className="w-full h-full rounded-[14px] object-cover object-top"
-                    priority
-                    unoptimized={true}
-                    quality={100}
-                  />
-                </div>
+                <div className="relative flex items-stretch gap-4 sm:gap-5 min-h-[200px]">
+                  <div className="relative w-[120px] sm:w-[150px] md:w-[170px] shrink-0 overflow-hidden rounded-[20px] border border-slate-200 dark:border-slate-700/60 bg-slate-100 dark:bg-slate-800 shadow-md">
+                    <Image
+                      src={profileImage}
+                      alt="Tun Yar Zar Toe"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                      unoptimized={true}
+                      quality={100}
+                    />
+                  </div>
 
-                {/* Identity text */}
-                <div className="relative flex-1 min-w-0">
-                  <p className="text-[11px] font-bold text-rose-500 dark:text-rose-400 uppercase tracking-widest mb-0.5 font-mono">
-                    Full-Stack Engineer
-                  </p>
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white leading-tight">
-                    Tun Yar Zar Toe
-                  </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
-                    トゥン・ヤー・ザー・トー
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mt-3">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-                      Open to Work
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                      🇯🇵 Tokyo
-                    </span>
+                  <div className="relative flex-1 min-w-0 flex flex-col justify-center">
+                    <p className="text-[11px] font-bold text-rose-500 dark:text-rose-400 uppercase tracking-widest mb-1 font-mono">
+                      Full-Stack Engineer
+                    </p>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 dark:text-white leading-tight">
+                      Tun Yar Zar Toe
+                    </h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                      トゥン・ヤー・ザー・トー
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                        Open to Work
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                        🇯🇵 Tokyo
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

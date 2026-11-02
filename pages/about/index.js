@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useMetadata } from "@/app/metaData";
-import cvPhoto from "@/public/new_profile.png";
+import cvPhoto from "@/public/about_profile.jpeg";
 import Personal from "@/components/Personal";
 import BackToTopButton from "@/components/main/BackToTopButton";
 import {
