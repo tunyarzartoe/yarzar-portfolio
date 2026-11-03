@@ -110,7 +110,7 @@ const SKILL_CATEGORIES = [
 const QUICK_FACTS = [
   { icon: <HiMapPin />, label: "Location", value: "Tokyo, Japan 🇯🇵" },
   { icon: <HiBriefcase />, label: "Experience", value: "3+ Years Commercial" },
-  { icon: <HiAcademicCap />, label: "Education", value: "Tokyo IT Specialist College" },
+  { icon: <HiAcademicCap />, label: "Education", value: "東京ITプログラミング＆会計専門学校" },
   { icon: <HiLanguage />, label: "Japanese", value: "JLPT N2 Certified" },
   { icon: <HiCheckBadge />, label: "Status", value: "Open to Opportunities" },
   { icon: <HiGlobeAlt />, label: "Languages", value: "JP · EN · Burmese" },

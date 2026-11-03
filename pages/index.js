@@ -79,7 +79,7 @@ const TECH_PILLS = [
 const METRICS = [
   { value: "3+ Years", label: "Commercial Experience", sub: "Production-tested code" },
   { value: "6+ Live", label: "Shipped Projects", sub: "Web & SaaS applications" },
-  { value: "JLPT N2", label: "Business Japanese", sub: "Tokyo IT Specialist College" },
+  { value: "JLPT N2", label: "Business Japanese", sub: "東京ITプログラミング＆会計専門学校" },
   { value: "Full-Stack", label: "React + Spring Boot", sub: "End-to-end architecture" },
 ];
 
