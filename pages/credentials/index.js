@@ -697,29 +697,35 @@ const CredentialsPage = () => {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-20 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-          <div>
-            <h3 className="text-2xl sm:text-3xl font-black mb-2">
-              Interested in collaborating or hiring?
-            </h3>
-            <p className="text-red-100 text-sm sm:text-base max-w-xl">
-              Currently living in Tokyo, Japan, holding JLPT N2 certification and looking for high-impact software engineering opportunities.
-            </p>
-          </div>
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-full bg-white text-red-600 font-bold text-sm shadow-md hover:bg-slate-100 hover:scale-105 transition-all"
-            >
-              Get in Touch
-            </Link>
-            <a
-              href="/TUNYARZARTOE-(履歴書).pdf"
-              download
-              className="px-6 py-3 rounded-full bg-red-800/40 hover:bg-red-800/60 border border-white/30 text-white font-bold text-sm backdrop-blur-md transition-all"
-            >
-              Download CV
-            </a>
+        <div className="mt-20 overflow-hidden rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-gradient-to-r from-red-50 via-white to-rose-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 shadow-lg shadow-red-500/10 dark:shadow-slate-900/40">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 sm:p-10 text-center sm:text-left">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-300 text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] mb-3">
+                <HiSparkles className="text-sm" />
+                Collaboration
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2">
+                Interested in collaborating or hiring?
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
+                Currently living in Tokyo, Japan, holding JLPT N2 certification and looking for high-impact software engineering opportunities.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link
+                href="/contact"
+                className="px-6 py-3 rounded-full bg-red-600 text-white font-bold text-sm shadow-md shadow-red-500/20 hover:bg-red-500 hover:scale-[1.02] transition-all duration-200"
+              >
+                Get in Touch
+              </Link>
+              <a
+                href="/TUNYARZARTOE-(履歴書).pdf"
+                download
+                className="px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-all duration-200"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
         </div>
       </section>
