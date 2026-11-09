@@ -485,7 +485,7 @@ const CredentialsPage = () => {
                 </div>
                 <a
                   href="/TUNYARZARTOE-(履歴書).pdf"
-                  download
+                  download="履歴書＿トウンヤーザートー.pdf"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-md transition-all self-start sm:self-auto"
                 >
                   <span>履歴書PDF (CV) をダウンロード</span>
@@ -505,10 +505,10 @@ const CredentialsPage = () => {
                 </div>
                 <div className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
                   <div className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase mb-1">在留資格 & 所在地</div>
-                  <div className="text-lg font-bold text-slate-900 dark:text-white">東京都江東区在住</div>
+                  <div className="text-lg font-bold text-slate-900 dark:text-white">東京都江東区大島（東大島駅）</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
                     • 在留資格：留学（東京ITプログラミング＆会計専門学校）<br />
-                    • 通勤：東京都内・23区内全域通勤可能（リモート可）<br />
+                    • 最寄り駅：都営新宿線 東大島駅（23区内・都内全域通勤可能）<br />
                     • 就労形態：正社員就職（新卒・中途）／インターン
                   </div>
                 </div>
@@ -517,8 +517,8 @@ const CredentialsPage = () => {
                   <div className="text-lg font-bold text-slate-900 dark:text-white">Web / Software Engineer</div>
                   <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
                     • フロントエンド：React.js, Next.js, TypeScript<br />
-                    • バックエンド：Java (Spring Boot), Node.js, Python<br />
-                    • データベース：MySQL, PostgreSQL, MongoDB
+                    • バックエンド：Java (Spring Boot), C# (.NET Core), Node.js<br />
+                    • データベース：MySQL, PostgreSQL, MongoDB, SQL Server
                   </div>
                 </div>
               </div>
@@ -720,7 +720,7 @@ const CredentialsPage = () => {
               </Link>
               <a
                 href="/TUNYARZARTOE-(履歴書).pdf"
-                download
+                download="履歴書＿トウンヤーザートー.pdf"
                 className="px-6 py-3 rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-all duration-200"
               >
                 Download CV

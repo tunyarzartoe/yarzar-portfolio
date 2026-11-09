@@ -143,7 +143,7 @@ const Contact = () => {
                     Tokyo, Japan
                   </div>
                   <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Koto-ku, Tokyo (東京都江東区)
+                    Koto-ku, Tokyo (東京都江東区大島・東大島駅 最寄り)
                   </div>
                 </div>
               </div>

@@ -108,7 +108,7 @@ const SKILL_CATEGORIES = [
 ];
 
 const QUICK_FACTS = [
-  { icon: <HiMapPin />, label: "Location", value: "Tokyo, Japan 🇯🇵" },
+  { icon: <HiMapPin />, label: "Location", value: "Tokyo (東大島駅) 🇯🇵" },
   { icon: <HiBriefcase />, label: "Experience", value: "3+ Years Commercial" },
   { icon: <HiAcademicCap />, label: "Education", value: "東京ITプログラミング＆会計専門学校" },
   { icon: <HiLanguage />, label: "Japanese", value: "JLPT N2 Certified" },
@@ -204,7 +204,7 @@ const About = () => {
               <div className="p-3 border-t border-slate-100 dark:border-slate-800">
                 <a
                   href="/TUNYARZARTOE-(履歴書).pdf"
-                  download
+                  download="履歴書＿トウンヤーザートー.pdf"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-2xl text-xs font-bold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow shadow-rose-500/20 transition-all"
                 >
                   Download CV / 履歴書
@@ -409,7 +409,7 @@ const About = () => {
                 </Link>
                 <a
                   href="/TUNYARZARTOE-(履歴書).pdf"
-                  download
+                  download="履歴書＿トウンヤーザートー.pdf"
                   className="px-8 py-3 rounded-full text-slate-200 font-bold text-sm bg-white/10 hover:bg-white/15 border border-white/20 transition-all"
                 >
                   Download 履歴書 PDF

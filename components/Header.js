@@ -67,7 +67,7 @@ const Header = () => {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="/TUNYARZARTOE-(履歴書).pdf"
-            download
+            download="履歴書＿トウンヤーザートー.pdf"
             className="group relative inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-white text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 shadow-md shadow-rose-500/25 hover:shadow-rose-500/40 transform hover:-translate-y-0.5 transition-all duration-200"
             aria-label="Download resume"
             title="Download CV / 履歴書"

@@ -196,7 +196,7 @@ const Home = () => {
                 </Link>
                 <a
                   href="/TUNYARZARTOE-(履歴書).pdf"
-                  download
+                  download="履歴書＿トウンヤーザートー.pdf"
                   className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl text-slate-700 dark:text-slate-300 text-sm font-bold hover:text-secondary transition-colors"
                   title="Download Japanese Resume"
                 >
@@ -502,7 +502,7 @@ const Home = () => {
             <div className="flex flex-wrap sm:flex-col gap-2.5 w-full sm:w-auto flex-shrink-0">
               <a
                 href="/TUNYARZARTOE-(履歴書).pdf"
-                download
+                download="履歴書＿トウンヤーザートー.pdf"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-md shadow-rose-500/25 transition-all text-center"
               >
                 <span>履歴書 (CV) ダウンロード</span>
@@ -555,7 +555,7 @@ const Home = () => {
             </Link>
             <a
               href="/TUNYARZARTOE-(履歴書).pdf"
-              download
+              download="履歴書＿トウンヤーザートー.pdf"
               className="px-8 py-3.5 rounded-full text-slate-800 dark:text-slate-200 font-bold text-sm bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-750 transition-all"
             >
               Download CV / 履歴書
