@@ -509,55 +509,16 @@ export const servicesData = [
 
 export const workData = [
   {
-    id: 1,
-    description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
-    title: "J4U",
-    name: "J4U - Job Portal Platform",
+    id: 4,
+    description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
+    title: "学習ガイド",
+    name: "Japanese Study Guide",
     images: [
-      { url: J4U_LOGO },
+      { url: JAPANESE_STUDY_LOGO },
     ],
-    logo: J4U_LOGO,
-    languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
-    demoLink: "https://j4u-frontend.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 6,
-    description: "A full-featured responsive social networking application built with React and Redux, featuring posts, real-time user feeds, author details, comments, and responsive UI.",
-    title: "Social App",
-    name: "React Social App - Social Media Platform",
-    images: [
-      { url: P5 },
-    ],
-    logo: SOCIAL_LOGO,
-    languages: ["ReactJS", "Redux", "Bootstrap", "Axios", "REST APIs"],
-    demoLink: "https://react-social-app-gules.vercel.app",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 3,
-    description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
-    title: "CO2 AI",
-    name: "AI Carbon Calculator - Carbon Footprint Estimator",
-    images: [
-      { url: AI_CARBON_LOGO },
-    ],
-    logo: AI_CARBON_LOGO,
-    languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
-    demoLink: "https://ai-carbon-calculator.vercel.app/",
-    lang: { name: "ReactJs", icon: "FaReact" }
-  },
-  {
-    id: 5,
-    description: "An interactive terminal portfolio that mimics macOS, with a live command system, boot animation, draggable windows, and a dock.",
-    title: "Mac Portfolio",
-    name: "Mac Portfolio - Interactive macOS Terminal Portfolio",
-    images: [
-      { url: MAC_PORTFOLIO_LOGO },
-    ],
-    logo: MAC_PORTFOLIO_LOGO,
-    languages: ["Next.js 15", "TypeScript", "Tailwind CSS"],
-    demoLink: "https://yarzardevportfolio.vercel.app/",
+    logo: JAPANESE_STUDY_LOGO,
+    languages: ["ReactJS", "React Router", "CSS"],
+    demoLink: "https://japanese-self-study-guide.vercel.app/",
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
@@ -574,17 +535,56 @@ export const workData = [
     lang: { name: "ReactJs", icon: "FaReact" }
   },
   {
-    id: 4,
-    description: "A self-study companion for learning Japanese, covering vocabulary, kanji, and grammar practice in a simple, focused interface.",
-    title: "学習ガイド",
-    name: "Japanese Study Guide",
+    id: 3,
+    description: "An AI-powered carbon footprint calculator that estimates emissions from daily activities and highlights ways to reduce impact.",
+    title: "CO2 AI",
+    name: "AI Carbon Calculator - Carbon Footprint Estimator",
     images: [
-      { url: JAPANESE_STUDY_LOGO },
+      { url: AI_CARBON_LOGO },
     ],
-    logo: JAPANESE_STUDY_LOGO,
-    languages: ["ReactJS", "React Router", "CSS"],
-    demoLink: "https://japanese-self-study-guide.vercel.app/",
-    lang: { name: "ReactJs" }
+    logo: AI_CARBON_LOGO,
+    languages: ["ReactJS", "Next.js", "Tailwind CSS", "AI Integration"],
+    demoLink: "https://ai-carbon-calculator.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 1,
+    description: "J4U is a job portal platform connecting job seekers with companies. Features include job listings, company profiles, job filtering, and user authentication.",
+    title: "J4U",
+    name: "J4U - Job Portal Platform",
+    images: [
+      { url: J4U_LOGO },
+    ],
+    logo: J4U_LOGO,
+    languages: ["ReactJS", "Redux", "React Router", "Bootstrap", "MDB UI Kit"],
+    demoLink: "https://j4u-frontend.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 5,
+    description: "An interactive terminal portfolio that mimics macOS, with a live command system, boot animation, draggable windows, and a dock.",
+    title: "Mac Portfolio",
+    name: "Mac Portfolio - Interactive macOS Terminal Portfolio",
+    images: [
+      { url: MAC_PORTFOLIO_LOGO },
+    ],
+    logo: MAC_PORTFOLIO_LOGO,
+    languages: ["Next.js 15", "TypeScript", "Tailwind CSS"],
+    demoLink: "https://yarzardevportfolio.vercel.app/",
+    lang: { name: "ReactJs", icon: "FaReact" }
+  },
+  {
+    id: 6,
+    description: "A full-featured responsive social networking application built with React and Redux, featuring posts, real-time user feeds, author details, comments, and responsive UI.",
+    title: "Social App",
+    name: "React Social App - Social Media Platform",
+    images: [
+      { url: P5 },
+    ],
+    logo: SOCIAL_LOGO,
+    languages: ["ReactJS", "Redux", "Bootstrap", "Axios", "REST APIs"],
+    demoLink: "https://react-social-app-gules.vercel.app",
+    lang: { name: "ReactJs", icon: "FaReact" }
   },
   // Add more projects as needed
 ];

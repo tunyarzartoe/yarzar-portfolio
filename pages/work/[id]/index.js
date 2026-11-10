@@ -51,7 +51,7 @@ const ProjectDetail = ({ project }) => {
           </Link>
 
           <span className="text-xs text-slate-400 dark:text-slate-500 font-mono">
-            Project #{project.id} of {workData.length}
+            Project #{currentIndex + 1} of {workData.length}
           </span>
         </div>
 
