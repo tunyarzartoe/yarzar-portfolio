@@ -103,8 +103,8 @@ const Home = () => {
     return () => clearInterval(id);
   }, []);
 
-  // Top featured works
-  const featuredWorks = workData.slice(0, 6);
+  // Top featured works (Top 3 projects on landing page)
+  const featuredWorks = workData.slice(0, 3);
 
 
   return (
