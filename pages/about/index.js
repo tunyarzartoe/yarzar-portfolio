@@ -172,7 +172,7 @@ const About = () => {
                   Tun Yar Zar Toe
                 </p>
                 <p className="text-secondary text-xs font-mono font-semibold mt-1">
-                  トゥン・ヤー・ザー・トー
+                  トウンヤーザートー
                 </p>
                 <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
                   <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">

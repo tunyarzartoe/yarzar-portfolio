@@ -240,7 +240,7 @@ const Home = () => {
                       Tun Yar Zar Toe
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
-                      トゥン・ヤー・ザー・トー
+                      トウンヤーザートー
                     </p>
                     <div className="flex flex-wrap gap-1.5 mt-3">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
